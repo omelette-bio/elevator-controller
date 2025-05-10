@@ -1,0 +1,20 @@
+*** Causality Error (ERR_400): Causality error
+  at file C:\Users\omele\AppData\Local\Temp\ScadeChecker\5964\checker_file.scade, line 439, character 0
+  at path ElevatorModes/elevator_state:RUNNING:
+ the strong guards of state RUNNING depend on flow oFloorNumber ;
+  at file C:\Users\omele\AppData\Local\Temp\ScadeChecker\5964\checker_file.scade, line 407, character 0
+  at path ElevatorModes/oFloorNumber/
+ the definition of flow oFloorNumber depends on shared flow oFloorNumber via a
+ control block ;
+  at file C:\Users\omele\AppData\Local\Temp\ScadeChecker\5964\checker_file.scade, line 407, character 0
+  at path ElevatorModes/oFloorNumber/
+ the definition of shared flow oFloorNumber depends on shared flow oFloorNumber
+ via a control block ;
+  at file C:\Users\omele\AppData\Local\Temp\ScadeChecker\5964\checker_file.scade, line 502, character 18
+  at path ElevatorModes/elevator_state:RUNNING:core:then:oFloorNumber=
+ the definition of shared flow oFloorNumber depends on the state of automaton
+ elevator_state via the control context ;
+  at file C:\Users\omele\AppData\Local\Temp\ScadeChecker\5964\checker_file.scade, line 439, character 0
+  at path ElevatorModes/elevator_state:RUNNING:
+ the state of automaton elevator_state depends on the strong guards of state
+ RUNNING ;

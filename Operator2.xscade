@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3">
+	<declarations>
+		<Operator kind="node" name="ElevatorModes">
+			<inputs>
+				<Variable name="iDestinationFloorNumber">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int32"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/4a21/3CE5/23A4/5ffc55f66ee8"/>
+					</pragmas>
+				</Variable>
+				<Variable name="iTravelRequest">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<pragmas>
+						<ed:Variable oid="!ed/4b32/3CE5/23A4/5ffc5a432773"/>
+					</pragmas>
+				</Variable>
+			</inputs>
+			<outputs>
+				<Variable name="oFloorNumber">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int32"/>
+							</type>
+						</NamedType>
+					</type>
+					<last>
+						<ConstValue value="0"/>
+					</last>
+					<pragmas>
+						<ed:Variable oid="!ed/4ce6/3CE5/23A4/5ffc8d592800"/>
+					</pragmas>
+				</Variable>
+				<Variable name="oOpenDoor">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<default>
+						<ConstValue value="false"/>
+					</default>
+					<pragmas>
+						<ed:Variable oid="!ed/4e9d/3CE5/23A4/5ffda431691b"/>
+					</pragmas>
+				</Variable>
+				<Variable name="oCloseDoor">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="bool"/>
+							</type>
+						</NamedType>
+					</type>
+					<default>
+						<ConstValue value="false"/>
+					</default>
+					<pragmas>
+						<ed:Variable oid="!ed/4ea4/3CE5/23A4/5ffda4316c9a"/>
+					</pragmas>
+				</Variable>
+				<Variable name="oMotorCommand">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="tMotorCommand"/>
+							</type>
+						</NamedType>
+					</type>
+					<default>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="eMOTOR_STOP"/>
+							</path>
+						</IdExpression>
+					</default>
+					<pragmas>
+						<ed:Variable oid="!ed/130b0/7914/23A4/5ffef8772ff7"/>
+					</pragmas>
+				</Variable>
+			</outputs>
+			<data>
+				<StateMachine name="elevator_state">
+					<states>
+						<State initial="true" name="STOPPED">
+							<unless>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="RUNNING"/>
+									</target>
+									<condition>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="iTravelRequest"/>
+											</path>
+										</IdExpression>
+									</condition>
+									<pragmas>
+										<ed:Transition oid="!ed/4bf7/2C51/4478/681bc0fb5417"/>
+									</pragmas>
+								</Transition>
+							</unless>
+							<pragmas>
+								<ed:State oid="!ed/4a49/2C51/4478/681bbe28a29"/>
+							</pragmas>
+						</State>
+						<State name="RUNNING">
+							<unless>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="STOPPED"/>
+									</target>
+									<condition>
+										<!-- oFloorNumber = iDestinationFloorNumber -->
+										<BinaryOp name="2" operator="=">
+											<operands>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="oFloorNumber"/>
+													</path>
+												</IdExpression>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="iDestinationFloorNumber"/>
+													</path>
+												</IdExpression>
+											</operands>
+										</BinaryOp>
+									</condition>
+									<pragmas>
+										<ed:Transition oid="!ed/4d3a/22B6/174C/681f68f2cec"/>
+									</pragmas>
+								</Transition>
+								<Transition kind="restart">
+									<target>
+										<StateRef name="RUNNING"/>
+									</target>
+									<condition>
+										<!-- cFLOOR_TRAVEL_TIME times true -->
+										<BinaryOp name="2" operator="times">
+											<operands>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="cFLOOR_TRAVEL_TIME"/>
+													</path>
+												</IdExpression>
+												<ConstValue value="true"/>
+											</operands>
+										</BinaryOp>
+									</condition>
+									<pragmas>
+										<ed:Transition oid="!ed/4ddb/22B6/174C/681f6a1c23a"/>
+									</pragmas>
+								</Transition>
+							</unless>
+							<pragmas>
+								<ed:State oid="!ed/4a50/2C51/4478/681bbe313e70"/>
+							</pragmas>
+						</State>
+					</states>
+					<pragmas>
+						<ed:StateMachine oid="!ed/4a42/2C51/4478/681bbe057295"/>
+					</pragmas>
+				</StateMachine>
+			</data>
+			<pragmas>
+				<ed:Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+					<diagrams>
+						<NetDiagram name="ElevatorModes_1" landscape="true" format="A4 (210 297)" oid="!ed/4a20/3CE5/23A4/5ffc508a6c43">
+							<presentationElements>
+								<StateMachineGE presentable="!ed/4a42/2C51/4478/681bbe057295">
+									<position>
+										<Point x="529" y="688"/>
+									</position>
+									<size>
+										<Size width="27437" height="11562"/>
+									</size>
+								</StateMachineGE>
+								<StateGE presentable="!ed/4a49/2C51/4478/681bbe28a29">
+									<position>
+										<Point x="820" y="1111"/>
+									</position>
+									<size>
+										<Size width="3069" height="2540"/>
+									</size>
+								</StateGE>
+								<StateGE presentable="!ed/4a50/2C51/4478/681bbe313e70">
+									<position>
+										<Point x="5530" y="794"/>
+									</position>
+									<size>
+										<Size width="21960" height="11298"/>
+									</size>
+								</StateGE>
+								<TransitionGE presentable="!ed/4bf7/2C51/4478/681bc0fb5417">
+									<positions>
+										<Point x="3889" y="2249"/>
+										<Point x="4419" y="2275"/>
+										<Point x="4948" y="2566"/>
+										<Point x="5530" y="2646"/>
+									</positions>
+									<labelSize>
+										<Size width="3519" height="370"/>
+									</labelSize>
+									<labelPos>
+										<Point x="3255" y="874"/>
+									</labelPos>
+									<slashPos>
+										<Point x="5980" y="873"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/4d3a/22B6/174C/681f68f2cec">
+									<positions>
+										<Point x="5530" y="6271"/>
+										<Point x="4657" y="5741"/>
+										<Point x="3784" y="4180"/>
+										<Point x="2858" y="3651"/>
+									</positions>
+									<labelSize>
+										<Size width="4869" height="370"/>
+									</labelSize>
+									<labelPos>
+										<Point x="0" y="5239"/>
+									</labelPos>
+									<slashPos>
+										<Point x="4075" y="5239"/>
+									</slashPos>
+								</TransitionGE>
+								<TransitionGE presentable="!ed/4ddb/22B6/174C/681f6a1c23a">
+									<positions>
+										<Point x="5530" y="9366"/>
+										<Point x="4260" y="10319"/>
+										<Point x="4895" y="10901"/>
+										<Point x="5530" y="11165"/>
+									</positions>
+									<labelSize>
+										<Size width="4869" height="370"/>
+									</labelSize>
+									<labelPos>
+										<Point x="158" y="9181"/>
+									</labelPos>
+									<slashPos>
+										<Point x="4233" y="9181"/>
+									</slashPos>
+								</TransitionGE>
+							</presentationElements>
+						</NetDiagram>
+					</diagrams>
+				</ed:Operator>
+			</pragmas>
+		</Operator>
+	</declarations>
+</File>
