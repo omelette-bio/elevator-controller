@@ -1,43 +1,47 @@
 [scade_version: Student 2024 R1]
-[scade_project: C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Elevator.etp]
+[scade_project: C:/Users/Dylan/Desktop/elevator-controller-main/Elevator.etp]
 [Code Generator]
-f48dcf513511fa800e768e3c0b8d7407 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/scade_model_without_unused.scade
-21fddcec680f826f2a41a3d2be794f6a C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/ElevatorModes.c
-1f1a8079975f42152bcc8446317121e7 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/ElevatorModes.h
-a3a4b546336f992d838f866c8dfc9e4b C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/cmd_cg.log
-729c104d184a81fa0bd4858c220d3340 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/config.txt
-e75bb946850286eefb8c777c16a10762 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_consts.c
-bccbab13cdb72f28252ae82dc72f0ef9 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_consts.h
-de07b7f03cecd9f52a990ee71258bdf8 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_files.txt
-c570e85441febaa6f6d5e23e14e58b55 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_imported_types.h
-f2eb36366f6684698ebac9ffc3ed755d C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_metrics.txt
-110c4e28304eac2c9902e1d11cfa4769 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_sensors.h
-e7196b28a9effc959dbe153cd074557f C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_types.c
-fba53eddaa7f495e781d767bae684c9c C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_types.h
-70da931d8c9e02c76a8d90926aba836e C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/mapping.xml
-ae3eb7ab76cdc5ab7228e39b505e73d6 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/user_macros.h
+16eb0c5332995108a10066fe66f72d6f C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/scade_model_without_unused.scade
+e7baf1bfa7a0ded44d3a39fe7fb72ba5 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/DoorModes.c
+b0825c65a9620c26be66a4878474ed22 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/DoorModes.h
+0d2a1ceb65deb5497a35f4217b635367 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/ElevatorController.c
+237054aebaa3a03d24cbc1716ae425ce C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/ElevatorController.h
+df1bfa22f083800b31c7d86d08918375 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/ElevatorModes.c
+b9f619de74d89820f93128d59f532e8a C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/ElevatorModes.h
+4bae4f831c1c9aba46d364dbe27021cd C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/cmd_cg.log
+9e40bdc1f83fce816c99ef96f026cb14 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/config.txt
+a4176d3e78eb54de1cf96ad64da37bb6 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/kcg_consts.c
+5e4c2c6622edc7ccd17fddb7d3050473 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/kcg_consts.h
+a34f2f82e39e0b1ceab272c7c34c6bb0 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/kcg_files.txt
+c570e85441febaa6f6d5e23e14e58b55 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/kcg_imported_types.h
+d950cea5dcb0f0656d9b3312c2053f17 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/kcg_metrics.txt
+d324e45a1b8f5fab258b1e6772587fcc C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/kcg_sensors.h
+f0218be078966241c5e34f5fb17058d1 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/kcg_types.c
+8007b63abc3bd552687fdfd648bd3165 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/kcg_types.h
+2f1b1650caff5fc14afc1d969f499092 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/mapping.xml
+ae3eb7ab76cdc5ab7228e39b505e73d6 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/user_macros.h
 [Mapping Utils]
-70da931d8c9e02c76a8d90926aba836e C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/mapping.xml
+2f1b1650caff5fc14afc1d969f499092 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/mapping.xml
 0f379c5ba395c92cdffef354dd86bfe5 C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuConfig.c
 5b9e0d7ea9b52c17fdae3092ded3ba5e C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuLib.c
 134415479f730b247b59be1fa4b82ed3 C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuTypes.c
 f8e54064707a32ec62840ae6f743d17e C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuVTable.c
-1ff246196c4737cc08184b2bf96586d9 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Elevator.etp
-0cf73aca3f753027e0a59923e7c44b9b C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_mapping.c
-d9ed7b190a4292000a5f5f2ea7d3656c C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_mapping.h
+1ff246196c4737cc08184b2bf96586d9 C:/Users/Dylan/Desktop/elevator-controller-main/Elevator.etp
+ca5e3475f913c27f0d78af9f89c1caf2 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/Elevator_mapping.c
+d9ed7b190a4292000a5f5f2ea7d3656c C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/Elevator_mapping.h
 [Simulator Wrapper]
-70da931d8c9e02c76a8d90926aba836e C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/mapping.xml
-1ff246196c4737cc08184b2bf96586d9 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Elevator.etp
-6e78af73ee7b0c548a3a6796ca959743 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_dll.c
-84e908ed6c6b3c9833585d755f755bb6 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_interface.c
-7f45bfb474903d6edbb7a543bb48d1eb C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_interface.h
+2f1b1650caff5fc14afc1d969f499092 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/mapping.xml
+1ff246196c4737cc08184b2bf96586d9 C:/Users/Dylan/Desktop/elevator-controller-main/Elevator.etp
+29235008f681f61c53cf37ce3380761a C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/Elevator_dll.c
+1bd6662a6470f380d7daa3c43b0dd473 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/Elevator_interface.c
+38c4b8d61863d51ae42245e88940878a C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/Elevator_interface.h
 [Type Utils]
-70da931d8c9e02c76a8d90926aba836e C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/mapping.xml
+2f1b1650caff5fc14afc1d969f499092 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/mapping.xml
 0f379c5ba395c92cdffef354dd86bfe5 C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuConfig.c
 5b9e0d7ea9b52c17fdae3092ded3ba5e C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuLib.c
 e63dd4db596b0c8780bfb3394e53cfd7 C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuPredefConv.c
 134415479f730b247b59be1fa4b82ed3 C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuTypes.c
 f8e54064707a32ec62840ae6f743d17e C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuVTable.c
-1ff246196c4737cc08184b2bf96586d9 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Elevator.etp
-c2145765c9f252677c385e0e30429eb9 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_type.c
-5753336a7ffc5cefc0ca750e49c1976d C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_type.h
+1ff246196c4737cc08184b2bf96586d9 C:/Users/Dylan/Desktop/elevator-controller-main/Elevator.etp
+be49a5defdf83a2c250f6bfecf9ea802 C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/Elevator_type.c
+44fcb4568b97e599e553e4e3bc3d987d C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/Elevator_type.h

@@ -12,7 +12,7 @@
     <Option name="warn_error" value="#off#"/>
     <Option name="short_circuit" value="#off#"/>
     <Option name="wrap_c_ops" value="#off#"/>
-    <Option name="input_file" value="C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/scade_model_without_unused.scade"/>
+    <Option name="input_file" value="C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/scade_model_without_unused.scade"/>
     <Option name="probes" value="#on#"/>
     <Option name="no_observe" value="#off#"/>
     <Option name="observe" value="#off#"/>
@@ -28,19 +28,48 @@
     <Option name="expall" value="#off#"/>
     <Option name="noexp" value="#off#"/>
     <Option name="exp" value="#off#"/>
-    <Option name="target_dir" value="C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation"/>
+    <Option name="target_dir" value="C:/Users/Dylan/Desktop/elevator-controller-main/Simulation"/>
     <Option name="target" value="C"/>
-    <Option name="root" value="ElevatorModes"/>
+    <Option name="root" value="ElevatorController"/>
     <Option name="auth" value="#off#"/>
     <Constant macroDef="true" scadeName="cFLOOR_TRAVEL_TIME" scadeType="int32" targetName="cFLOOR_TRAVEL_TIME" targetType="kcg_int32"/>
+    <Constant macroDef="true" scadeName="cDOOR_MOVE_TIME" scadeType="int32" targetName="cDOOR_MOVE_TIME" targetType="kcg_int32"/>
     <EnumType scadeName="tMotorCommand" targetName="tMotorCommand">
       <EnumVal scadeName="eMOTOR_STOP" targetName="eMOTOR_STOP"/>
       <EnumVal scadeName="eMOTOR_MOVEUP" targetName="eMOTOR_MOVEUP"/>
       <EnumVal scadeName="eMOTOR_MOVEDOWN" targetName="eMOTOR_MOVEDOWN"/>
     </EnumType>
-    <RootNode headerFile="ElevatorModes.h" scadeName="ElevatorModes" targetCycleFct="ElevatorModes" targetInitFct="ElevatorModes_reset" targetInitializationFct="ElevatorModes_init">
+    <EnumType scadeName="tDoorStatusEnum" targetName="tDoorStatusEnum">
+      <EnumVal scadeName="eDOOR_CLOSED" targetName="eDOOR_CLOSED"/>
+      <EnumVal scadeName="eDOOR_OPENED" targetName="eDOOR_OPENED"/>
+      <EnumVal scadeName="eDOOR_CLOSING" targetName="eDOOR_CLOSING"/>
+      <EnumVal scadeName="eDOOR_OPENING" targetName="eDOOR_OPENING"/>
+    </EnumType>
+    <RootNode headerFile="ElevatorController.h" scadeName="ElevatorController" targetCycleFct="ElevatorController" targetInitFct="ElevatorController_reset" targetInitializationFct="ElevatorController_init">
       <Input inCtx="true" scadeName="iDestinationFloorNumber" scadeType="int32" targetName="iDestinationFloorNumber" targetType="kcg_int32"/>
       <Input inCtx="true" scadeName="iTravelRequest" scadeType="bool" targetName="iTravelRequest" targetType="kcg_bool"/>
+      <Output inCtx="true" scadeName="oDoorStatus" scadeType="tDoorStatusEnum" targetName="oDoorStatus" targetType="tDoorStatusEnum"/>
+      <Output inCtx="true" scadeName="oFloorNumber" scadeType="int32" targetName="oFloorNumber" targetType="kcg_int32"/>
+      <Output inCtx="true" scadeName="oMotorCommand" scadeType="tMotorCommand" targetName="oMotorCommand" targetType="tMotorCommand"/>
+      <Local inCtx="true" scadeName="_L1" scadeType="int32" targetName="_L1" targetType="kcg_int32"/>
+      <Local inCtx="true" scadeName="_L8" scadeType="bool" targetName="_L8" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L9" scadeType="bool" targetName="_L9" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L3" scadeType="tDoorStatusEnum" targetName="_L3" targetType="tDoorStatusEnum"/>
+      <Local inCtx="true" scadeName="_L12" scadeType="bool" targetName="_L12" targetType="kcg_bool"/>
+      <Local inCtx="true" scadeName="_L13" scadeType="int32" targetName="_L13" targetType="kcg_int32"/>
+      <Local inCtx="true" scadeName="_L14" scadeType="tMotorCommand" targetName="_L14" targetType="tMotorCommand"/>
+      <NodeInstance instName="1" refName="ElevatorModes" scadeName="ElevatorModes">
+        <OutCtxVar targetName="Context_ElevatorModes_1"/>
+      </NodeInstance>
+      <NodeInstance instName="1" refName="DoorModes" scadeName="DoorModes">
+        <OutCtxVar targetName="Context_DoorModes_1"/>
+      </NodeInstance>
+      <OutCtxType targetName="outC_ElevatorController"/>
+      <InCtxType targetName="inC_ElevatorController"/>
+    </RootNode>
+    <NoExpNode headerFile="ElevatorModes.h" scadeName="ElevatorModes" targetCycleFct="ElevatorModes" targetInitFct="ElevatorModes_reset" targetInitializationFct="ElevatorModes_init">
+      <Input scadeName="iDestinationFloorNumber" scadeType="int32" targetName="iDestinationFloorNumber" targetType="kcg_int32"/>
+      <Input scadeName="iTravelRequest" scadeType="bool" targetName="iTravelRequest" targetType="kcg_bool"/>
       <Output inCtx="true" scadeName="oFloorNumber" scadeType="int32" targetName="oFloorNumber" targetType="kcg_int32"/>
       <Output inCtx="true" scadeName="oOpenDoor" scadeType="bool" targetName="oOpenDoor" targetType="kcg_bool"/>
       <Output inCtx="true" scadeName="oCloseDoor" scadeType="bool" targetName="oCloseDoor" targetType="kcg_bool"/>
@@ -72,12 +101,22 @@
               <Fork priority="1">
                 <Condition/>
                 <Action>
+                  <Times instName="7">
+                    <Init inCtx="true" targetName="init" targetType="kcg_bool"/>
+                    <Memory inCtx="true" targetName="v3_times_7_size" targetType="kcg_size"/>
+                  </Times>
+                </Action>
+                <Transition kind="weak" scadeDest="ELEVATOR_DOWN" targetName="SSM_TR_init_ELEVATOR_DOWN_1_init_SM2_RUNNING_elevator_state"/>
+              </Fork>
+              <Fork priority="2">
+                <Condition/>
+                <Action>
                   <Times instName="5">
                     <Init inCtx="true" targetName="init" targetType="kcg_bool"/>
                     <Memory inCtx="true" targetName="v3_times_5_size" targetType="kcg_size"/>
                   </Times>
                 </Action>
-                <Transition kind="weak" scadeDest="ELEVATOR_CLIMB" targetName="SSM_TR_init_ELEVATOR_CLIMB_1_init_SM2_RUNNING_elevator_state"/>
+                <Transition kind="weak" scadeDest="ELEVATOR_CLIMB" targetName="SSM_TR_init_ELEVATOR_CLIMB_2_init_SM2_RUNNING_elevator_state"/>
               </Fork>
             </State>
             <State scadeName="ELEVATOR_CLIMB" targetName="SSM_st_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state">
@@ -88,6 +127,16 @@
               <Fork priority="1">
                 <Condition/>
                 <Transition kind="weak" scadeDest="init" targetName="SSM_TR_ELEVATOR_CLIMB_init_1_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state"/>
+              </Fork>
+            </State>
+            <State scadeName="ELEVATOR_DOWN" targetName="SSM_st_ELEVATOR_DOWN_SM2_RUNNING_elevator_state">
+              <Local clockVal="SSM_st_ELEVATOR_DOWN_SM2_RUNNING_elevator_state" clockVar="SM2_clock_RUNNING_elevator_state" inCtx="true" scadeName="_L1" scadeType="int32" targetName="_L1_ELEVATOR_DOWN_SM2_RUNNING_elevator_state" targetType="kcg_int32"/>
+              <Local clockVal="SSM_st_ELEVATOR_DOWN_SM2_RUNNING_elevator_state" clockVar="SM2_clock_RUNNING_elevator_state" inCtx="true" scadeName="_L2" scadeType="int32" targetName="_L2_ELEVATOR_DOWN_SM2_RUNNING_elevator_state" targetType="kcg_int32"/>
+              <Local clockVal="SSM_st_ELEVATOR_DOWN_SM2_RUNNING_elevator_state" clockVar="SM2_clock_RUNNING_elevator_state" inCtx="true" scadeName="_L3" scadeType="int32" targetName="_L3_ELEVATOR_DOWN_SM2_RUNNING_elevator_state" targetType="kcg_int32"/>
+              <Last/>
+              <Fork priority="1">
+                <Condition/>
+                <Transition kind="weak" scadeDest="init" targetName="SSM_TR_ELEVATOR_DOWN_init_1_ELEVATOR_DOWN_SM2_RUNNING_elevator_state"/>
               </Fork>
             </State>
             <ActiveState inCtx="true" targetName="SM2_state_act_RUNNING_elevator_state"/>
@@ -114,6 +163,7 @@
       <Memory inCtx="true" targetName="oFloorNumber" targetType="kcg_int32"/>
       <Init inCtx="true" targetName="init" targetType="kcg_bool"/>
       <Init inCtx="true" targetName="init1" targetType="kcg_bool"/>
+      <Memory inCtx="true" targetName="v3_times_7_size" targetType="kcg_size"/>
       <Memory inCtx="true" targetName="v3_times_5_size" targetType="kcg_size"/>
       <Memory inCtx="true" targetName="SM2_state_nxt_RUNNING_elevator_state" targetType="SSM_ST_SM2_RUNNING_elevator_state"/>
       <Memory inCtx="true" targetName="elevator_state_state_nxt" targetType="SSM_ST_elevator_state"/>
@@ -121,8 +171,69 @@
       <Clock clockVal="SSM_st_init_SM2_RUNNING_elevator_state" clockVar="SM2_clock_RUNNING_elevator_state" inCtx="true" targetName="MotorControl_clock_init_SM2_RUNNING_elevator_state" targetType="kcg_bool"/>
       <Clock inCtx="true" targetName="elevator_state_state_act" targetType="SSM_ST_elevator_state"/>
       <OutCtxType targetName="outC_ElevatorModes"/>
-      <InCtxType targetName="inC_ElevatorModes"/>
-    </RootNode>
+    </NoExpNode>
+    <NoExpNode headerFile="DoorModes.h" scadeName="DoorModes" targetCycleFct="DoorModes" targetInitFct="DoorModes_reset" targetInitializationFct="DoorModes_init">
+      <Input scadeName="iOpenDoor" scadeType="bool" targetName="iOpenDoor" targetType="kcg_bool"/>
+      <Input scadeName="iCloseDoor" scadeType="bool" targetName="iCloseDoor" targetType="kcg_bool"/>
+      <Output inCtx="true" scadeName="oDoorStatus" scadeType="tDoorStatusEnum" targetName="oDoorStatus" targetType="tDoorStatusEnum"/>
+      <Automaton scadeName="SM1" targetStatesType="SSM_ST_SM1" targetTransitionsType="SSM_TR_SM1">
+        <State scadeName="CLOSED" targetName="SSM_st_CLOSED_SM1">
+          <Local clockVal="SSM_st_CLOSED_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L4" scadeType="tDoorStatusEnum" targetName="_L4_CLOSED_SM1" targetType="tDoorStatusEnum"/>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="strong" scadeDest="OPENING" targetName="SSM_TR_CLOSED_OPENING_1_CLOSED_SM1"/>
+          </Fork>
+        </State>
+        <State scadeName="CLOSING" targetName="SSM_st_CLOSING_SM1">
+          <Local clockVal="SSM_st_CLOSING_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L1" scadeType="tDoorStatusEnum" targetName="_L1_CLOSING_SM1" targetType="tDoorStatusEnum"/>
+          <Fork priority="1">
+            <Condition/>
+            <Action>
+              <Times instName="1">
+                <Init inCtx="true" targetName="init" targetType="kcg_bool"/>
+                <Memory inCtx="true" targetName="v3_times_1_size" targetType="kcg_size"/>
+              </Times>
+            </Action>
+            <Transition kind="strong" scadeDest="CLOSED" targetName="SSM_TR_CLOSING_CLOSED_1_CLOSING_SM1"/>
+          </Fork>
+        </State>
+        <State scadeName="OPENING" targetName="SSM_st_OPENING_SM1">
+          <Local clockVal="SSM_st_OPENING_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L1" scadeType="tDoorStatusEnum" targetName="_L1_OPENING_SM1" targetType="tDoorStatusEnum"/>
+          <Fork priority="1">
+            <Condition/>
+            <Action>
+              <Times instName="2">
+                <Init inCtx="true" targetName="init1" targetType="kcg_bool"/>
+                <Memory inCtx="true" targetName="v3_times_2_size" targetType="kcg_size"/>
+              </Times>
+            </Action>
+            <Transition kind="strong" scadeDest="OPENED" targetName="SSM_TR_OPENING_OPENED_1_OPENING_SM1"/>
+          </Fork>
+        </State>
+        <State scadeName="OPENED" targetName="SSM_st_OPENED_SM1">
+          <Local clockVal="SSM_st_OPENED_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L1" scadeType="tDoorStatusEnum" targetName="_L1_OPENED_SM1" targetType="tDoorStatusEnum"/>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="strong" scadeDest="CLOSING" targetName="SSM_TR_OPENED_CLOSING_1_OPENED_SM1"/>
+          </Fork>
+        </State>
+        <ActiveState inCtx="true" targetName="SM1_state_act"/>
+        <SelectedState inCtx="true" targetName="SM1_state_sel"/>
+        <NextState inCtx="true" mem="true" targetName="SM1_state_nxt"/>
+        <ResetActiveState inCtx="true" mem="true" targetName="SM1_reset_act"/>
+        <ResetNextState inCtx="true" mem="true" targetName="SM1_reset_nxt"/>
+        <StrongTransition inCtx="true" targetName="SM1_fired_strong"/>
+        <WeakTransition inCtx="true" targetName="SM1_fired"/>
+      </Automaton>
+      <Init inCtx="true" targetName="init" targetType="kcg_bool"/>
+      <Init inCtx="true" targetName="init1" targetType="kcg_bool"/>
+      <Memory inCtx="true" targetName="v3_times_1_size" targetType="kcg_size"/>
+      <Memory inCtx="true" targetName="v3_times_2_size" targetType="kcg_size"/>
+      <Memory inCtx="true" targetName="SM1_state_nxt" targetType="SSM_ST_SM1"/>
+      <Clock inCtx="true" targetName="SM1_state_sel" targetType="SSM_ST_SM1"/>
+      <Clock inCtx="true" targetName="SM1_state_act" targetType="SSM_ST_SM1"/>
+      <OutCtxType targetName="outC_DoorModes"/>
+    </NoExpNode>
     <PredefType scadeName="int8" targetName="kcg_int8"/>
     <PredefType scadeName="int16" targetName="kcg_int16"/>
     <PredefType scadeName="int32" targetName="kcg_int32"/>

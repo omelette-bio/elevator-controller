@@ -1,0 +1,77 @@
+/* $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
+** Command: scadecg.exe -config C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/config.txt
+** Generation date: 2025-05-15T11:31:51
+*************************************************************$ */
+#ifndef _DoorModes_H_
+#define _DoorModes_H_
+
+#include "kcg_types.h"
+
+/* =====================  no input structure  ====================== */
+
+/* =====================  no output structure  ====================== */
+
+/* ========================  context type  ========================= */
+typedef struct {
+  /* ---------------------------  outputs  --------------------------- */
+  tDoorStatusEnum /* oDoorStatus/ */ oDoorStatus;
+  /* -----------------------  no local probes  ----------------------- */
+  /* ----------------------- local memories  ------------------------- */
+  kcg_bool init;
+  kcg_bool init1;
+  kcg_size /* @1/_/v3/ */ v3_times_1_size;
+  kcg_size /* @2/_/v3/ */ v3_times_2_size;
+  SSM_ST_SM1 /* SM1: */ SM1_state_nxt;
+  kcg_bool /* SM1: */ SM1_reset_act;
+  kcg_bool /* SM1: */ SM1_reset_nxt;
+  /* -------------------- no sub nodes' contexts  -------------------- */
+  /* ------------------ clocks of observable data -------------------- */
+  SSM_ST_SM1 /* SM1: */ SM1_state_sel;
+  SSM_ST_SM1 /* SM1: */ SM1_state_act;
+  /* -------------------- (-debug) no assertions  -------------------- */
+  /* ------------------- (-debug) local variables -------------------- */
+  kcg_bool /* @1/_/o/ */ o_times_1_size;
+  kcg_bool /* @1/_/c/ */ c_times_1_size;
+  kcg_size /* @1/_/n/ */ n_times_1_size;
+  kcg_size /* @1/_/v4/ */ v4_times_1_size;
+  kcg_bool /* @2/_/o/ */ o_times_2_size;
+  kcg_bool /* @2/_/c/ */ c_times_2_size;
+  kcg_size /* @2/_/n/ */ n_times_2_size;
+  kcg_size /* @2/_/v4/ */ v4_times_2_size;
+  tDoorStatusEnum /* SM1:CLOSED:_L4/ */ _L4_CLOSED_SM1;
+  tDoorStatusEnum /* SM1:CLOSING:_L1/ */ _L1_CLOSING_SM1;
+  tDoorStatusEnum /* SM1:OPENING:_L1/ */ _L1_OPENING_SM1;
+  tDoorStatusEnum /* SM1:OPENED:_L1/ */ _L1_OPENED_SM1;
+  SSM_TR_SM1 /* SM1: */ SM1_fired_strong;
+  SSM_TR_SM1 /* SM1: */ SM1_fired;
+} outC_DoorModes;
+
+/* ===========  node initialization and cycle functions  =========== */
+/* DoorModes/ */
+extern void DoorModes(
+  /* iOpenDoor/ */
+  kcg_bool iOpenDoor,
+  /* iCloseDoor/ */
+  kcg_bool iCloseDoor,
+  outC_DoorModes *outC);
+
+#ifndef KCG_NO_EXTERN_CALL_TO_RESET
+extern void DoorModes_reset(outC_DoorModes *outC);
+#endif /* KCG_NO_EXTERN_CALL_TO_RESET */
+
+#ifndef KCG_USER_DEFINED_INIT
+extern void DoorModes_init(outC_DoorModes *outC);
+#endif /* KCG_USER_DEFINED_INIT */
+
+/*
+  Expanded instances for: DoorModes/
+  @1: (times#1)
+  @2: (times#2)
+*/
+
+#endif /* _DoorModes_H_ */
+/* $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
+** DoorModes.h
+** Generation date: 2025-05-15T11:31:51
+*************************************************************$ */
+

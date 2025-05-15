@@ -48,6 +48,7 @@
 "C:\\Users\\abouali\\OneDrive - Université Nice Sophia Antipolis\\03 - Formation\\Master M1 Critical Systems\\2020-2021\\Exams\\UCA-M1-Safety-2020\\SCADE-Elevator-Project\\Elevator.etp"="KCG" 
 "C:\\Users\\abouali\\OneDrive - Université Nice Sophia Antipolis\\03 - Formation\\Master M1 Critical Systems\\2024-2025\\SCADE Elevator Project\\Elevator\\Elevator.etp"="KCG" 
 "C:\\Users\\omele\\Documents\\SCADE Elevator Project\\SCADE Elevator Project\\Elevator\\Elevator.etp"="KCG" 
+"C:\\Users\\Dylan\\Desktop\\elevator-controller-main\\Elevator.etp"="KCG" 
 
 [STUDIO\TOOLS\CONFIGURATIONS\Metrics and Rules Checker]
 
@@ -57,6 +58,7 @@
 "C:\\Users\\abouali\\OneDrive - Université Nice Sophia Antipolis\\03 - Formation\\Master M1 Critical Systems\\2020-2021\\Exams\\UCA-M1-Safety-2020\\SCADE-Elevator-Project\\Elevator.etp"="MetricRule" 
 "C:\\Users\\abouali\\OneDrive - Université Nice Sophia Antipolis\\03 - Formation\\Master M1 Critical Systems\\2024-2025\\SCADE Elevator Project\\Elevator\\Elevator.etp"="MetricRule" 
 "C:\\Users\\omele\\Documents\\SCADE Elevator Project\\SCADE Elevator Project\\Elevator\\Elevator.etp"="MetricRule" 
+"C:\\Users\\Dylan\\Desktop\\elevator-controller-main\\Elevator.etp"="MetricRule" 
 
 [STUDIO\TOOLS\CONFIGURATIONS\Reporter]
 
@@ -66,10 +68,11 @@
 "C:\\Users\\abouali\\OneDrive - Université Nice Sophia Antipolis\\03 - Formation\\Master M1 Critical Systems\\2020-2021\\Exams\\UCA-M1-Safety-2020\\SCADE-Elevator-Project\\Elevator.etp"="HTML" 
 "C:\\Users\\abouali\\OneDrive - Université Nice Sophia Antipolis\\03 - Formation\\Master M1 Critical Systems\\2024-2025\\SCADE Elevator Project\\Elevator\\Elevator.etp"="HTML" 
 "C:\\Users\\omele\\Documents\\SCADE Elevator Project\\SCADE Elevator Project\\Elevator\\Elevator.etp"="HTML" 
+"C:\\Users\\Dylan\\Desktop\\elevator-controller-main\\Elevator.etp"="HTML" 
 
 [STUDIO\Workspace]
 
-"ActiveProject"="C:\\Users\\omele\\Documents\\SCADE Elevator Project\\SCADE Elevator Project\\Elevator\\Elevator.etp" 
+"ActiveProject"="C:\\Users\\Dylan\\Desktop\\elevator-controller-main\\Elevator.etp" 
 
 [SCADE\Editor\Shortcut]
 
