@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--$ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
+** Command: scadecg.exe -config C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/config.txt
+** Generation date: 2025-05-15T08:42:54
+*************************************************************$-->
+<mapping>
+  <config>
+    <option name="use_types" value="#off#"/>
+    <option name="imported_root_package" value="#off#"/>
+    <option name="root_package" value="#off#"/>
+    <option name="xml_basename" value="kcg_xml_filter_out.scade"/>
+    <option name="state_vector" value="#off#"/>
+    <option name="static" value="#off#"/>
+    <option name="separate_io_all" value="#off#"/>
+    <option name="no_separate_io" value="#off#"/>
+    <option name="separate_io" value="#off#"/>
+    <option name="warn_error" value="#off#"/>
+    <option name="short_circuit" value="#off#"/>
+    <option name="wrap_c_ops" value="#off#"/>
+    <option name="input_file"
+        value="C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/scade_model_without_unused.scade"/>
+    <option name="probes" value="#on#"/>
+    <option name="no_observe" value="#off#"/>
+    <option name="observe" value="#off#"/>
+    <option name="debug" value="#on#"/>
+    <option name="user_config" value="./user_macros.h"/>
+    <option name="input_threshold" value="#off#"/>
+    <option name="header" value="#off#"/>
+    <option name="significance_length" value="31"/>
+    <option name="name_length" value="200"/>
+    <option name="globals_prefix" value="#off#"/>
+    <option name="keep_asserts" value="#off#"/>
+    <option name="global_root_context" value="#off#"/>
+    <option name="expall" value="#off#"/>
+    <option name="noexp" value="#off#"/>
+    <option name="exp" value="#off#"/>
+    <option name="target_dir"
+        value="C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation"/>
+    <option name="target" value="C"/>
+    <option name="root" value="ElevatorModes"/>
+    <option name="auth" value="#off#"/>
+  </config>
+  <model>
+    <predefType id="1" name="bool"/>
+    <predefType id="2" name="char"/>
+    <predefType id="3" name="int8"/>
+    <predefType id="4" name="int16"/>
+    <predefType id="5" name="int32"/>
+    <predefType id="6" name="int64"/>
+    <predefType id="7" name="uint8"/>
+    <predefType id="8" name="uint16"/>
+    <predefType id="9" name="uint32"/>
+    <predefType id="10" name="uint64"/>
+    <predefType id="11" name="float32"/>
+    <predefType id="12" name="float64"/>
+    <predefType id="13" name="size"/>
+    <constant id="14" name="cFLOOR_TRAVEL_TIME" imported="false" type="5"/>
+    <enum id="15" name="tMotorCommand">
+      <value id="16" name="eMOTOR_STOP" default="false"/>
+      <value id="17" name="eMOTOR_MOVEUP" default="false"/>
+      <value id="18" name="eMOTOR_MOVEDOWN" default="false"/>
+    </enum>
+    <operator id="19" name="ElevatorModes" imported="false" root="true" expanded="false">
+      <input id="20" name="iDestinationFloorNumber" clock="false" type="5"/>
+      <input id="21" name="iTravelRequest" clock="false" type="1"/>
+      <output id="22" name="oFloorNumber" clock="false" type="5"/>
+      <output id="23" name="oOpenDoor" clock="false" type="1"/>
+      <output id="24" name="oCloseDoor" clock="false" type="1"/>
+      <output id="25" name="oMotorCommand" clock="false" type="15"/>
+      <automaton id="26" name="elevator_state">
+        <state id="27" name="STOPPED" initial="true" final="false" default="false">
+          <local id="28" name="_L1" clock="false" type="1"/>
+          <local id="29" name="_L2" clock="false" type="1"/>
+          <local id="30" name="_L3" clock="false" type="15"/>
+          <fork id="31" name="1" kind="weak">
+            <transition id="32" dest="33"/>
+          </fork>
+        </state>
+        <state id="33" name="RUNNING" initial="false" final="false" default="false">
+          <automaton id="34" name="SM2">
+            <state id="35" name="init" initial="true" final="false" default="false">
+              <local id="36" name="_L1" clock="false" type="1"/>
+              <local id="37" name="_L2" clock="false" type="1"/>
+              <block id="38" name="MotorControl" type="1">
+                <branch id="39" name="else">
+                  <local id="40" name="_L1" clock="false" type="15"/>
+                </branch>
+                <branch id="41" name="then">
+                  <local id="42" name="_L1" clock="false" type="15"/>
+                </branch>
+              </block>
+              <fork id="43" name="1" kind="weak">
+                <times id="44" name="5"/>
+                <transition id="45" dest="46"/>
+              </fork>
+            </state>
+            <state id="46" name="ELEVATOR_CLIMB" initial="false" final="false" default="false">
+              <local id="47" name="_L1" clock="false" type="5"/>
+              <local id="48" name="_L2" clock="false" type="5"/>
+              <local id="49" name="_L3" clock="false" type="5"/>
+              <last id="50"/>
+              <fork id="51" name="1" kind="weak">
+                <transition id="52" dest="35"/>
+              </fork>
+            </state>
+          </automaton>
+          <fork id="53" name="1" kind="weak">
+            <transition id="54" dest="27"/>
+          </fork>
+        </state>
+      </automaton>
+    </operator>
+  </model>
+  <generated>
+    <c>
+      <file id="55" name="ElevatorModes.h">
+        <function id="56" name="ElevatorModes_init">
+          <parameter id="57" name="outC" type="63" pointer="true"/>
+        </function>
+        <function id="58" name="ElevatorModes_reset">
+          <parameter id="59" name="outC" type="63" pointer="true"/>
+        </function>
+        <function id="60" name="ElevatorModes">
+          <parameter id="61" name="inC" type="101" pointer="true"/>
+          <parameter id="62" name="outC" type="63" pointer="true"/>
+        </function>
+        <struct id="63" name="outC_ElevatorModes">
+          <field id="64" name="oFloorNumber" type="148" pointer="false"/>
+          <field id="65" name="oOpenDoor" type="157" pointer="false"/>
+          <field id="66" name="oCloseDoor" type="157" pointer="false"/>
+          <field id="67" name="oMotorCommand" type="119" pointer="false"/>
+          <field id="68" name="init" type="157" pointer="false"/>
+          <field id="69" name="init1" type="157" pointer="false"/>
+          <field id="70" name="v3_times_5_size" type="154" pointer="false"/>
+          <field id="71" name="SM2_reset_nxt_RUNNING_elevator_state" type="157" pointer="false"/>
+          <field id="72" name="SM2_reset_act_RUNNING_elevator_state" type="157" pointer="false"/>
+          <field id="73" name="SM2_state_nxt_RUNNING_elevator_state" type="105" pointer="false"/>
+          <field id="74" name="elevator_state_state_nxt" type="112" pointer="false"/>
+          <field id="75" name="elevator_state_reset_act" type="157" pointer="false"/>
+          <field id="76" name="elevator_state_reset_nxt" type="157" pointer="false"/>
+          <field id="77" name="SM2_clock_RUNNING_elevator_state" type="105" pointer="false"/>
+          <field id="78" name="MotorControl_clock_init_SM2_RUNNING_elevator_state" type="157" pointer="false"/>
+          <field id="79" name="elevator_state_state_act" type="112" pointer="false"/>
+          <field id="80" name="o_times_5_size" type="157" pointer="false"/>
+          <field id="81" name="c_times_5_size" type="157" pointer="false"/>
+          <field id="82" name="n_times_5_size" type="154" pointer="false"/>
+          <field id="83" name="v4_times_5_size" type="154" pointer="false"/>
+          <field id="84" name="_L3_STOPPED_elevator_state" type="119" pointer="false"/>
+          <field id="85" name="_L2_STOPPED_elevator_state" type="157" pointer="false"/>
+          <field id="86" name="_L1_STOPPED_elevator_state" type="157" pointer="false"/>
+          <field id="87" name="SM2_fired_RUNNING_elevator_state" type="108" pointer="false"/>
+          <field id="88" name="SM2_fired_strong_RUNNING_elevator_state" type="108" pointer="false"/>
+          <field id="89" name="SM2_state_act_RUNNING_elevator_state" type="105" pointer="false"/>
+          <field id="90" name="SM2_state_sel_RUNNING_elevator_state" type="105" pointer="false"/>
+          <field id="91" name="_L1_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state" type="148" pointer="false"/>
+          <field id="92" name="_L2_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state" type="148" pointer="false"/>
+          <field id="93" name="_L3_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state" type="148" pointer="false"/>
+          <field id="94" name="_L1_then_MotorControl_init_SM2_RUNNING_elevator_state" type="119" pointer="false"/>
+          <field id="95" name="_L1_else_MotorControl_init_SM2_RUNNING_elevator_state" type="119" pointer="false"/>
+          <field id="96" name="_L1_init_SM2_RUNNING_elevator_state" type="157" pointer="false"/>
+          <field id="97" name="_L2_init_SM2_RUNNING_elevator_state" type="157" pointer="false"/>
+          <field id="98" name="elevator_state_state_sel" type="112" pointer="false"/>
+          <field id="99" name="elevator_state_fired_strong" type="115" pointer="false"/>
+          <field id="100" name="elevator_state_fired" type="115" pointer="false"/>
+        </struct>
+        <struct id="101" name="inC_ElevatorModes">
+          <field id="102" name="iDestinationFloorNumber" type="148" pointer="false"/>
+          <field id="103" name="iTravelRequest" type="157" pointer="false"/>
+        </struct>
+      </file>
+      <file id="104" name="kcg_types.h">
+        <enum id="105" name="SSM_ST_SM2_RUNNING_elevator_state" tagName="kcg_tag_SSM_ST_SM2_RUNNING_elevator_state">
+          <value id="106" name="SSM_st_init_SM2_RUNNING_elevator_state"/>
+          <value id="107" name="SSM_st_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state"/>
+        </enum>
+        <enum id="108" name="SSM_TR_SM2_RUNNING_elevator_state" tagName="kcg_tag_SSM_TR_SM2_RUNNING_elevator_state">
+          <value id="109" name="SSM_TR_no_trans_SM2_RUNNING_elevator_state"/>
+          <value id="110" name="SSM_TR_init_ELEVATOR_CLIMB_1_init_SM2_RUNNING_elevator_state"/>
+          <value id="111" name="SSM_TR_ELEVATOR_CLIMB_init_1_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state"/>
+        </enum>
+        <enum id="112" name="SSM_ST_elevator_state" tagName="kcg_tag_SSM_ST_elevator_state">
+          <value id="113" name="SSM_st_STOPPED_elevator_state"/>
+          <value id="114" name="SSM_st_RUNNING_elevator_state"/>
+        </enum>
+        <enum id="115" name="SSM_TR_elevator_state" tagName="kcg_tag_SSM_TR_elevator_state">
+          <value id="116" name="SSM_TR_no_trans_elevator_state"/>
+          <value id="117" name="SSM_TR_STOPPED_RUNNING_1_STOPPED_elevator_state"/>
+          <value id="118" name="SSM_TR_RUNNING_STOPPED_1_RUNNING_elevator_state"/>
+        </enum>
+        <enum id="119" name="tMotorCommand" tagName="kcg_tag_tMotorCommand">
+          <value id="120" name="eMOTOR_STOP"/>
+          <value id="121" name="eMOTOR_MOVEUP"/>
+          <value id="122" name="eMOTOR_MOVEDOWN"/>
+        </enum>
+        <macro id="123" name="kcg_assign_array"/>
+        <macro id="124" name="kcg_assign_struct"/>
+        <macro id="125" name="kcg_lnot_uint8"/>
+        <macro id="126" name="kcg_lnot_uint16"/>
+        <macro id="127" name="kcg_lnot_uint32"/>
+        <macro id="128" name="kcg_lnot_uint64"/>
+        <macro id="129" name="kcg_lsl_uint8"/>
+        <macro id="130" name="kcg_lsl_uint16"/>
+        <macro id="131" name="kcg_lsl_uint32"/>
+        <macro id="132" name="kcg_lsl_uint64"/>
+        <macro id="133" name="kcg_true"/>
+        <macro id="134" name="kcg_false"/>
+        <macro id="135" name="kcg_lit_int8"/>
+        <macro id="136" name="kcg_lit_int16"/>
+        <macro id="137" name="kcg_lit_int32"/>
+        <macro id="138" name="kcg_lit_int64"/>
+        <macro id="139" name="kcg_lit_uint8"/>
+        <macro id="140" name="kcg_lit_uint16"/>
+        <macro id="141" name="kcg_lit_uint32"/>
+        <macro id="142" name="kcg_lit_uint64"/>
+        <macro id="143" name="kcg_lit_size"/>
+        <macro id="144" name="kcg_lit_float64"/>
+        <macro id="145" name="kcg_lit_float32"/>
+        <predefType id="146" name="kcg_int8"/>
+        <predefType id="147" name="kcg_int16"/>
+        <predefType id="148" name="kcg_int32"/>
+        <predefType id="149" name="kcg_int64"/>
+        <predefType id="150" name="kcg_uint8"/>
+        <predefType id="151" name="kcg_uint16"/>
+        <predefType id="152" name="kcg_uint32"/>
+        <predefType id="153" name="kcg_uint64"/>
+        <predefType id="154" name="kcg_size"/>
+        <predefType id="155" name="kcg_float64"/>
+        <predefType id="156" name="kcg_float32"/>
+        <predefType id="157" name="kcg_bool"/>
+        <predefType id="158" name="kcg_char"/>
+        <macro id="159" name="KCG_MAPW_CPY"/>
+      </file>
+      <file id="160" name="kcg_consts.h">
+        <macro id="161" name="cFLOOR_TRAVEL_TIME" type="148"/>
+      </file>
+      <file id="162" name="kcg_sensors.h"/>
+    </c>
+    <map srcId="155" dstId="144" role="wrapped-lit"/>
+    <map srcId="156" dstId="145" role="wrapped-lit"/>
+    <map srcId="154" dstId="143" role="wrapped-lit"/>
+    <map srcId="153" dstId="142" role="wrapped-lit"/>
+    <map srcId="153" dstId="128" role="wrapped-lnot"/>
+    <map srcId="153" dstId="132" role="wrapped-lsl"/>
+    <map srcId="152" dstId="141" role="wrapped-lit"/>
+    <map srcId="152" dstId="127" role="wrapped-lnot"/>
+    <map srcId="152" dstId="131" role="wrapped-lsl"/>
+    <map srcId="151" dstId="140" role="wrapped-lit"/>
+    <map srcId="151" dstId="126" role="wrapped-lnot"/>
+    <map srcId="151" dstId="130" role="wrapped-lsl"/>
+    <map srcId="150" dstId="139" role="wrapped-lit"/>
+    <map srcId="150" dstId="125" role="wrapped-lnot"/>
+    <map srcId="150" dstId="129" role="wrapped-lsl"/>
+    <map srcId="149" dstId="138" role="wrapped-lit"/>
+    <map srcId="148" dstId="137" role="wrapped-lit"/>
+    <map srcId="147" dstId="136" role="wrapped-lit"/>
+    <map srcId="146" dstId="135" role="wrapped-lit"/>
+    <map srcId="97" dstId="77" role="clock"/>
+    <map srcId="97" dstId="106" role="clock-value"/>
+    <map srcId="96" dstId="77" role="clock"/>
+    <map srcId="96" dstId="106" role="clock-value"/>
+    <map srcId="95" dstId="78" role="clock"/>
+    <map srcId="95" dstId="134" role="clock-value"/>
+    <map srcId="94" dstId="78" role="clock"/>
+    <map srcId="94" dstId="133" role="clock-value"/>
+    <map srcId="93" dstId="77" role="clock"/>
+    <map srcId="93" dstId="107" role="clock-value"/>
+    <map srcId="92" dstId="77" role="clock"/>
+    <map srcId="92" dstId="107" role="clock-value"/>
+    <map srcId="91" dstId="77" role="clock"/>
+    <map srcId="91" dstId="107" role="clock-value"/>
+    <map srcId="90" dstId="79" role="clock"/>
+    <map srcId="90" dstId="114" role="clock-value"/>
+    <map srcId="89" dstId="79" role="clock"/>
+    <map srcId="89" dstId="114" role="clock-value"/>
+    <map srcId="88" dstId="79" role="clock"/>
+    <map srcId="88" dstId="114" role="clock-value"/>
+    <map srcId="87" dstId="79" role="clock"/>
+    <map srcId="87" dstId="114" role="clock-value"/>
+    <map srcId="86" dstId="79" role="clock"/>
+    <map srcId="86" dstId="113" role="clock-value"/>
+    <map srcId="85" dstId="79" role="clock"/>
+    <map srcId="85" dstId="113" role="clock-value"/>
+    <map srcId="84" dstId="79" role="clock"/>
+    <map srcId="84" dstId="113" role="clock-value"/>
+    <map srcId="83" dstId="77" role="clock"/>
+    <map srcId="83" dstId="106" role="clock-value"/>
+    <map srcId="82" dstId="77" role="clock"/>
+    <map srcId="82" dstId="106" role="clock-value"/>
+    <map srcId="81" dstId="77" role="clock"/>
+    <map srcId="81" dstId="106" role="clock-value"/>
+    <map srcId="80" dstId="77" role="clock"/>
+    <map srcId="80" dstId="106" role="clock-value"/>
+    <map srcId="78" dstId="77" role="clock"/>
+    <map srcId="78" dstId="106" role="clock-value"/>
+    <map srcId="77" dstId="79" role="clock"/>
+    <map srcId="77" dstId="114" role="clock-value"/>
+    <map srcId="73" dstId="79" role="clock"/>
+    <map srcId="73" dstId="114" role="clock-value"/>
+    <map srcId="70" dstId="77" role="clock"/>
+    <map srcId="70" dstId="106" role="clock-value"/>
+  </generated>
+  <map modelId="32" generatedId="117"/>
+  <map modelId="18" generatedId="122"/>
+  <map modelId="17" generatedId="121"/>
+  <map modelId="45" generatedId="110"/>
+  <map modelId="34" generatedId="109" role="autom-no-trans-enum"/>
+  <map modelId="52" generatedId="111"/>
+  <map modelId="16" generatedId="120"/>
+  <map modelId="27" generatedId="113"/>
+  <map modelId="26" generatedId="116" role="autom-no-trans-enum"/>
+  <map modelId="54" generatedId="118"/>
+  <map modelId="46" generatedId="107"/>
+  <map modelId="35" generatedId="106"/>
+  <map modelId="33" generatedId="114"/>
+  <map modelId="19" generatedId="57" role="context-parameter"/>
+  <map modelId="19" generatedId="56" role="init-method"/>
+  <map modelId="19" generatedId="59" role="context-parameter"/>
+  <map modelId="19" generatedId="58" role="reset-method"/>
+  <map modelId="19" generatedId="61" role="input-struct-parameter"/>
+  <map modelId="21" generatedId="103"/>
+  <map modelId="20" generatedId="102"/>
+  <map modelId="19" generatedId="101" role="input-struct-type"/>
+  <map modelId="19" generatedId="62" role="context-parameter"/>
+  <map modelId="26" generatedId="100" role="autom-weak-transition"/>
+  <map modelId="26" generatedId="99" role="autom-strong-transition"/>
+  <map modelId="26" generatedId="98" role="autom-selected-state"/>
+  <map modelId="37" generatedId="97"/>
+  <map modelId="36" generatedId="96"/>
+  <map modelId="40" generatedId="95"/>
+  <map modelId="42" generatedId="94"/>
+  <map modelId="49" generatedId="93"/>
+  <map modelId="48" generatedId="92"/>
+  <map modelId="47" generatedId="91"/>
+  <map modelId="34" generatedId="90" role="autom-selected-state"/>
+  <map modelId="34" generatedId="89" role="autom-active-state"/>
+  <map modelId="34" generatedId="88" role="autom-strong-transition"/>
+  <map modelId="34" generatedId="87" role="autom-weak-transition"/>
+  <map modelId="28" generatedId="86"/>
+  <map modelId="29" generatedId="85"/>
+  <map modelId="30" generatedId="84"/>
+  <map modelId="26" generatedId="79" role="autom-active-state"/>
+  <map modelId="38" generatedId="78" role="condition"/>
+  <map modelId="26" generatedId="76" role="autom-next-reset"/>
+  <map modelId="26" generatedId="75" role="autom-active-reset"/>
+  <map modelId="26" generatedId="74" role="autom-next-state"/>
+  <map modelId="34" generatedId="73" role="autom-next-state"/>
+  <map modelId="34" generatedId="72" role="autom-active-reset"/>
+  <map modelId="34" generatedId="71" role="autom-next-reset"/>
+  <map modelId="44" generatedId="70" role="memory"/>
+  <map modelId="34" generatedId="69" role="init"/>
+  <map modelId="44" generatedId="68" role="init"/>
+  <map modelId="25" generatedId="67"/>
+  <map modelId="24" generatedId="66"/>
+  <map modelId="23" generatedId="65"/>
+  <map modelId="22" generatedId="64"/>
+  <map modelId="26" generatedId="64" role="memory"/>
+  <map modelId="34" generatedId="64" role="memory"/>
+  <map modelId="50" generatedId="64" role="memory"/>
+  <map modelId="19" generatedId="63" role="context-type"/>
+  <map modelId="19" generatedId="55" role="interface-file"/>
+  <map modelId="19" generatedId="60" role="cycle-method"/>
+  <map modelId="14" generatedId="161"/>
+  <map modelId="15" generatedId="119"/>
+  <map modelId="26" generatedId="115" role="autom-transitions-type"/>
+  <map modelId="26" generatedId="112" role="autom-states-type"/>
+  <map modelId="34" generatedId="108" role="autom-transitions-type"/>
+  <map modelId="34" generatedId="105" role="autom-states-type"/>
+  <map modelId="2" generatedId="158"/>
+  <map modelId="1" generatedId="157"/>
+  <map modelId="12" generatedId="155"/>
+  <map modelId="11" generatedId="156"/>
+  <map modelId="13" generatedId="154"/>
+  <map modelId="10" generatedId="153"/>
+  <map modelId="9" generatedId="152"/>
+  <map modelId="8" generatedId="151"/>
+  <map modelId="7" generatedId="150"/>
+  <map modelId="6" generatedId="149"/>
+  <map modelId="5" generatedId="148"/>
+  <map modelId="4" generatedId="147"/>
+  <map modelId="3" generatedId="146"/>
+</mapping>
+<!--$ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
+** mapping.xml
+** Generation date: 2025-05-15T08:42:54
+*************************************************************$-->

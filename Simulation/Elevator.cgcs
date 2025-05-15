@@ -1,0 +1,43 @@
+[scade_version: Student 2024 R1]
+[scade_project: C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Elevator.etp]
+[Code Generator]
+f48dcf513511fa800e768e3c0b8d7407 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/scade_model_without_unused.scade
+21fddcec680f826f2a41a3d2be794f6a C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/ElevatorModes.c
+1f1a8079975f42152bcc8446317121e7 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/ElevatorModes.h
+a3a4b546336f992d838f866c8dfc9e4b C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/cmd_cg.log
+729c104d184a81fa0bd4858c220d3340 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/config.txt
+e75bb946850286eefb8c777c16a10762 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_consts.c
+bccbab13cdb72f28252ae82dc72f0ef9 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_consts.h
+de07b7f03cecd9f52a990ee71258bdf8 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_files.txt
+c570e85441febaa6f6d5e23e14e58b55 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_imported_types.h
+f2eb36366f6684698ebac9ffc3ed755d C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_metrics.txt
+110c4e28304eac2c9902e1d11cfa4769 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_sensors.h
+e7196b28a9effc959dbe153cd074557f C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_types.c
+fba53eddaa7f495e781d767bae684c9c C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/kcg_types.h
+70da931d8c9e02c76a8d90926aba836e C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/mapping.xml
+ae3eb7ab76cdc5ab7228e39b505e73d6 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/user_macros.h
+[Mapping Utils]
+70da931d8c9e02c76a8d90926aba836e C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/mapping.xml
+0f379c5ba395c92cdffef354dd86bfe5 C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuConfig.c
+5b9e0d7ea9b52c17fdae3092ded3ba5e C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuLib.c
+134415479f730b247b59be1fa4b82ed3 C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuTypes.c
+f8e54064707a32ec62840ae6f743d17e C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuVTable.c
+1ff246196c4737cc08184b2bf96586d9 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Elevator.etp
+0cf73aca3f753027e0a59923e7c44b9b C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_mapping.c
+d9ed7b190a4292000a5f5f2ea7d3656c C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_mapping.h
+[Simulator Wrapper]
+70da931d8c9e02c76a8d90926aba836e C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/mapping.xml
+1ff246196c4737cc08184b2bf96586d9 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Elevator.etp
+6e78af73ee7b0c548a3a6796ca959743 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_dll.c
+84e908ed6c6b3c9833585d755f755bb6 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_interface.c
+7f45bfb474903d6edbb7a543bb48d1eb C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_interface.h
+[Type Utils]
+70da931d8c9e02c76a8d90926aba836e C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/mapping.xml
+0f379c5ba395c92cdffef354dd86bfe5 C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuConfig.c
+5b9e0d7ea9b52c17fdae3092ded3ba5e C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuLib.c
+e63dd4db596b0c8780bfb3394e53cfd7 C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuPredefConv.c
+134415479f730b247b59be1fa4b82ed3 C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuTypes.c
+f8e54064707a32ec62840ae6f743d17e C:/Program Files/ANSYS Inc/v241/SCADE Student/SCADE/lib/C/SmuVTable.c
+1ff246196c4737cc08184b2bf96586d9 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Elevator.etp
+c2145765c9f252677c385e0e30429eb9 C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_type.c
+5753336a7ffc5cefc0ca750e49c1976d C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/Elevator_type.h

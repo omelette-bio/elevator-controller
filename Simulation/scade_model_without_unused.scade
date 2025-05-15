@@ -1,0 +1,631 @@
+
+const
+   #pragma ed <Constant oid="!ed/52d6/3CE5/23A4/5ffdb1c75c7b"/>
+#end
+
+cFLOOR_TRAVEL_TIME : int32 = 20;
+
+type
+   #pragma ed <Type oid="!ed/1309c/7914/23A4/5ffef7d46a33"/>
+#end
+
+tMotorCommand = enum {#pragma ed <Constant oid="!ed/1309d/7914/23A4/5ffef7ec1e17"/>
+#end
+eMOTOR_STOP, #pragma ed <Constant oid="!ed/1309e/7914/23A4/5ffef7fd4476"/>
+#end
+eMOTOR_MOVEUP, #pragma ed <Constant oid="!ed/1309f/7914/23A4/5ffef80c1e68"/>
+#end
+eMOTOR_MOVEDOWN};
+
+node #pragma ed <Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053">
+	<diagrams>
+		<NetDiagram name="ElevatorModes_1" landscape="true" format="A4 (210 297)" oid="!ed/4a20/3CE5/23A4/5ffc508a6c43">
+			<presentationElements>
+				<StateMachineGE presentable="!ed/4a42/2C51/4478/681bbe057295">
+					<position>
+						<Point x="529" y="688"/>
+					</position>
+					<size>
+						<Size width="30401" height="15743"/>
+					</size>
+				</StateMachineGE>
+				<StateGE presentable="!ed/4a49/2C51/4478/681bbe28a29">
+					<position>
+						<Point x="820" y="1111"/>
+					</position>
+					<size>
+						<Size width="4022" height="3413"/>
+					</size>
+				</StateGE>
+				<StateGE presentable="!ed/4a50/2C51/4478/681bbe313e70">
+					<position>
+						<Point x="6879" y="1508"/>
+					</position>
+					<size>
+						<Size width="23813" height="12832"/>
+					</size>
+				</StateGE>
+				<TransitionGE presentable="!ed/4bf7/2C51/4478/681bc0fb5417">
+					<positions>
+						<Point x="4842" y="2646"/>
+						<Point x="5371" y="2672"/>
+						<Point x="6297" y="3545"/>
+						<Point x="6879" y="3625"/>
+					</positions>
+					<labelSize>
+						<Size width="7886" height="370"/>
+					</labelSize>
+					<labelPos>
+						<Point x="2936" y="768"/>
+					</labelPos>
+					<slashPos>
+						<Point x="10027" y="767"/>
+					</slashPos>
+				</TransitionGE>
+				<TransitionGE presentable="!ed/4c92/5945/2D20/6825875d68f8">
+					<positions>
+						<Point x="6879" y="5556"/>
+						<Point x="6297" y="5318"/>
+						<Point x="5292" y="4736"/>
+						<Point x="4710" y="4445"/>
+					</positions>
+					<labelSize>
+						<Size width="5530" height="370"/>
+					</labelSize>
+					<labelPos>
+						<Point x="1614" y="5900"/>
+					</labelPos>
+					<slashPos>
+						<Point x="6350" y="5900"/>
+					</slashPos>
+				</TransitionGE>
+				<StateMachineGE presentable="!ed/4cab/5945/2D20/682587cfe50">
+					<position>
+						<Point x="7197" y="2275"/>
+					</position>
+					<size>
+						<Size width="23177" height="11589"/>
+					</size>
+				</StateMachineGE>
+				<StateGE presentable="!ed/4ca6/5945/2D20/682587ce6ae0">
+					<position>
+						<Point x="7673" y="2672"/>
+					</position>
+					<size>
+						<Size width="7779" height="6377"/>
+					</size>
+				</StateGE>
+				<StateGE presentable="!ed/4cbc/5945/2D20/682587e41b65">
+					<position>
+						<Point x="20029" y="3704"/>
+					</position>
+					<size>
+						<Size width="8044" height="3175"/>
+					</size>
+				</StateGE>
+				<TransitionGE presentable="!ed/4cc4/5945/2D20/682587f0eb3">
+					<textAreas>
+						<TextArea text="cFLOOR_TRAVEL_TIME times true and iDestinationFloorNumber &gt; oFloorNumber" role="130"/>
+					</textAreas>
+					<positions>
+						<Point x="15452" y="4207"/>
+						<Point x="17039" y="4392"/>
+						<Point x="18415" y="4260"/>
+						<Point x="20029" y="4471"/>
+					</positions>
+					<labelSize>
+						<Size width="10001" height="370"/>
+					</labelSize>
+					<labelPos>
+						<Point x="11642" y="2301"/>
+					</labelPos>
+					<slashPos>
+						<Point x="20849" y="2302"/>
+					</slashPos>
+				</TransitionGE>
+				<EquationGE presentable="!ed/4cfc/5945/2D20/6825883014bc">
+					<position>
+						<Point x="22913" y="4736"/>
+					</position>
+					<size>
+						<Size width="264" height="529"/>
+					</size>
+				</EquationGE>
+				<EquationGE presentable="!ed/4d16/5945/2D20/6825884245eb">
+					<position>
+						<Point x="23548" y="5001"/>
+					</position>
+					<size>
+						<Size width="1005" height="661"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4cfc/5945/2D20/6825883014bc" dstEquation="!ed/4d16/5945/2D20/6825884245eb">
+					<positions>
+						<Point x="23178" y="5001"/>
+						<Point x="23363" y="5001"/>
+						<Point x="23363" y="5212"/>
+						<Point x="23548" y="5212"/>
+					</positions>
+				</Edge>
+				<EquationGE kind="OBJ_LIT" presentable="!ed/4d1f/5945/2D20/68258846203e">
+					<position>
+						<Point x="22410" y="5715"/>
+					</position>
+					<size>
+						<Size width="212" height="318"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/4d1f/5945/2D20/68258846203e" dstEquation="!ed/4d16/5945/2D20/6825884245eb">
+					<positions>
+						<Point x="22622" y="5874"/>
+						<Point x="23072" y="5874"/>
+						<Point x="23072" y="5450"/>
+						<Point x="23548" y="5450"/>
+					</positions>
+				</Edge>
+				<EquationGE presentable="!ed/4d42/5945/2D20/682588541170">
+					<position>
+						<Point x="25506" y="5080"/>
+					</position>
+					<size>
+						<Size width="317" height="503"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4d16/5945/2D20/6825884245eb" dstEquation="!ed/4d42/5945/2D20/682588541170">
+					<positions>
+						<Point x="24553" y="5345"/>
+						<Point x="25056" y="5345"/>
+						<Point x="25056" y="5345"/>
+						<Point x="25559" y="5345"/>
+					</positions>
+				</Edge>
+				<TransitionGE presentable="!ed/4d49/5945/2D20/6825885c4bc5">
+					<positions>
+						<Point x="20029" y="5001"/>
+						<Point x="18415" y="4657"/>
+						<Point x="17092" y="4974"/>
+						<Point x="15452" y="4630"/>
+					</positions>
+					<labelSize>
+						<Size width="1376" height="370"/>
+					</labelSize>
+					<labelPos>
+						<Point x="15848" y="5529"/>
+					</labelPos>
+					<slashPos>
+						<Point x="16431" y="5530"/>
+					</slashPos>
+				</TransitionGE>
+				<EquationGE presentable="!ed/4df0/5945/2D20/68258ad61b67">
+					<position>
+						<Point x="2963" y="2090"/>
+					</position>
+					<size>
+						<Size width="318" height="503"/>
+					</size>
+				</EquationGE>
+				<EquationGE kind="OBJ_LIT" presentable="!ed/4df8/5945/2D20/68258add4e4e">
+					<position>
+						<Point x="1931" y="2223"/>
+					</position>
+					<size>
+						<Size width="212" height="317"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4df8/5945/2D20/68258add4e4e" dstEquation="!ed/4df0/5945/2D20/68258ad61b67">
+					<positions>
+						<Point x="2143" y="2381"/>
+						<Point x="2566" y="2381"/>
+						<Point x="2566" y="2381"/>
+						<Point x="3016" y="2381"/>
+					</positions>
+				</Edge>
+				<EquationGE kind="OBJ_LIT" presentable="!ed/4e09/5945/2D20/68258ae55223">
+					<position>
+						<Point x="1958" y="3043"/>
+					</position>
+					<size>
+						<Size width="212" height="317"/>
+					</size>
+				</EquationGE>
+				<EquationGE presentable="!ed/4e18/5945/2D20/68258aeb295a">
+					<position>
+						<Point x="2990" y="2963"/>
+					</position>
+					<size>
+						<Size width="317" height="503"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4e09/5945/2D20/68258ae55223" dstEquation="!ed/4e18/5945/2D20/68258aeb295a">
+					<positions>
+						<Point x="2170" y="3201"/>
+						<Point x="2593" y="3201"/>
+						<Point x="2593" y="3201"/>
+						<Point x="3043" y="3201"/>
+					</positions>
+				</Edge>
+				<EquationGE presentable="!ed/4e1e/5945/2D20/68258af2e1b">
+					<position>
+						<Point x="3043" y="3704"/>
+					</position>
+					<size>
+						<Size width="317" height="503"/>
+					</size>
+				</EquationGE>
+				<EquationGE kind="OBJ_LIT" presentable="!ed/4e2a/5945/2D20/68258af6324a">
+					<position>
+						<Point x="2143" y="3863"/>
+					</position>
+					<size>
+						<Size width="212" height="317"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4e2a/5945/2D20/68258af6324a" dstEquation="!ed/4e1e/5945/2D20/68258af2e1b">
+					<positions>
+						<Point x="2355" y="4022"/>
+						<Point x="2725" y="4022"/>
+						<Point x="2725" y="3969"/>
+						<Point x="3096" y="3969"/>
+					</positions>
+				</Edge>
+				<EquationGE kind="OBJ_LIT" presentable="!ed/4e48/5945/2D20/68258b07934">
+					<position>
+						<Point x="8414" y="3493"/>
+					</position>
+					<size>
+						<Size width="211" height="318"/>
+					</size>
+				</EquationGE>
+				<EquationGE kind="OBJ_LIT" presentable="!ed/4e59/5945/2D20/68258b0c2a91">
+					<position>
+						<Point x="8599" y="4101"/>
+					</position>
+					<size>
+						<Size width="212" height="317"/>
+					</size>
+				</EquationGE>
+				<EquationGE presentable="!ed/4e6c/5945/2D20/68258b142f73">
+					<position>
+						<Point x="9049" y="3334"/>
+					</position>
+					<size>
+						<Size width="317" height="503"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4e48/5945/2D20/68258b07934" dstEquation="!ed/4e6c/5945/2D20/68258b142f73">
+					<positions>
+						<Point x="8625" y="3651"/>
+						<Point x="8864" y="3651"/>
+						<Point x="8864" y="3598"/>
+						<Point x="9102" y="3598"/>
+					</positions>
+				</Edge>
+				<EquationGE presentable="!ed/4e72/5945/2D20/68258b1a75a3">
+					<position>
+						<Point x="9155" y="3969"/>
+					</position>
+					<size>
+						<Size width="317" height="503"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4e59/5945/2D20/68258b0c2a91" dstEquation="!ed/4e72/5945/2D20/68258b1a75a3">
+					<positions>
+						<Point x="8811" y="4260"/>
+						<Point x="8996" y="4260"/>
+						<Point x="8996" y="4260"/>
+						<Point x="9208" y="4260"/>
+					</positions>
+				</Edge>
+				<IfBlockGE presentable="!ed/4f11/5945/2D20/68258b9b32c9">
+					<position>
+						<Point x="8176" y="4657"/>
+					</position>
+					<size>
+						<Size width="6799" height="4048"/>
+					</size>
+				</IfBlockGE>
+				<ActionGE presentable="!ed/4f17/5945/2D20/68258b9f22a1">
+					<position>
+						<Point x="10001" y="5159"/>
+					</position>
+					<size>
+						<Size width="4710" height="1588"/>
+					</size>
+				</ActionGE>
+				<ActionGE presentable="!ed/4f18/5945/2D20/68258b9f5119">
+					<position>
+						<Point x="10054" y="6959"/>
+					</position>
+					<size>
+						<Size width="4709" height="1270"/>
+					</size>
+				</ActionGE>
+				<IfNodeGE labelWidth="4577" presentable="!ed/4f16/5945/2D20/68258b9f28aa">
+					<textAreas>
+						<TextArea text="iDestinationFloorNumber &gt; oFloorNumber&##xA;
+ " role="181"/>
+					</textAreas>
+					<position>
+						<Point x="8626" y="5239"/>
+					</position>
+				</IfNodeGE>
+				<EquationGE presentable="!ed/4f25/5945/2D20/68258bcd2cda">
+					<position>
+						<Point x="13070" y="5715"/>
+					</position>
+					<size>
+						<Size width="318" height="503"/>
+					</size>
+				</EquationGE>
+				<EquationGE kind="OBJ_LIT" presentable="!ed/4f2e/5945/2D20/68258bd16889">
+					<position>
+						<Point x="11721" y="5847"/>
+					</position>
+					<size>
+						<Size width="212" height="318"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4f2e/5945/2D20/68258bd16889" dstEquation="!ed/4f25/5945/2D20/68258bcd2cda">
+					<positions>
+						<Point x="11933" y="6006"/>
+						<Point x="12515" y="6006"/>
+						<Point x="12515" y="6006"/>
+						<Point x="13123" y="6006"/>
+					</positions>
+				</Edge>
+				<EquationGE kind="OBJ_LIT" presentable="!ed/4f40/5945/2D20/68258bdd1219">
+					<position>
+						<Point x="11430" y="7329"/>
+					</position>
+					<size>
+						<Size width="212" height="317"/>
+					</size>
+				</EquationGE>
+				<EquationGE presentable="!ed/4f4e/5945/2D20/68258be55b74">
+					<position>
+						<Point x="12938" y="7329"/>
+					</position>
+					<size>
+						<Size width="318" height="502"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4f40/5945/2D20/68258bdd1219" dstEquation="!ed/4f4e/5945/2D20/68258be55b74">
+					<positions>
+						<Point x="11642" y="7488"/>
+						<Point x="12303" y="7488"/>
+						<Point x="12303" y="7594"/>
+						<Point x="12991" y="7594"/>
+					</positions>
+				</Edge>
+			</presentationElements>
+		</NetDiagram>
+	</diagrams>
+</Operator>
+#end
+
+ElevatorModes(
+      #pragma ed    <Variable oid="!ed/4a21/3CE5/23A4/5ffc55f66ee8"/>
+#end
+
+iDestinationFloorNumber : int32; 
+      #pragma ed    <Variable oid="!ed/4b32/3CE5/23A4/5ffc5a432773"/>
+#end
+
+iTravelRequest : bool)
+returns (
+      #pragma ed    <Variable oid="!ed/4ce6/3CE5/23A4/5ffc8d592800"/>
+#end
+
+oFloorNumber : int32 last = 0; 
+      #pragma ed    <Variable oid="!ed/4e9d/3CE5/23A4/5ffda431691b"/>
+#end
+
+oOpenDoor : bool default = false; 
+      #pragma ed    <Variable oid="!ed/4ea4/3CE5/23A4/5ffda4316c9a"/>
+#end
+
+oCloseDoor : bool default = false; 
+      #pragma ed    <Variable oid="!ed/130b0/7914/23A4/5ffef8772ff7"/>
+#end
+
+oMotorCommand : tMotorCommand default = eMOTOR_STOP)
+let
+   #pragma ed    <StateMachine oid="!ed/4a42/2C51/4478/681bbe057295"/>
+#end
+
+   automaton elevator_state
+      initial       #pragma ed       <State oid="!ed/4a49/2C51/4478/681bbe28a29"/>
+#end
+
+state STOPPED
+      var
+                  #pragma ed          <Variable oid="!ed/4df9/5945/2D20/68258add707"/>
+#end
+
+_L1 : bool;
+                  #pragma ed          <Variable oid="!ed/4e0a/5945/2D20/68258ae5d8c"/>
+#end
+
+_L2 : bool;
+                  #pragma ed          <Variable oid="!ed/4e2b/5945/2D20/68258af61ae4"/>
+#end
+
+_L3 : tMotorCommand;
+      let
+         #pragma ed          <Equation oid="!ed/4df0/5945/2D20/68258ad61b67"/>
+#end
+
+         oOpenDoor = _L1;
+         #pragma ed          <Equation oid="!ed/4df8/5945/2D20/68258add4e4e"/>
+#end
+
+         _L1 = true;
+         #pragma ed          <Equation oid="!ed/4e09/5945/2D20/68258ae55223"/>
+#end
+
+         _L2 = false;
+         #pragma ed          <Equation oid="!ed/4e18/5945/2D20/68258aeb295a"/>
+#end
+
+         oCloseDoor = _L2;
+         #pragma ed          <Equation oid="!ed/4e1e/5945/2D20/68258af2e1b"/>
+#end
+
+         oMotorCommand = _L3;
+         #pragma ed          <Equation oid="!ed/4e2a/5945/2D20/68258af6324a"/>
+#end
+
+         _L3 = eMOTOR_STOP;
+      tel
+      until
+         #pragma ed          <Transition oid="!ed/4bf7/2C51/4478/681bc0fb5417"/>
+#end
+
+         if iTravelRequest #4  and oFloorNumber #2  <> iDestinationFloorNumber
+            restart RUNNING;
+
+            #pragma ed       <State oid="!ed/4a50/2C51/4478/681bbe313e70"/>
+#end
+
+state RUNNING
+      let
+         #pragma ed          <StateMachine oid="!ed/4cab/5945/2D20/682587cfe50"/>
+#end
+
+         automaton SM2
+            initial             #pragma ed             <State oid="!ed/4ca6/5945/2D20/682587ce6ae0"/>
+#end
+
+state init
+            var
+                              #pragma ed                <Variable oid="!ed/4e49/5945/2D20/68258b077a5a"/>
+#end
+
+_L1 : bool;
+                              #pragma ed                <Variable oid="!ed/4e5a/5945/2D20/68258b0c5aaf"/>
+#end
+
+_L2 : bool;
+            let
+               #pragma ed                <Equation oid="!ed/4e48/5945/2D20/68258b07934"/>
+#end
+
+               _L1 = true;
+               #pragma ed                <Equation oid="!ed/4e59/5945/2D20/68258b0c2a91"/>
+#end
+
+               _L2 = false;
+               #pragma ed                <Equation oid="!ed/4e6c/5945/2D20/68258b142f73"/>
+#end
+
+               oCloseDoor = _L1;
+               #pragma ed                <Equation oid="!ed/4e72/5945/2D20/68258b1a75a3"/>
+#end
+
+               oOpenDoor = _L2;
+               #pragma ed                <IfBlock oid="!ed/4f11/5945/2D20/68258b9b32c9"/>
+#end
+
+               activate MotorControl
+                  if (iDestinationFloorNumber #3  > oFloorNumber)                  #pragma ed                   <Action oid="!ed/4f17/5945/2D20/68258b9f22a1"/>
+#end
+
+ then 
+                     var
+                                                #pragma ed                         <Variable oid="!ed/4f2f/5945/2D20/68258bd13df9"/>
+#end
+
+_L1 : tMotorCommand;
+                     let
+                        #pragma ed                         <Equation oid="!ed/4f25/5945/2D20/68258bcd2cda"/>
+#end
+
+                        oMotorCommand = _L1;
+                        #pragma ed                         <Equation oid="!ed/4f2e/5945/2D20/68258bd16889"/>
+#end
+
+                        _L1 = eMOTOR_MOVEUP;
+                     tel
+                  #pragma ed                   <Action oid="!ed/4f18/5945/2D20/68258b9f5119"/>
+#end
+
+                  else 
+                     var
+                                                #pragma ed                         <Variable oid="!ed/4f41/5945/2D20/68258bdd16e5"/>
+#end
+
+_L1 : tMotorCommand;
+                     let
+                        #pragma ed                         <Equation oid="!ed/4f40/5945/2D20/68258bdd1219"/>
+#end
+
+                        _L1 = eMOTOR_MOVEDOWN;
+                        #pragma ed                         <Equation oid="!ed/4f4e/5945/2D20/68258be55b74"/>
+#end
+
+                        oMotorCommand = _L1;
+                     tel
+
+               returns .. ;
+            tel
+            until
+               #pragma ed                <Transition oid="!ed/4cc4/5945/2D20/682587f0eb3"/>
+#end
+
+               if cFLOOR_TRAVEL_TIME #5  times (true #2  and iDestinationFloorNumber #2  > oFloorNumber)
+                  restart ELEVATOR_CLIMB;
+
+                        #pragma ed             <State oid="!ed/4cbc/5945/2D20/682587e41b65"/>
+#end
+
+state ELEVATOR_CLIMB
+            var
+                              #pragma ed                <Variable oid="!ed/4cfd/5945/2D20/68258830199"/>
+#end
+
+_L1 : int32;
+                              #pragma ed                <Variable oid="!ed/4d17/5945/2D20/68258842744a"/>
+#end
+
+_L2 : int32;
+                              #pragma ed                <Variable oid="!ed/4d20/5945/2D20/6825884688a"/>
+#end
+
+_L3 : int32;
+            let
+               #pragma ed                <Equation oid="!ed/4cfc/5945/2D20/6825883014bc"/>
+#end
+
+               _L1 =  last 'oFloorNumber;
+               #pragma ed                <Equation oid="!ed/4d16/5945/2D20/6825884245eb"/>
+#end
+
+               _L2 = _L1 #4  + _L3;
+               #pragma ed                <Equation oid="!ed/4d1f/5945/2D20/68258846203e"/>
+#end
+
+               _L3 = 1;
+               #pragma ed                <Equation oid="!ed/4d42/5945/2D20/682588541170"/>
+#end
+
+               oFloorNumber = _L2;
+            tel
+            until
+               #pragma ed                <Transition oid="!ed/4d49/5945/2D20/6825885c4bc5"/>
+#end
+
+               if true
+                  restart init;
+
+         returns .. ;
+      tel
+      until
+         #pragma ed          <Transition oid="!ed/4c92/5945/2D20/6825875d68f8"/>
+#end
+
+         if oFloorNumber #3  = iDestinationFloorNumber
+            restart STOPPED;
+
+   returns .. ;
+tel
+

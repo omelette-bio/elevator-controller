@@ -1,0 +1,413 @@
+EXPORTS
+    ElevatorModes @1
+    ElevatorModes_init @2
+    ElevatorModes_reset @3
+    EnumToString @4
+    ImportedToString @5
+    OutputMessageCallback @6 DATA
+    SSM_ST_SM2_RUNNING_elevator_state_nb_values @7 DATA
+    SSM_ST_SM2_RUNNING_elevator_state_to_double @8
+    SSM_ST_SM2_RUNNING_elevator_state_to_long @9
+    SSM_ST_SM2_RUNNING_elevator_state_to_string @10
+    SSM_ST_elevator_state_nb_values @11 DATA
+    SSM_ST_elevator_state_to_double @12
+    SSM_ST_elevator_state_to_long @13
+    SSM_ST_elevator_state_to_string @14
+    SSM_TR_SM2_RUNNING_elevator_state_nb_values @15 DATA
+    SSM_TR_SM2_RUNNING_elevator_state_to_double @16
+    SSM_TR_SM2_RUNNING_elevator_state_to_long @17
+    SSM_TR_SM2_RUNNING_elevator_state_to_string @18
+    SSM_TR_elevator_state_nb_values @19 DATA
+    SSM_TR_elevator_state_to_double @20
+    SSM_TR_elevator_state_to_long @21
+    SSM_TR_elevator_state_to_string @22
+    SimCustomInit @23
+    SimInit @24
+    SimRealloc @25
+    SimReset @26
+    SimStep @27
+    SimStop @28
+    SimStringAlloc @29
+    SimStringAllocEx @30
+    SimStringAppend @31
+    SimStringFree @32
+    SimStringGet @33
+    SimStringListAlloc @34
+    SimStringListAllocEx @35
+    SimStringListAppend @36
+    SimStringListFree @37
+    SimStringListGetCount @38
+    SimStringListGetData @39
+    SimStringListReset @40
+    SimStringReset @41
+    SsmConnectExternalInputs @42
+    SsmCustomInit @43
+    SsmGatherDumpData @44
+    SsmGetCheckSum @45
+    SsmGetConverter @46
+    SsmGetDefaultRealFormat @47
+    SsmGetDumpSize @48
+    SsmGetMapping @49
+    SsmGetSmuTypesCheckSum @50
+    SsmInit @51
+    SsmInitValues @52
+    SsmLoadSnapshot @53
+    SsmOutputMessage @54
+    SsmReset @55
+    SsmRestoreDumpData @56
+    SsmSaveSnapshot @57
+    SsmSetOutputMessageCallback @58
+    SsmSetUpdateCallback @59
+    SsmStep @60
+    SsmStop @61
+    SsmUpdateValues @62
+    StringToConstant @63
+    StringToEnum @64
+    StringToImported @65
+    UpdateSimulatorValues @66
+    UpdateSimulatorValuesCallback @67 DATA
+    VTable_to_double @68
+    VTable_to_long @69
+    _SCSIM_CheckSum @70 DATA
+    _SCSIM_SmuTypesCheckSum @71 DATA
+    _Type_SSM_ST_SM2_RUNNING_elevator_state_Utils @72 DATA
+    _Type_SSM_ST_elevator_state_Utils @73 DATA
+    _Type_SSM_TR_SM2_RUNNING_elevator_state_Utils @74 DATA
+    _Type_SSM_TR_elevator_state_Utils @75 DATA
+    _Type_kcg_bool_Utils @76 DATA
+    _Type_kcg_char_Utils @77 DATA
+    _Type_kcg_float32_Utils @78 DATA
+    _Type_kcg_float64_Utils @79 DATA
+    _Type_kcg_int16_Utils @80 DATA
+    _Type_kcg_int32_Utils @81 DATA
+    _Type_kcg_int64_Utils @82 DATA
+    _Type_kcg_int8_Utils @83 DATA
+    _Type_kcg_size_Utils @84 DATA
+    _Type_kcg_uint16_Utils @85 DATA
+    _Type_kcg_uint32_Utils @86 DATA
+    _Type_kcg_uint64_Utils @87 DATA
+    _Type_kcg_uint8_Utils @88 DATA
+    _Type_tMotorCommand_Utils @89 DATA
+    check_SSM_ST_SM2_RUNNING_elevator_state_string @90
+    check_SSM_ST_elevator_state_string @91
+    check_SSM_TR_SM2_RUNNING_elevator_state_string @92
+    check_SSM_TR_elevator_state_string @93
+    check_kcg_bool_string @94
+    check_kcg_char_string @95
+    check_kcg_float32_string @96
+    check_kcg_float64_string @97
+    check_kcg_int16_string @98
+    check_kcg_int32_string @99
+    check_kcg_int64_string @100
+    check_kcg_int8_string @101
+    check_kcg_size_string @102
+    check_kcg_uint16_string @103
+    check_kcg_uint32_string @104
+    check_kcg_uint64_string @105
+    check_kcg_uint8_string @106
+    check_tMotorCommand_string @107
+    compare_SSM_ST_SM2_RUNNING_elevator_state @108
+    compare_SSM_ST_elevator_state @109
+    compare_SSM_TR_SM2_RUNNING_elevator_state @110
+    compare_SSM_TR_elevator_state @111
+    compare_kcg_bool @112
+    compare_kcg_char @113
+    compare_kcg_float32 @114
+    compare_kcg_float64 @115
+    compare_kcg_int16 @116
+    compare_kcg_int32 @117
+    compare_kcg_int64 @118
+    compare_kcg_int8 @119
+    compare_kcg_size @120
+    compare_kcg_uint16 @121
+    compare_kcg_uint32 @122
+    compare_kcg_uint64 @123
+    compare_kcg_uint8 @124
+    compare_tMotorCommand @125
+    copy_SSM_ST_SM2_RUNNING_elevator_state @126
+    copy_SSM_ST_elevator_state @127
+    copy_SSM_TR_SM2_RUNNING_elevator_state @128
+    copy_SSM_TR_elevator_state @129
+    copy_kcg_bool @130
+    copy_kcg_char @131
+    copy_kcg_float32 @132
+    copy_kcg_float64 @133
+    copy_kcg_int16 @134
+    copy_kcg_int32 @135
+    copy_kcg_int64 @136
+    copy_kcg_int8 @137
+    copy_kcg_size @138
+    copy_kcg_uint16 @139
+    copy_kcg_uint32 @140
+    copy_kcg_uint64 @141
+    copy_kcg_uint8 @142
+    copy_tMotorCommand @143
+    defaultSimToleranceDouble @144 DATA
+    defaultSimToleranceFloat @145 DATA
+    get_SSM_ST_SM2_RUNNING_elevator_state_signature @146
+    get_SSM_ST_elevator_state_signature @147
+    get_SSM_TR_SM2_RUNNING_elevator_state_signature @148
+    get_SSM_TR_elevator_state_signature @149
+    get_kcg_bool_signature @150
+    get_kcg_char_signature @151
+    get_kcg_float32_signature @152
+    get_kcg_float64_signature @153
+    get_kcg_int16_signature @154
+    get_kcg_int32_signature @155
+    get_kcg_int64_signature @156
+    get_kcg_int8_signature @157
+    get_kcg_size_signature @158
+    get_kcg_uint16_signature @159
+    get_kcg_uint32_signature @160
+    get_kcg_uint64_signature @161
+    get_kcg_uint8_signature @162
+    get_tMotorCommand_signature @163
+    init_SSM_ST_SM2_RUNNING_elevator_state @164
+    init_SSM_ST_elevator_state @165
+    init_SSM_TR_SM2_RUNNING_elevator_state @166
+    init_SSM_TR_elevator_state @167
+    init_kcg_bool @168
+    init_kcg_char @169
+    init_kcg_float32 @170
+    init_kcg_float64 @171
+    init_kcg_int16 @172
+    init_kcg_int32 @173
+    init_kcg_int64 @174
+    init_kcg_int8 @175
+    init_kcg_size @176
+    init_kcg_uint16 @177
+    init_kcg_uint32 @178
+    init_kcg_uint64 @179
+    init_kcg_uint8 @180
+    init_tMotorCommand @181
+    inputs_ctx @182 DATA
+    is_SSM_ST_SM2_RUNNING_elevator_state_double_conversion_allowed @183
+    is_SSM_ST_SM2_RUNNING_elevator_state_long_conversion_allowed @184
+    is_SSM_ST_elevator_state_double_conversion_allowed @185
+    is_SSM_ST_elevator_state_long_conversion_allowed @186
+    is_SSM_TR_SM2_RUNNING_elevator_state_double_conversion_allowed @187
+    is_SSM_TR_SM2_RUNNING_elevator_state_long_conversion_allowed @188
+    is_SSM_TR_elevator_state_double_conversion_allowed @189
+    is_SSM_TR_elevator_state_long_conversion_allowed @190
+    is_VTable_double_conversion_allowed @191
+    is_VTable_long_conversion_allowed @192
+    is_kcg_bool_double_conversion_allowed @193
+    is_kcg_bool_long_conversion_allowed @194
+    is_kcg_char_double_conversion_allowed @195
+    is_kcg_char_long_conversion_allowed @196
+    is_kcg_float32_double_conversion_allowed @197
+    is_kcg_float32_long_conversion_allowed @198
+    is_kcg_float64_double_conversion_allowed @199
+    is_kcg_float64_long_conversion_allowed @200
+    is_kcg_int16_double_conversion_allowed @201
+    is_kcg_int16_long_conversion_allowed @202
+    is_kcg_int32_double_conversion_allowed @203
+    is_kcg_int32_long_conversion_allowed @204
+    is_kcg_int64_double_conversion_allowed @205
+    is_kcg_int64_long_conversion_allowed @206
+    is_kcg_int8_double_conversion_allowed @207
+    is_kcg_int8_long_conversion_allowed @208
+    is_kcg_size_double_conversion_allowed @209
+    is_kcg_size_long_conversion_allowed @210
+    is_kcg_uint16_double_conversion_allowed @211
+    is_kcg_uint16_long_conversion_allowed @212
+    is_kcg_uint32_double_conversion_allowed @213
+    is_kcg_uint32_long_conversion_allowed @214
+    is_kcg_uint64_double_conversion_allowed @215
+    is_kcg_uint64_long_conversion_allowed @216
+    is_kcg_uint8_double_conversion_allowed @217
+    is_kcg_uint8_long_conversion_allowed @218
+    is_tMotorCommand_double_conversion_allowed @219
+    is_tMotorCommand_long_conversion_allowed @220
+    kcg_bool_to_double @221
+    kcg_bool_to_long @222
+    kcg_bool_to_string @223
+    kcg_char_to_double @224
+    kcg_char_to_long @225
+    kcg_char_to_string @226
+    kcg_float32_to_double @227
+    kcg_float32_to_long @228
+    kcg_float32_to_string @229
+    kcg_float64_to_double @230
+    kcg_float64_to_long @231
+    kcg_float64_to_string @232
+    kcg_int16_to_double @233
+    kcg_int16_to_long @234
+    kcg_int16_to_string @235
+    kcg_int32_to_double @236
+    kcg_int32_to_long @237
+    kcg_int32_to_string @238
+    kcg_int64_to_double @239
+    kcg_int64_to_long @240
+    kcg_int64_to_string @241
+    kcg_int8_to_double @242
+    kcg_int8_to_long @243
+    kcg_int8_to_string @244
+    kcg_size_to_double @245
+    kcg_size_to_long @246
+    kcg_size_to_string @247
+    kcg_uint16_to_double @248
+    kcg_uint16_to_long @249
+    kcg_uint16_to_string @250
+    kcg_uint32_to_double @251
+    kcg_uint32_to_long @252
+    kcg_uint32_to_string @253
+    kcg_uint64_to_double @254
+    kcg_uint64_to_long @255
+    kcg_uint64_to_string @256
+    kcg_uint8_to_double @257
+    kcg_uint8_to_long @258
+    kcg_uint8_to_string @259
+    nSsmRtVersion @260 DATA
+    outputs_ctx @261 DATA
+    pConverter @262 DATA
+    pSimBoolVTable @263 DATA
+    pSimCharVTable @264 DATA
+    pSimFloat32VTable @265 DATA
+    pSimFloat64VTable @266 DATA
+    pSimInt16VTable @267 DATA
+    pSimInt32VTable @268 DATA
+    pSimInt64VTable @269 DATA
+    pSimInt8VTable @270 DATA
+    pSimSSM_ST_SM2_RUNNING_elevator_stateVTable @271 DATA
+    pSimSSM_ST_elevator_stateVTable @272 DATA
+    pSimSSM_TR_SM2_RUNNING_elevator_stateVTable @273 DATA
+    pSimSSM_TR_elevator_stateVTable @274 DATA
+    pSimSizeVTable @275 DATA
+    pSimUint16VTable @276 DATA
+    pSimUint32VTable @277 DATA
+    pSimUint64VTable @278 DATA
+    pSimUint8VTable @279 DATA
+    pSimoutC_ElevatorModesCIVTable @280 DATA
+    pSimtMotorCommandVTable @281 DATA
+    pSimulator @282 DATA
+    pTop @283 DATA
+    predef_compare_enum @284
+    predef_compare_kcg_bool @285
+    predef_compare_kcg_char @286
+    predef_compare_kcg_float32 @287
+    predef_compare_kcg_float64 @288
+    predef_compare_kcg_int16 @289
+    predef_compare_kcg_int32 @290
+    predef_compare_kcg_int64 @291
+    predef_compare_kcg_int8 @292
+    predef_compare_kcg_size @293
+    predef_compare_kcg_uint16 @294
+    predef_compare_kcg_uint32 @295
+    predef_compare_kcg_uint64 @296
+    predef_compare_kcg_uint8 @297
+    predef_int_to_string @298
+    predef_kcg_bool_to_string @299
+    predef_kcg_char_to_string @300
+    predef_kcg_float32_to_string @301
+    predef_kcg_float64_to_string @302
+    predef_kcg_int16_to_string @303
+    predef_kcg_int32_to_string @304
+    predef_kcg_int64_to_string @305
+    predef_kcg_int8_to_string @306
+    predef_kcg_size_to_string @307
+    predef_kcg_uint16_to_string @308
+    predef_kcg_uint32_to_string @309
+    predef_kcg_uint64_to_string @310
+    predef_kcg_uint8_to_string @311
+    predef_string_to_kcg_bool @312
+    predef_string_to_kcg_char @313
+    predef_string_to_kcg_float32 @314
+    predef_string_to_kcg_float64 @315
+    predef_string_to_kcg_int16 @316
+    predef_string_to_kcg_int32 @317
+    predef_string_to_kcg_int64 @318
+    predef_string_to_kcg_int8 @319
+    predef_string_to_kcg_size @320
+    predef_string_to_kcg_uint16 @321
+    predef_string_to_kcg_uint32 @322
+    predef_string_to_kcg_uint64 @323
+    predef_string_to_kcg_uint8 @324
+    release_SSM_ST_SM2_RUNNING_elevator_state @325
+    release_SSM_ST_elevator_state @326
+    release_SSM_TR_SM2_RUNNING_elevator_state @327
+    release_SSM_TR_elevator_state @328
+    release_kcg_bool @329
+    release_kcg_char @330
+    release_kcg_float32 @331
+    release_kcg_float64 @332
+    release_kcg_int16 @333
+    release_kcg_int32 @334
+    release_kcg_int64 @335
+    release_kcg_int8 @336
+    release_kcg_size @337
+    release_kcg_uint16 @338
+    release_kcg_uint32 @339
+    release_kcg_uint64 @340
+    release_kcg_uint8 @341
+    release_tMotorCommand @342
+    rt_version @343 DATA
+    scope_0 @344 DATA
+    scope_0_entries @345 DATA
+    scope_1 @346 DATA
+    scope_10 @347 DATA
+    scope_10_entries @348 DATA
+    scope_11 @349 DATA
+    scope_11_entries @350 DATA
+    scope_12 @351 DATA
+    scope_12_entries @352 DATA
+    scope_13 @353 DATA
+    scope_13_entries @354 DATA
+    scope_14 @355 DATA
+    scope_14_entries @356 DATA
+    scope_1_entries @357 DATA
+    scope_2 @358 DATA
+    scope_2_entries @359 DATA
+    scope_3 @360 DATA
+    scope_3_entries @361 DATA
+    scope_4 @362 DATA
+    scope_4_entries @363 DATA
+    scope_5 @364 DATA
+    scope_5_entries @365 DATA
+    scope_6 @366 DATA
+    scope_6_entries @367 DATA
+    scope_7 @368 DATA
+    scope_7_entries @369 DATA
+    scope_8 @370 DATA
+    scope_8_entries @371 DATA
+    scope_9 @372 DATA
+    scope_9_entries @373 DATA
+    ssm_char_to_string @374
+    ssm_double_to_string @375
+    ssm_float_to_string @376
+    ssm_int_to_base_string @377
+    ssm_int_to_string @378
+    ssm_real_to_string_ @379
+    ssm_string_to_bool @380
+    ssm_string_to_char @381
+    ssm_string_to_char_ @382
+    ssm_string_to_double @383
+    ssm_string_to_float @384
+    ssm_string_to_int @385
+    ssm_string_to_int_ @386
+    ssm_string_to_real_ @387
+    strDefaultRealFormat @388 DATA
+    string_to_SSM_ST_SM2_RUNNING_elevator_state @389
+    string_to_SSM_ST_elevator_state @390
+    string_to_SSM_TR_SM2_RUNNING_elevator_state @391
+    string_to_SSM_TR_elevator_state @392
+    string_to_VTable @393
+    string_to_kcg_bool @394
+    string_to_kcg_char @395
+    string_to_kcg_float32 @396
+    string_to_kcg_float64 @397
+    string_to_kcg_int16 @398
+    string_to_kcg_int32 @399
+    string_to_kcg_int64 @400
+    string_to_kcg_int8 @401
+    string_to_kcg_size @402
+    string_to_kcg_uint16 @403
+    string_to_kcg_uint32 @404
+    string_to_kcg_uint64 @405
+    string_to_kcg_uint8 @406
+    string_to_tMotorCommand @407
+    tMotorCommand_nb_values @408 DATA
+    tMotorCommand_to_double @409
+    tMotorCommand_to_long @410
+    tMotorCommand_to_string @411
+    updateCompareResult @412

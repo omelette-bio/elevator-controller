@@ -1,0 +1,62 @@
+$************** ANSYS(R) SCADE Suite(R) - SCADETOC - Version Student 2024 R1 (build 20231108T130114) **************
+** Generation date: 2025-05-15T08:42:54
+** Command: scade -code "C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Elevator.etp" -root ElevatorModes -conf Simulation -sim -all
+*************************************************************$
+*** Generated Files Information (GENFIL): KCG- Generated files
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\mapping.xml, line 0, character 0
+ ~mapping.xml
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\kcg_metrics.txt, line 0, character 0
+ ~kcg_metrics.txt
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\ElevatorModes.c, line 0, character 0
+ ~ElevatorModes.c
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\ElevatorModes.h, line 0, character 0
+ ~ElevatorModes.h
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\kcg_types.h, line 0, character 0
+ ~kcg_types.h
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\kcg_consts.h, line 0, character 0
+ ~kcg_consts.h
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\kcg_sensors.h, line 0, character 0
+ ~kcg_sensors.h
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\kcg_types.c, line 0, character 0
+ ~kcg_types.c
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\kcg_consts.c, line 0, character 0
+ ~kcg_consts.c
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\config.txt, line 0, character 0
+ ~config.txt
+*** Generated Files Information (GENFIL): Code Generator Generated files
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\user_macros.h, line 0, character 0
+ ~user_macros.h
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\kcg_imported_types.h, line 0, character 0
+ ~kcg_imported_types.h
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\sc2c.log, line 0, character 0
+ ~sc2c.log
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\sc2c_integration_files.txt, line 0, character 0
+ ~sc2c_integration_files.txt
+*** Generated Files Information (GENFIL): Type Utils Generated files
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\Elevator_type.h, line 0, character 0
+ ~Elevator_type.h
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\Elevator_type.c, line 0, character 0
+ ~Elevator_type.c
+*** Generated Files Information (GENFIL): Mapping Utils Generated files
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\Elevator_mapping.h, line 0, character 0
+ ~Elevator_mapping.h
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\Elevator_mapping.c, line 0, character 0
+ ~Elevator_mapping.c
+*** Generated Files Information (GENFIL): Simulator Generated files
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\Elevator_interface.h, line 0, character 0
+ ~Elevator_interface.h
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\Elevator_interface.c, line 0, character 0
+ ~Elevator_interface.c
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\Elevator_dll.c, line 0, character 0
+ ~Elevator_dll.c
+*** Generated Files Information (GENFIL): Build Generated files
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\Makefile_win64, line 0, character 0
+ ~Makefile_win64
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\ElevatorModes.dll, line 0, character 0
+ ~ElevatorModes.dll
+  at file C:\Users\omele\Documents\SCADE Elevator Project\SCADE Elevator Project\Elevator\Simulation\ElevatorModes.exe, line 0, character 0
+ ~ElevatorModes.exe
+$************** ANSYS(R) SCADE Suite(R) - SCADETOC - Version Student 2024 R1 (build 20231108T130114) **************
+** Generation date: 2025-05-15T08:42:55
+** sc2c.log
+*************************************************************$

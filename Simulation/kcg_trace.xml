@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <Model commandLine="" date="">
+    <Option name="use_types" value="#off#"/>
+    <Option name="imported_root_package" value="#off#"/>
+    <Option name="root_package" value="#off#"/>
+    <Option name="xml_basename" value="kcg_xml_filter_out.scade"/>
+    <Option name="state_vector" value="#off#"/>
+    <Option name="static" value="#off#"/>
+    <Option name="separate_io_all" value="#off#"/>
+    <Option name="no_separate_io" value="#off#"/>
+    <Option name="separate_io" value="#off#"/>
+    <Option name="warn_error" value="#off#"/>
+    <Option name="short_circuit" value="#off#"/>
+    <Option name="wrap_c_ops" value="#off#"/>
+    <Option name="input_file" value="C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation/scade_model_without_unused.scade"/>
+    <Option name="probes" value="#on#"/>
+    <Option name="no_observe" value="#off#"/>
+    <Option name="observe" value="#off#"/>
+    <Option name="debug" value="#on#"/>
+    <Option name="user_config" value="./user_macros.h"/>
+    <Option name="input_threshold" value="#off#"/>
+    <Option name="header" value="#off#"/>
+    <Option name="significance_length" value="31"/>
+    <Option name="name_length" value="200"/>
+    <Option name="globals_prefix" value="#off#"/>
+    <Option name="keep_asserts" value="#off#"/>
+    <Option name="global_root_context" value="#off#"/>
+    <Option name="expall" value="#off#"/>
+    <Option name="noexp" value="#off#"/>
+    <Option name="exp" value="#off#"/>
+    <Option name="target_dir" value="C:/Users/omele/Documents/SCADE Elevator Project/SCADE Elevator Project/Elevator/Simulation"/>
+    <Option name="target" value="C"/>
+    <Option name="root" value="ElevatorModes"/>
+    <Option name="auth" value="#off#"/>
+    <Constant macroDef="true" scadeName="cFLOOR_TRAVEL_TIME" scadeType="int32" targetName="cFLOOR_TRAVEL_TIME" targetType="kcg_int32"/>
+    <EnumType scadeName="tMotorCommand" targetName="tMotorCommand">
+      <EnumVal scadeName="eMOTOR_STOP" targetName="eMOTOR_STOP"/>
+      <EnumVal scadeName="eMOTOR_MOVEUP" targetName="eMOTOR_MOVEUP"/>
+      <EnumVal scadeName="eMOTOR_MOVEDOWN" targetName="eMOTOR_MOVEDOWN"/>
+    </EnumType>
+    <RootNode headerFile="ElevatorModes.h" scadeName="ElevatorModes" targetCycleFct="ElevatorModes" targetInitFct="ElevatorModes_reset" targetInitializationFct="ElevatorModes_init">
+      <Input inCtx="true" scadeName="iDestinationFloorNumber" scadeType="int32" targetName="iDestinationFloorNumber" targetType="kcg_int32"/>
+      <Input inCtx="true" scadeName="iTravelRequest" scadeType="bool" targetName="iTravelRequest" targetType="kcg_bool"/>
+      <Output inCtx="true" scadeName="oFloorNumber" scadeType="int32" targetName="oFloorNumber" targetType="kcg_int32"/>
+      <Output inCtx="true" scadeName="oOpenDoor" scadeType="bool" targetName="oOpenDoor" targetType="kcg_bool"/>
+      <Output inCtx="true" scadeName="oCloseDoor" scadeType="bool" targetName="oCloseDoor" targetType="kcg_bool"/>
+      <Output inCtx="true" scadeName="oMotorCommand" scadeType="tMotorCommand" targetName="oMotorCommand" targetType="tMotorCommand"/>
+      <Automaton scadeName="elevator_state" targetStatesType="SSM_ST_elevator_state" targetTransitionsType="SSM_TR_elevator_state">
+        <State scadeName="STOPPED" targetName="SSM_st_STOPPED_elevator_state">
+          <Local clockVal="SSM_st_STOPPED_elevator_state" clockVar="elevator_state_state_act" inCtx="true" scadeName="_L1" scadeType="bool" targetName="_L1_STOPPED_elevator_state" targetType="kcg_bool"/>
+          <Local clockVal="SSM_st_STOPPED_elevator_state" clockVar="elevator_state_state_act" inCtx="true" scadeName="_L2" scadeType="bool" targetName="_L2_STOPPED_elevator_state" targetType="kcg_bool"/>
+          <Local clockVal="SSM_st_STOPPED_elevator_state" clockVar="elevator_state_state_act" inCtx="true" scadeName="_L3" scadeType="tMotorCommand" targetName="_L3_STOPPED_elevator_state" targetType="tMotorCommand"/>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="weak" scadeDest="RUNNING" targetName="SSM_TR_STOPPED_RUNNING_1_STOPPED_elevator_state"/>
+          </Fork>
+        </State>
+        <State scadeName="RUNNING" targetName="SSM_st_RUNNING_elevator_state">
+          <Automaton scadeName="SM2" targetStatesType="SSM_ST_SM2_RUNNING_elevator_state" targetTransitionsType="SSM_TR_SM2_RUNNING_elevator_state">
+            <State scadeName="init" targetName="SSM_st_init_SM2_RUNNING_elevator_state">
+              <Local clockVal="SSM_st_init_SM2_RUNNING_elevator_state" clockVar="SM2_clock_RUNNING_elevator_state" inCtx="true" scadeName="_L1" scadeType="bool" targetName="_L1_init_SM2_RUNNING_elevator_state" targetType="kcg_bool"/>
+              <Local clockVal="SSM_st_init_SM2_RUNNING_elevator_state" clockVar="SM2_clock_RUNNING_elevator_state" inCtx="true" scadeName="_L2" scadeType="bool" targetName="_L2_init_SM2_RUNNING_elevator_state" targetType="kcg_bool"/>
+              <ActivateIf scadeName="MotorControl">
+                <Condition inCtx="true" targetName="MotorControl_clock_init_SM2_RUNNING_elevator_state"/>
+                <Else>
+                  <Local clockVal="kcg_false" clockVar="MotorControl_clock_init_SM2_RUNNING_elevator_state" inCtx="true" scadeName="_L1" scadeType="tMotorCommand" targetName="_L1_else_MotorControl_init_SM2_RUNNING_elevator_state" targetType="tMotorCommand"/>
+                </Else>
+                <Then>
+                  <Local clockVal="kcg_true" clockVar="MotorControl_clock_init_SM2_RUNNING_elevator_state" inCtx="true" scadeName="_L1" scadeType="tMotorCommand" targetName="_L1_then_MotorControl_init_SM2_RUNNING_elevator_state" targetType="tMotorCommand"/>
+                </Then>
+              </ActivateIf>
+              <Fork priority="1">
+                <Condition/>
+                <Action>
+                  <Times instName="5">
+                    <Init inCtx="true" targetName="init" targetType="kcg_bool"/>
+                    <Memory inCtx="true" targetName="v3_times_5_size" targetType="kcg_size"/>
+                  </Times>
+                </Action>
+                <Transition kind="weak" scadeDest="ELEVATOR_CLIMB" targetName="SSM_TR_init_ELEVATOR_CLIMB_1_init_SM2_RUNNING_elevator_state"/>
+              </Fork>
+            </State>
+            <State scadeName="ELEVATOR_CLIMB" targetName="SSM_st_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state">
+              <Local clockVal="SSM_st_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state" clockVar="SM2_clock_RUNNING_elevator_state" inCtx="true" scadeName="_L1" scadeType="int32" targetName="_L1_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state" targetType="kcg_int32"/>
+              <Local clockVal="SSM_st_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state" clockVar="SM2_clock_RUNNING_elevator_state" inCtx="true" scadeName="_L2" scadeType="int32" targetName="_L2_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state" targetType="kcg_int32"/>
+              <Local clockVal="SSM_st_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state" clockVar="SM2_clock_RUNNING_elevator_state" inCtx="true" scadeName="_L3" scadeType="int32" targetName="_L3_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state" targetType="kcg_int32"/>
+              <Last/>
+              <Fork priority="1">
+                <Condition/>
+                <Transition kind="weak" scadeDest="init" targetName="SSM_TR_ELEVATOR_CLIMB_init_1_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state"/>
+              </Fork>
+            </State>
+            <ActiveState inCtx="true" targetName="SM2_state_act_RUNNING_elevator_state"/>
+            <SelectedState inCtx="true" targetName="SM2_state_sel_RUNNING_elevator_state"/>
+            <NextState inCtx="true" mem="true" targetName="SM2_state_nxt_RUNNING_elevator_state"/>
+            <ResetActiveState inCtx="true" mem="true" targetName="SM2_reset_act_RUNNING_elevator_state"/>
+            <ResetNextState inCtx="true" mem="true" targetName="SM2_reset_nxt_RUNNING_elevator_state"/>
+            <StrongTransition inCtx="true" targetName="SM2_fired_strong_RUNNING_elevator_state"/>
+            <WeakTransition inCtx="true" targetName="SM2_fired_RUNNING_elevator_state"/>
+          </Automaton>
+          <Fork priority="1">
+            <Condition/>
+            <Transition kind="weak" scadeDest="STOPPED" targetName="SSM_TR_RUNNING_STOPPED_1_RUNNING_elevator_state"/>
+          </Fork>
+        </State>
+        <ActiveState inCtx="true" targetName="elevator_state_state_act"/>
+        <SelectedState inCtx="true" targetName="elevator_state_state_sel"/>
+        <NextState inCtx="true" mem="true" targetName="elevator_state_state_nxt"/>
+        <ResetActiveState inCtx="true" mem="true" targetName="elevator_state_reset_act"/>
+        <ResetNextState inCtx="true" mem="true" targetName="elevator_state_reset_nxt"/>
+        <StrongTransition inCtx="true" targetName="elevator_state_fired_strong"/>
+        <WeakTransition inCtx="true" targetName="elevator_state_fired"/>
+      </Automaton>
+      <Memory inCtx="true" targetName="oFloorNumber" targetType="kcg_int32"/>
+      <Init inCtx="true" targetName="init" targetType="kcg_bool"/>
+      <Init inCtx="true" targetName="init1" targetType="kcg_bool"/>
+      <Memory inCtx="true" targetName="v3_times_5_size" targetType="kcg_size"/>
+      <Memory inCtx="true" targetName="SM2_state_nxt_RUNNING_elevator_state" targetType="SSM_ST_SM2_RUNNING_elevator_state"/>
+      <Memory inCtx="true" targetName="elevator_state_state_nxt" targetType="SSM_ST_elevator_state"/>
+      <Clock clockVal="SSM_st_RUNNING_elevator_state" clockVar="elevator_state_state_act" inCtx="true" targetName="SM2_clock_RUNNING_elevator_state" targetType="SSM_ST_SM2_RUNNING_elevator_state"/>
+      <Clock clockVal="SSM_st_init_SM2_RUNNING_elevator_state" clockVar="SM2_clock_RUNNING_elevator_state" inCtx="true" targetName="MotorControl_clock_init_SM2_RUNNING_elevator_state" targetType="kcg_bool"/>
+      <Clock inCtx="true" targetName="elevator_state_state_act" targetType="SSM_ST_elevator_state"/>
+      <OutCtxType targetName="outC_ElevatorModes"/>
+      <InCtxType targetName="inC_ElevatorModes"/>
+    </RootNode>
+    <PredefType scadeName="int8" targetName="kcg_int8"/>
+    <PredefType scadeName="int16" targetName="kcg_int16"/>
+    <PredefType scadeName="int32" targetName="kcg_int32"/>
+    <PredefType scadeName="int64" targetName="kcg_int64"/>
+    <PredefType scadeName="uint8" targetName="kcg_uint8"/>
+    <PredefType scadeName="uint16" targetName="kcg_uint16"/>
+    <PredefType scadeName="uint32" targetName="kcg_uint32"/>
+    <PredefType scadeName="uint64" targetName="kcg_uint64"/>
+    <PredefType scadeName="size" targetName="kcg_size"/>
+    <PredefType scadeName="float32" targetName="kcg_float32"/>
+    <PredefType scadeName="float64" targetName="kcg_float64"/>
+    <PredefType scadeName="bool" targetName="kcg_bool"/>
+    <PredefType scadeName="char" targetName="kcg_char"/>
+  </Model>
