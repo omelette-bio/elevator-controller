@@ -242,6 +242,23 @@ extern int copy_SSM_ST_elevator_state(void *pToValue, const void *pFromValue);
 extern SimTypeUtils _Type_SSM_ST_elevator_state_Utils;
 
 /****************************************************************
+ ** SSM_ST_SM1 
+ ****************************************************************/
+extern int SSM_ST_SM1_to_string(const void *pValue, PFN_STR_APPEND pfnStrAppend, void *pStrObj);
+extern int check_SSM_ST_SM1_string(const char *str, char **endptr);
+extern int string_to_SSM_ST_SM1(const char *str, void *pValue, char **endptr);
+extern int is_SSM_ST_SM1_double_conversion_allowed();
+extern int SSM_ST_SM1_to_double(const void *pValue, double *nValue);
+extern int is_SSM_ST_SM1_long_conversion_allowed();
+extern int SSM_ST_SM1_to_long(const void *pValue, long *nValue);
+extern void compare_SSM_ST_SM1(int *nStatus, const void *pValue1, const void *pValue2, SimTolerance *pTol, const char *pszPath, PFN_STR_LIST_APPEND pfnStrListAppend, void *pListErrPaths);
+extern int get_SSM_ST_SM1_signature(PFN_STR_APPEND pfnStrAppend, void *pStrObj);
+extern int init_SSM_ST_SM1(void *pValue);
+extern int release_SSM_ST_SM1(void *pValue);
+extern int copy_SSM_ST_SM1(void *pToValue, const void *pFromValue);
+extern SimTypeUtils _Type_SSM_ST_SM1_Utils;
+
+/****************************************************************
  ** SSM_ST_SM2_RUNNING_elevator_state 
  ****************************************************************/
 extern int SSM_ST_SM2_RUNNING_elevator_state_to_string(const void *pValue, PFN_STR_APPEND pfnStrAppend, void *pStrObj);
@@ -276,6 +293,23 @@ extern int copy_SSM_TR_elevator_state(void *pToValue, const void *pFromValue);
 extern SimTypeUtils _Type_SSM_TR_elevator_state_Utils;
 
 /****************************************************************
+ ** SSM_TR_SM1 
+ ****************************************************************/
+extern int SSM_TR_SM1_to_string(const void *pValue, PFN_STR_APPEND pfnStrAppend, void *pStrObj);
+extern int check_SSM_TR_SM1_string(const char *str, char **endptr);
+extern int string_to_SSM_TR_SM1(const char *str, void *pValue, char **endptr);
+extern int is_SSM_TR_SM1_double_conversion_allowed();
+extern int SSM_TR_SM1_to_double(const void *pValue, double *nValue);
+extern int is_SSM_TR_SM1_long_conversion_allowed();
+extern int SSM_TR_SM1_to_long(const void *pValue, long *nValue);
+extern void compare_SSM_TR_SM1(int *nStatus, const void *pValue1, const void *pValue2, SimTolerance *pTol, const char *pszPath, PFN_STR_LIST_APPEND pfnStrListAppend, void *pListErrPaths);
+extern int get_SSM_TR_SM1_signature(PFN_STR_APPEND pfnStrAppend, void *pStrObj);
+extern int init_SSM_TR_SM1(void *pValue);
+extern int release_SSM_TR_SM1(void *pValue);
+extern int copy_SSM_TR_SM1(void *pToValue, const void *pFromValue);
+extern SimTypeUtils _Type_SSM_TR_SM1_Utils;
+
+/****************************************************************
  ** SSM_TR_SM2_RUNNING_elevator_state 
  ****************************************************************/
 extern int SSM_TR_SM2_RUNNING_elevator_state_to_string(const void *pValue, PFN_STR_APPEND pfnStrAppend, void *pStrObj);
@@ -291,6 +325,23 @@ extern int init_SSM_TR_SM2_RUNNING_elevator_state(void *pValue);
 extern int release_SSM_TR_SM2_RUNNING_elevator_state(void *pValue);
 extern int copy_SSM_TR_SM2_RUNNING_elevator_state(void *pToValue, const void *pFromValue);
 extern SimTypeUtils _Type_SSM_TR_SM2_RUNNING_elevator_state_Utils;
+
+/****************************************************************
+ ** tDoorStatusEnum 
+ ****************************************************************/
+extern int tDoorStatusEnum_to_string(const void *pValue, PFN_STR_APPEND pfnStrAppend, void *pStrObj);
+extern int check_tDoorStatusEnum_string(const char *str, char **endptr);
+extern int string_to_tDoorStatusEnum(const char *str, void *pValue, char **endptr);
+extern int is_tDoorStatusEnum_double_conversion_allowed();
+extern int tDoorStatusEnum_to_double(const void *pValue, double *nValue);
+extern int is_tDoorStatusEnum_long_conversion_allowed();
+extern int tDoorStatusEnum_to_long(const void *pValue, long *nValue);
+extern void compare_tDoorStatusEnum(int *nStatus, const void *pValue1, const void *pValue2, SimTolerance *pTol, const char *pszPath, PFN_STR_LIST_APPEND pfnStrListAppend, void *pListErrPaths);
+extern int get_tDoorStatusEnum_signature(PFN_STR_APPEND pfnStrAppend, void *pStrObj);
+extern int init_tDoorStatusEnum(void *pValue);
+extern int release_tDoorStatusEnum(void *pValue);
+extern int copy_tDoorStatusEnum(void *pToValue, const void *pFromValue);
+extern SimTypeUtils _Type_tDoorStatusEnum_Utils;
 
 /****************************************************************
  ** tMotorCommand 

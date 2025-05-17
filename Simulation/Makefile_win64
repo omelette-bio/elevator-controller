@@ -8,10 +8,22 @@ SHELL=cmd.exe
 
 C_FLAGS = -pedantic
 
-all: ElevatorModes.exe ElevatorModes.dll 
+all: Proof__Proof.exe Proof__Proof.dll 
 
-win64/ElevatorModes.o: ElevatorModes.c
-	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "ElevatorModes.c" -o "win64\ElevatorModes.o"
+win64/Proof_Proof.o: Proof_Proof.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "Proof_Proof.c" -o "win64\Proof_Proof.o"
+
+win64/Prop1_Proof.o: Prop1_Proof.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "Prop1_Proof.c" -o "win64\Prop1_Proof.o"
+
+win64/ElevatorController_Elevator.o: ElevatorController_Elevator.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "ElevatorController_Elevator.c" -o "win64\ElevatorController_Elevator.o"
+
+win64/DoorModes_Elevator.o: DoorModes_Elevator.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "DoorModes_Elevator.c" -o "win64\DoorModes_Elevator.o"
+
+win64/ElevatorModes_Elevator.o: ElevatorModes_Elevator.c
+	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "ElevatorModes_Elevator.c" -o "win64\ElevatorModes_Elevator.o"
 
 win64/kcg_types.o: kcg_types.c
 	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "kcg_types.c" -o "win64\kcg_types.o"
@@ -46,8 +58,8 @@ win64/Elevator_interface.o: Elevator_interface.c
 win64/SmuProxy.o: C:/Program\ Files/ANSYS\ Inc/v241/SCADE\ Student/SCADE/lib/C/SmuProxy.c
 	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "C:\Program Files\ANSYS Inc\v241\SCADE Student\SCADE\lib\C\SmuProxy.c" -o "win64\SmuProxy.o"
 
-ElevatorModes.dll: win64/ElevatorModes.o win64/kcg_types.o win64/kcg_consts.o win64/Elevator_mapping.o win64/Elevator_type.o win64/SmuPredefConv.o win64/SmuConfig.o win64/SmuTypes.o win64/SmuLib.o win64/SmuVTable.o win64/Elevator_interface.o win64/SmuProxy.o SmuExport.def 
-	gcc -mwindows -mwin32 -shared -static-libgcc  "win64\ElevatorModes.o" "win64\kcg_types.o" "win64\kcg_consts.o" "win64\Elevator_mapping.o" "win64\Elevator_type.o" "win64\SmuPredefConv.o" "win64\SmuConfig.o" "win64\SmuTypes.o" "win64\SmuLib.o" "win64\SmuVTable.o" "win64\Elevator_interface.o" "win64\SmuProxy.o" -Wl,--output-def,"SmuExport.def" -lm -lwsock32 -m64 -o "ElevatorModes.dll" 
+Proof__Proof.dll: win64/Proof_Proof.o win64/Prop1_Proof.o win64/ElevatorController_Elevator.o win64/DoorModes_Elevator.o win64/ElevatorModes_Elevator.o win64/kcg_types.o win64/kcg_consts.o win64/Elevator_mapping.o win64/Elevator_type.o win64/SmuPredefConv.o win64/SmuConfig.o win64/SmuTypes.o win64/SmuLib.o win64/SmuVTable.o win64/Elevator_interface.o win64/SmuProxy.o SmuExport.def 
+	gcc -mwindows -mwin32 -shared -static-libgcc  "win64\Proof_Proof.o" "win64\Prop1_Proof.o" "win64\ElevatorController_Elevator.o" "win64\DoorModes_Elevator.o" "win64\ElevatorModes_Elevator.o" "win64\kcg_types.o" "win64\kcg_consts.o" "win64\Elevator_mapping.o" "win64\Elevator_type.o" "win64\SmuPredefConv.o" "win64\SmuConfig.o" "win64\SmuTypes.o" "win64\SmuLib.o" "win64\SmuVTable.o" "win64\Elevator_interface.o" "win64\SmuProxy.o" -Wl,--output-def,"SmuExport.def" -lm -lwsock32 -m64 -o "Proof__Proof.dll" 
 
 SmuExport.def: C:/Program\ Files/ANSYS\ Inc/v241/SCADE\ Student/SCADE/lib/C/SmuExport.def
 	copy "C:\Program Files\ANSYS Inc\v241\SCADE Student\SCADE\lib\C\SmuExport.def" "SmuExport.def"
@@ -58,8 +70,8 @@ win64/Elevator_dll.o: Elevator_dll.c
 win64/SmuMainWindows.o: C:/Program\ Files/ANSYS\ Inc/v241/SCADE\ Student/SCADE/lib/C/SmuMainWindows.c
 	gcc -I"$(SCADE)\libraries\SC65\libmathext" -I"." -I"$(SCADE)" -I"$(SCADE)\include" -I"$(SCADE)\include\C" -I"$(SCADE)\include\Ada" -I"$(SCADE)\lib\Ada" $(C_FLAGS) -DBUILD_DLL -DSIM -DWIN32 -D_CONSOLE -D_MBCS -c -ansi -std=c99 -m64 "C:\Program Files\ANSYS Inc\v241\SCADE Student\SCADE\lib\C\SmuMainWindows.c" -o "win64\SmuMainWindows.o"
 
-ElevatorModes.exe: win64/Elevator_dll.o win64/SmuMainWindows.o 
-	gcc "win64\Elevator_dll.o" "win64\SmuMainWindows.o" -lm -lwsock32 -m64 -o "ElevatorModes.exe" 
+Proof__Proof.exe: win64/Elevator_dll.o win64/SmuMainWindows.o 
+	gcc "win64\Elevator_dll.o" "win64\SmuMainWindows.o" -lm -lwsock32 -m64 -o "Proof__Proof.exe" 
 
 #############################################################
 ######    End of Makefile

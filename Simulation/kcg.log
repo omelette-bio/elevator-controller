@@ -1,12 +1,12 @@
 $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
 ** Command: scadecg.exe -config C:/Users/omele/Desktop/elevator-controller-main/elevator-controller-main/Simulation/config.txt
-** Generation date: 2025-05-17T10:30:58
+** Generation date: 2025-05-17T14:42:01
 *************************************************************$
-Model size: 277/500 operations, 13/50 memories
+Model size: 368/500 operations, 21/50 memories
 No warning was found
 No error was found
 No failure occurred
 $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
 ** kcg.log
-** Generation date: 2025-05-17T10:30:58
+** Generation date: 2025-05-17T14:42:01
 *************************************************************$

@@ -3,12 +3,12 @@
 
 #include "kcg_sensors.h"
 #include "SmuProxy.h"
-#include "ElevatorModes.h"
+#include "Proof_Proof.h"
 
 /* context */
 
-extern inC_ElevatorModes inputs_ctx;
-extern outC_ElevatorModes outputs_ctx;
+extern inC_Proof_Proof inputs_ctx;
+extern outC_Proof_Proof outputs_ctx;
 
 #ifdef __cplusplus
 extern "C" {

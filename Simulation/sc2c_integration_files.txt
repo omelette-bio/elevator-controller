@@ -1,7 +1,11 @@
 *****************************
 *** Generated KCG H/Ads files ***
 *****************************
-ElevatorModes.h
+Proof_Proof.h
+Prop1_Proof.h
+ElevatorController_Elevator.h
+DoorModes_Elevator.h
+ElevatorModes_Elevator.h
 kcg_types.h
 kcg_consts.h
 kcg_sensors.h
@@ -9,7 +13,11 @@ kcg_sensors.h
 *****************************
 *** Generated KCG C/Adb files ***
 *****************************
-ElevatorModes.c
+Proof_Proof.c
+Prop1_Proof.c
+ElevatorController_Elevator.c
+DoorModes_Elevator.c
+ElevatorModes_Elevator.c
 kcg_types.c
 kcg_consts.c
 
