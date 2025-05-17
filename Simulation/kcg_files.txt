@@ -1,10 +1,6 @@
 mapping.xml
 kcg_metrics.txt
-ElevatorController.c
-DoorModes.c
 ElevatorModes.c
-ElevatorController.h
-DoorModes.h
 ElevatorModes.h
 kcg_types.h
 kcg_consts.h

@@ -1,6 +1,6 @@
 /* $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
-** Command: scadecg.exe -config C:/Users/Dylan/Desktop/elevator-controller-main/Simulation/config.txt
-** Generation date: 2025-05-15T11:31:51
+** Command: scadecg.exe -config C:/Users/omele/Desktop/elevator-controller-main/elevator-controller-main/Simulation/config.txt
+** Generation date: 2025-05-17T10:30:58
 *************************************************************$ */
 #ifndef _KCG_TYPES_H_
 #define _KCG_TYPES_H_
@@ -176,13 +176,6 @@ typedef signed char kcg_int8;
 #define kcg_assign_array kcg_assign
 #endif /* kcg_assign_array */
 
-/* tDoorStatusEnum/ */
-typedef enum kcg_tag_tDoorStatusEnum {
-  eDOOR_CLOSED,
-  eDOOR_OPENED,
-  eDOOR_CLOSING,
-  eDOOR_OPENING
-} tDoorStatusEnum;
 /* tMotorCommand/ */
 typedef enum kcg_tag_tMotorCommand {
   eMOTOR_STOP,
@@ -203,35 +196,22 @@ typedef enum kcg_tag_SSM_ST_elevator_state {
 /* ElevatorModes/elevator_state:RUNNING:SM2: */
 typedef enum kcg_tag_SSM_TR_SM2_RUNNING_elevator_state {
   SSM_TR_no_trans_SM2_RUNNING_elevator_state,
-  SSM_TR_init_ELEVATOR_DOWN_1_init_SM2_RUNNING_elevator_state,
-  SSM_TR_init_ELEVATOR_CLIMB_2_init_SM2_RUNNING_elevator_state,
-  SSM_TR_ELEVATOR_CLIMB_init_1_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state,
-  SSM_TR_ELEVATOR_DOWN_init_1_ELEVATOR_DOWN_SM2_RUNNING_elevator_state
+  SSM_TR_SET_MOVEMENT_ELEVATOR_DOWN_1_SET_MOVEMENT_SM2_RUNNING_elevator_state,
+  SSM_TR_SET_MOVEMENT_ELEVATOR_CLIMB_2_SET_MOVEMENT_SM2_RUNNING_elevator_state,
+  SSM_TR_ELEVATOR_CLIMB_SET_MOVEMENT_1_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state,
+  SSM_TR_ELEVATOR_DOWN_SET_MOVEMENT_1_ELEVATOR_DOWN_SM2_RUNNING_elevator_state,
+  SSM_TR_CLOSE_DOORS_SET_MOVEMENT_1_CLOSE_DOORS_SM2_RUNNING_elevator_state
 } SSM_TR_SM2_RUNNING_elevator_state;
 /* ElevatorModes/elevator_state:RUNNING:SM2: */
 typedef enum kcg_tag_SSM_ST_SM2_RUNNING_elevator_state {
-  SSM_st_init_SM2_RUNNING_elevator_state,
+  SSM_st_SET_MOVEMENT_SM2_RUNNING_elevator_state,
   SSM_st_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state,
-  SSM_st_ELEVATOR_DOWN_SM2_RUNNING_elevator_state
+  SSM_st_ELEVATOR_DOWN_SM2_RUNNING_elevator_state,
+  SSM_st_CLOSE_DOORS_SM2_RUNNING_elevator_state
 } SSM_ST_SM2_RUNNING_elevator_state;
-/* DoorModes/SM1: */
-typedef enum kcg_tag_SSM_TR_SM1 {
-  SSM_TR_no_trans_SM1,
-  SSM_TR_CLOSED_OPENING_1_CLOSED_SM1,
-  SSM_TR_CLOSING_CLOSED_1_CLOSING_SM1,
-  SSM_TR_OPENING_OPENED_1_OPENING_SM1,
-  SSM_TR_OPENED_CLOSING_1_OPENED_SM1
-} SSM_TR_SM1;
-/* DoorModes/SM1: */
-typedef enum kcg_tag_SSM_ST_SM1 {
-  SSM_st_CLOSED_SM1,
-  SSM_st_CLOSING_SM1,
-  SSM_st_OPENING_SM1,
-  SSM_st_OPENED_SM1
-} SSM_ST_SM1;
 #endif /* _KCG_TYPES_H_ */
 /* $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
 ** kcg_types.h
-** Generation date: 2025-05-15T11:31:51
+** Generation date: 2025-05-17T10:30:58
 *************************************************************$ */
 

@@ -7,9 +7,9 @@
 #define UNUSED(x) (void)(x)
 /* context */
 
-inC_ElevatorController inputs_ctx;
-static inC_ElevatorController inputs_ctx_execute;
-outC_ElevatorController outputs_ctx;
+inC_ElevatorModes inputs_ctx;
+static inC_ElevatorModes inputs_ctx_execute;
+outC_ElevatorModes outputs_ctx;
 
 static void _SCSIM_RestoreInterface(void) {
     init_kcg_int32(&inputs_ctx.iDestinationFloorNumber);
@@ -32,7 +32,7 @@ extern "C" {
 
 const int  rt_version = Srtv62;
 
-const char* _SCSIM_CheckSum = "549334fb5048344dd24613c3e3d0e7a5";
+const char* _SCSIM_CheckSum = "16deca1dc489b7fe164d5297e41a6896";
 const char* _SCSIM_SmuTypesCheckSum = "612a6f2dec6abe526bcaa0632c507adf";
 
 /* simulation */
@@ -44,7 +44,7 @@ int SimInit(void) {
     BeforeSimInit();
 #endif
 #ifndef KCG_USER_DEFINED_INIT
-    ElevatorController_init(&outputs_ctx);
+    ElevatorModes_init(&outputs_ctx);
     nRet = 1;
 #else
     nRet = 0;
@@ -62,7 +62,7 @@ int SimReset(void) {
     BeforeSimInit();
 #endif
 #ifndef KCG_NO_EXTERN_CALL_TO_RESET
-    ElevatorController_reset(&outputs_ctx);
+    ElevatorModes_reset(&outputs_ctx);
     nRet = 1;
 #else
     nRet = 0;
@@ -74,21 +74,21 @@ int SimReset(void) {
 }
 
 #ifdef __cplusplus
-    #ifdef pSimoutC_ElevatorControllerCIVTable_defined
-        extern struct SimCustomInitVTable *pSimoutC_ElevatorControllerCIVTable;
+    #ifdef pSimoutC_ElevatorModesCIVTable_defined
+        extern struct SimCustomInitVTable *pSimoutC_ElevatorModesCIVTable;
     #else 
-        struct SimCustomInitVTable *pSimoutC_ElevatorControllerCIVTable = NULL;
+        struct SimCustomInitVTable *pSimoutC_ElevatorModesCIVTable = NULL;
     #endif
 #else
-    struct SimCustomInitVTable *pSimoutC_ElevatorControllerCIVTable;
+    struct SimCustomInitVTable *pSimoutC_ElevatorModesCIVTable;
 #endif
 
 int SimCustomInit(void) {
     int nRet = 0;
-    if (pSimoutC_ElevatorControllerCIVTable != NULL && 
-        pSimoutC_ElevatorControllerCIVTable->m_pfnCustomInit != NULL) {
+    if (pSimoutC_ElevatorModesCIVTable != NULL && 
+        pSimoutC_ElevatorModesCIVTable->m_pfnCustomInit != NULL) {
         /* VTable function provided => call it */
-        nRet = pSimoutC_ElevatorControllerCIVTable->m_pfnCustomInit ((void*)&outputs_ctx);
+        nRet = pSimoutC_ElevatorModesCIVTable->m_pfnCustomInit ((void*)&outputs_ctx);
     }
     else {
         /* VTable misssing => error */
@@ -107,7 +107,7 @@ int SimStep(void) {
         BeforeSimStep();
 #endif
     _SCSIM_ExecuteInterface();
-    ElevatorController(&inputs_ctx_execute, &outputs_ctx);
+    ElevatorModes(&inputs_ctx_execute, &outputs_ctx);
 #ifdef EXTENDED_SIM
     AfterSimStep();
 #endif
@@ -139,8 +139,8 @@ void SsmConnectExternalInputs(int bConnect) {
 
 int SsmGetDumpSize(void) {
     int nSize = 0;
-    nSize += sizeof(inC_ElevatorController);
-    nSize += sizeof(outC_ElevatorController);
+    nSize += sizeof(inC_ElevatorModes);
+    nSize += sizeof(outC_ElevatorModes);
 #ifdef EXTENDED_SIM
     nSize += ExtendedGetDumpSize();
 #endif
@@ -149,10 +149,10 @@ int SsmGetDumpSize(void) {
 
 void SsmGatherDumpData(char * pData) {
     char* pCurrent = pData;
-    memcpy(pCurrent, &inputs_ctx, sizeof(inC_ElevatorController));
-    pCurrent += sizeof(inC_ElevatorController);
-    memcpy(pCurrent, &outputs_ctx, sizeof(outC_ElevatorController));
-    pCurrent += sizeof(outC_ElevatorController);
+    memcpy(pCurrent, &inputs_ctx, sizeof(inC_ElevatorModes));
+    pCurrent += sizeof(inC_ElevatorModes);
+    memcpy(pCurrent, &outputs_ctx, sizeof(outC_ElevatorModes));
+    pCurrent += sizeof(outC_ElevatorModes);
 #ifdef EXTENDED_SIM
     ExtendedGatherDumpData(pCurrent);
 #endif
@@ -160,10 +160,10 @@ void SsmGatherDumpData(char * pData) {
 
 void SsmRestoreDumpData(const char * pData) {
     const char* pCurrent = pData;
-    memcpy(&inputs_ctx, pCurrent, sizeof(inC_ElevatorController));
-    pCurrent += sizeof(inC_ElevatorController);
-    memcpy(&outputs_ctx, pCurrent, sizeof(outC_ElevatorController));
-    pCurrent += sizeof(outC_ElevatorController);
+    memcpy(&inputs_ctx, pCurrent, sizeof(inC_ElevatorModes));
+    pCurrent += sizeof(inC_ElevatorModes);
+    memcpy(&outputs_ctx, pCurrent, sizeof(outC_ElevatorModes));
+    pCurrent += sizeof(outC_ElevatorModes);
 #ifdef EXTENDED_SIM
     ExtendedRestoreDumpData(pCurrent);
 #endif

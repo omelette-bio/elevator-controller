@@ -20,222 +20,6 @@ eMOTOR_STOP, #pragma ed <Constant oid="!ed/1309e/7914/23A4/5ffef7fd4476"/>
 eMOTOR_MOVEUP, #pragma ed <Constant oid="!ed/1309f/7914/23A4/5ffef80c1e68"/>
 #end
 eMOTOR_MOVEDOWN};
-   #pragma ed <Type oid="!ed/4de1/3CE5/23A4/5ffda206139a"/>
-#end
-
-tDoorStatusEnum = enum {#pragma ed <Constant oid="!ed/4de2/3CE5/23A4/5ffda2117b7f"/>
-#end
-eDOOR_CLOSED, #pragma ed <Constant oid="!ed/4de3/3CE5/23A4/5ffda2241c37"/>
-#end
-eDOOR_OPENED, #pragma ed <Constant oid="!ed/4de4/3CE5/23A4/5ffda22d4957"/>
-#end
-eDOOR_CLOSING, #pragma ed <Constant oid="!ed/4de5/3CE5/23A4/5ffda2351211"/>
-#end
-eDOOR_OPENING};
-
-node #pragma ed <Operator oid="!ed/4de6/3CE5/23A4/5ffda2622b98">
-	<diagrams>
-		<NetDiagram name="ElevatorController_1" landscape="true" format="A4 (210 297)" oid="!ed/4de7/3CE5/23A4/5ffda2625b51">
-			<presentationElements>
-				<EquationGE presentable="!ed/4e6a/3CE5/23A4/5ffda36329ac">
-					<position>
-						<Point x="8255" y="3942"/>
-					</position>
-					<size>
-						<Size width="5334" height="4329"/>
-					</size>
-				</EquationGE>
-				<EquationGE presentable="!ed/4e71/3CE5/23A4/5ffda36a213d">
-					<position>
-						<Point x="18785" y="4842"/>
-					</position>
-					<size>
-						<Size width="4197" height="2582"/>
-					</size>
-				</EquationGE>
-				<EquationGE presentable="!ed/4e86/3CE5/23A4/5ffda3a53ed8">
-					<position>
-						<Point x="26141" y="5874"/>
-					</position>
-					<size>
-						<Size width="317" height="503"/>
-					</size>
-				</EquationGE>
-				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4e71/3CE5/23A4/5ffda36a213d" dstEquation="!ed/4e86/3CE5/23A4/5ffda3a53ed8">
-					<positions>
-						<Point x="22992" y="6138"/>
-						<Point x="25321" y="6138"/>
-						<Point x="25321" y="6138"/>
-						<Point x="26194" y="6138"/>
-					</positions>
-				</Edge>
-				<Edge leftVarIndex="2" rightExprIndex="1" srcEquation="!ed/4e6a/3CE5/23A4/5ffda36329ac" dstEquation="!ed/4e71/3CE5/23A4/5ffda36a213d">
-					<positions>
-						<Point x="13600" y="5689"/>
-						<Point x="16378" y="5689"/>
-						<Point x="16378" y="5715"/>
-						<Point x="18785" y="5715"/>
-					</positions>
-				</Edge>
-				<Edge leftVarIndex="3" rightExprIndex="2" srcEquation="!ed/4e6a/3CE5/23A4/5ffda36329ac" dstEquation="!ed/4e71/3CE5/23A4/5ffda36a213d">
-					<positions>
-						<Point x="13600" y="6535"/>
-						<Point x="16378" y="6535"/>
-						<Point x="16378" y="6562"/>
-						<Point x="18785" y="6562"/>
-					</positions>
-				</Edge>
-				<EquationGE presentable="!ed/5393/3CE5/23A4/5ffdb44119d">
-					<position>
-						<Point x="5556" y="6562"/>
-					</position>
-					<size>
-						<Size width="265" height="502"/>
-					</size>
-				</EquationGE>
-				<EquationGE presentable="!ed/5395/3CE5/23A4/5ffdb44177f2">
-					<position>
-						<Point x="5477" y="5133"/>
-					</position>
-					<size>
-						<Size width="265" height="503"/>
-					</size>
-				</EquationGE>
-				<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/5393/3CE5/23A4/5ffdb44119d" dstEquation="!ed/4e6a/3CE5/23A4/5ffda36329ac">
-					<positions>
-						<Point x="5821" y="6826"/>
-						<Point x="7038" y="6826"/>
-						<Point x="7038" y="6826"/>
-						<Point x="8255" y="6826"/>
-					</positions>
-				</Edge>
-				<EquationGE presentable="!ed/53a9/3CE5/23A4/5ffdb45a47dc">
-					<position>
-						<Point x="26141" y="3572"/>
-					</position>
-					<size>
-						<Size width="317" height="503"/>
-					</size>
-				</EquationGE>
-				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4e6a/3CE5/23A4/5ffda36329ac" dstEquation="!ed/53a9/3CE5/23A4/5ffdb45a47dc">
-					<positions>
-						<Point x="13600" y="4815"/>
-						<Point x="14764" y="4815"/>
-						<Point x="14764" y="3836"/>
-						<Point x="26194" y="3836"/>
-					</positions>
-				</Edge>
-				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/5395/3CE5/23A4/5ffdb44177f2" dstEquation="!ed/4e6a/3CE5/23A4/5ffda36329ac">
-					<positions>
-						<Point x="5741" y="5398"/>
-						<Point x="6800" y="5398"/>
-						<Point x="6800" y="5398"/>
-						<Point x="8255" y="5398"/>
-					</positions>
-				</Edge>
-				<EquationGE presentable="!ed/13198/7914/23A4/5ffefb431e29">
-					<position>
-						<Point x="26141" y="8229"/>
-					</position>
-					<size>
-						<Size width="317" height="503"/>
-					</size>
-				</EquationGE>
-				<Edge leftVarIndex="4" rightExprIndex="1" srcEquation="!ed/4e6a/3CE5/23A4/5ffda36329ac" dstEquation="!ed/13198/7914/23A4/5ffefb431e29">
-					<positions>
-						<Point x="13600" y="7408"/>
-						<Point x="14843" y="7408"/>
-						<Point x="14843" y="8493"/>
-						<Point x="26194" y="8493"/>
-					</positions>
-				</Edge>
-			</presentationElements>
-		</NetDiagram>
-	</diagrams>
-</Operator>
-#end
-
-ElevatorController(
-      #pragma ed    <Variable oid="!ed/5392/3CE5/23A4/5ffdb43dc71"/>
-#end
-
-iDestinationFloorNumber : int32; 
-      #pragma ed    <Variable oid="!ed/538a/3CE5/23A4/5ffdb4351620"/>
-#end
-
-iTravelRequest : bool)
-returns (
-      #pragma ed    <Variable oid="!ed/4e85/3CE5/23A4/5ffda39e1c7"/>
-#end
-
-oDoorStatus : tDoorStatusEnum; 
-      #pragma ed    <Variable oid="!ed/53a8/3CE5/23A4/5ffdb4591219"/>
-#end
-
-oFloorNumber : int32 last = 0; 
-      #pragma ed    <Variable oid="!ed/130a0/7914/23A4/5ffef83e2fd5"/>
-#end
-
-oMotorCommand : tMotorCommand default = eMOTOR_STOP)
-var
-      #pragma ed    <Variable oid="!ed/4e6b/3CE5/23A4/5ffda36366f8"/>
-#end
-
-_L1 : int32;
-      #pragma ed    <Variable oid="!ed/4e9e/3CE5/23A4/5ffda4313951"/>
-#end
-
-_L8 : bool;
-      #pragma ed    <Variable oid="!ed/4ea5/3CE5/23A4/5ffda4314b2d"/>
-#end
-
-_L9 : bool;
-      #pragma ed    <Variable oid="!ed/4e72/3CE5/23A4/5ffda36a6b86"/>
-#end
-
-_L3 : tDoorStatusEnum;
-      #pragma ed    <Variable oid="!ed/5394/3CE5/23A4/5ffdb4412e20"/>
-#end
-
-_L12 : bool;
-      #pragma ed    <Variable oid="!ed/5396/3CE5/23A4/5ffdb44132e4"/>
-#end
-
-_L13 : int32;
-      #pragma ed    <Variable oid="!ed/130b1/7914/23A4/5ffef877114c"/>
-#end
-
-_L14 : tMotorCommand;
-let
-   #pragma ed    <Equation oid="!ed/4e6a/3CE5/23A4/5ffda36329ac"/>
-#end
-
-   _L1, _L9, _L8, _L14 =  #1 ElevatorModes(_L13, _L12);
-   #pragma ed    <Equation oid="!ed/4e71/3CE5/23A4/5ffda36a213d"/>
-#end
-
-   _L3 =  #1 DoorModes(_L9, _L8);
-   #pragma ed    <Equation oid="!ed/4e86/3CE5/23A4/5ffda3a53ed8"/>
-#end
-
-   oDoorStatus = _L3;
-   #pragma ed    <Equation oid="!ed/5393/3CE5/23A4/5ffdb44119d"/>
-#end
-
-   _L12 = iTravelRequest;
-   #pragma ed    <Equation oid="!ed/5395/3CE5/23A4/5ffdb44177f2"/>
-#end
-
-   _L13 = iDestinationFloorNumber;
-   #pragma ed    <Equation oid="!ed/53a9/3CE5/23A4/5ffdb45a47dc"/>
-#end
-
-   oFloorNumber = _L1;
-   #pragma ed    <Equation oid="!ed/13198/7914/23A4/5ffefb431e29"/>
-#end
-
-   oMotorCommand = _L14;
-tel
 
 node #pragma ed <Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053">
 	<diagrams>
@@ -309,10 +93,10 @@ node #pragma ed <Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053">
 				</StateMachineGE>
 				<StateGE presentable="!ed/4ca6/5945/2D20/682587ce6ae0">
 					<position>
-						<Point x="7673" y="2672"/>
+						<Point x="7858" y="6482"/>
 					</position>
 					<size>
-						<Size width="7779" height="6377"/>
+						<Size width="7620" height="4181"/>
 					</size>
 				</StateGE>
 				<StateGE presentable="!ed/4cbc/5945/2D20/682587e41b65">
@@ -325,22 +109,22 @@ node #pragma ed <Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053">
 				</StateGE>
 				<TransitionGE presentable="!ed/4cc4/5945/2D20/682587f0eb3">
 					<textAreas>
-						<TextArea text="cFLOOR_TRAVEL_TIME times true and iDestinationFloorNumber &gt; oFloorNumber" role="130"/>
+						<TextArea text="(cFLOOR_TRAVEL_TIME - 1) times true and iDestinationFloorNumber &gt; oFloorNumber" role="130"/>
 					</textAreas>
 					<positions>
-						<Point x="15452" y="4207"/>
-						<Point x="17039" y="4392"/>
+						<Point x="15505" y="7488"/>
+						<Point x="17092" y="7673"/>
 						<Point x="18415" y="4260"/>
 						<Point x="20029" y="4471"/>
 					</positions>
 					<labelSize>
-						<Size width="10001" height="370"/>
+						<Size width="10530" height="370"/>
 					</labelSize>
 					<labelPos>
-						<Point x="11642" y="2301"/>
+						<Point x="13520" y="2910"/>
 					</labelPos>
 					<slashPos>
-						<Point x="20849" y="2302"/>
+						<Point x="23257" y="2911"/>
 					</slashPos>
 				</TransitionGE>
 				<EquationGE presentable="!ed/4cfc/5945/2D20/6825883014bc">
@@ -403,8 +187,8 @@ node #pragma ed <Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053">
 					<positions>
 						<Point x="20029" y="5001"/>
 						<Point x="18415" y="4657"/>
-						<Point x="17092" y="4974"/>
-						<Point x="15452" y="4630"/>
+						<Point x="17145" y="8123"/>
+						<Point x="15505" y="7779"/>
 					</positions>
 					<labelSize>
 						<Size width="1376" height="370"/>
@@ -488,90 +272,42 @@ node #pragma ed <Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053">
 						<Point x="3096" y="3969"/>
 					</positions>
 				</Edge>
-				<EquationGE kind="OBJ_LIT" presentable="!ed/4e48/5945/2D20/68258b07934">
-					<position>
-						<Point x="8414" y="3493"/>
-					</position>
-					<size>
-						<Size width="211" height="318"/>
-					</size>
-				</EquationGE>
-				<EquationGE kind="OBJ_LIT" presentable="!ed/4e59/5945/2D20/68258b0c2a91">
-					<position>
-						<Point x="8599" y="4101"/>
-					</position>
-					<size>
-						<Size width="212" height="317"/>
-					</size>
-				</EquationGE>
-				<EquationGE presentable="!ed/4e6c/5945/2D20/68258b142f73">
-					<position>
-						<Point x="9049" y="3334"/>
-					</position>
-					<size>
-						<Size width="317" height="503"/>
-					</size>
-				</EquationGE>
-				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4e48/5945/2D20/68258b07934" dstEquation="!ed/4e6c/5945/2D20/68258b142f73">
-					<positions>
-						<Point x="8625" y="3651"/>
-						<Point x="8864" y="3651"/>
-						<Point x="8864" y="3598"/>
-						<Point x="9102" y="3598"/>
-					</positions>
-				</Edge>
-				<EquationGE presentable="!ed/4e72/5945/2D20/68258b1a75a3">
-					<position>
-						<Point x="9155" y="3969"/>
-					</position>
-					<size>
-						<Size width="317" height="503"/>
-					</size>
-				</EquationGE>
-				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4e59/5945/2D20/68258b0c2a91" dstEquation="!ed/4e72/5945/2D20/68258b1a75a3">
-					<positions>
-						<Point x="8811" y="4260"/>
-						<Point x="8996" y="4260"/>
-						<Point x="8996" y="4260"/>
-						<Point x="9208" y="4260"/>
-					</positions>
-				</Edge>
 				<IfBlockGE presentable="!ed/4f11/5945/2D20/68258b9b32c9">
 					<position>
-						<Point x="8176" y="4657"/>
+						<Point x="8149" y="7435"/>
 					</position>
 					<size>
-						<Size width="6799" height="4048"/>
+						<Size width="6800" height="2937"/>
 					</size>
 				</IfBlockGE>
 				<ActionGE presentable="!ed/4f17/5945/2D20/68258b9f22a1">
 					<position>
-						<Point x="10001" y="5159"/>
+						<Point x="9313" y="8202"/>
 					</position>
 					<size>
-						<Size width="4710" height="1588"/>
+						<Size width="5371" height="873"/>
 					</size>
 				</ActionGE>
 				<ActionGE presentable="!ed/4f18/5945/2D20/68258b9f5119">
 					<position>
-						<Point x="10054" y="6959"/>
+						<Point x="8996" y="9181"/>
 					</position>
 					<size>
-						<Size width="4709" height="1270"/>
+						<Size width="5742" height="900"/>
 					</size>
 				</ActionGE>
 				<IfNodeGE labelWidth="4577" presentable="!ed/4f16/5945/2D20/68258b9f28aa">
 					<textAreas>
 						<TextArea text="iDestinationFloorNumber &gt; oFloorNumber&##xA;
- " role="181"/>
+  " role="181"/>
 					</textAreas>
 					<position>
-						<Point x="8626" y="5239"/>
+						<Point x="8599" y="8281"/>
 					</position>
 				</IfNodeGE>
 				<EquationGE presentable="!ed/4f25/5945/2D20/68258bcd2cda">
 					<position>
-						<Point x="13070" y="5715"/>
+						<Point x="12277" y="8308"/>
 					</position>
 					<size>
 						<Size width="318" height="503"/>
@@ -579,7 +315,7 @@ node #pragma ed <Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053">
 				</EquationGE>
 				<EquationGE kind="OBJ_LIT" presentable="!ed/4f2e/5945/2D20/68258bd16889">
 					<position>
-						<Point x="11721" y="5847"/>
+						<Point x="11668" y="8440"/>
 					</position>
 					<size>
 						<Size width="212" height="318"/>
@@ -587,15 +323,15 @@ node #pragma ed <Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053">
 				</EquationGE>
 				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4f2e/5945/2D20/68258bd16889" dstEquation="!ed/4f25/5945/2D20/68258bcd2cda">
 					<positions>
-						<Point x="11933" y="6006"/>
-						<Point x="12515" y="6006"/>
-						<Point x="12515" y="6006"/>
-						<Point x="13123" y="6006"/>
+						<Point x="11880" y="8599"/>
+						<Point x="12091" y="8599"/>
+						<Point x="12091" y="8599"/>
+						<Point x="12330" y="8599"/>
 					</positions>
 				</Edge>
 				<EquationGE kind="OBJ_LIT" presentable="!ed/4f40/5945/2D20/68258bdd1219">
 					<position>
-						<Point x="11430" y="7329"/>
+						<Point x="11774" y="9551"/>
 					</position>
 					<size>
 						<Size width="212" height="317"/>
@@ -603,7 +339,7 @@ node #pragma ed <Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053">
 				</EquationGE>
 				<EquationGE presentable="!ed/4f4e/5945/2D20/68258be55b74">
 					<position>
-						<Point x="12938" y="7329"/>
+						<Point x="12356" y="9446"/>
 					</position>
 					<size>
 						<Size width="318" height="502"/>
@@ -611,10 +347,10 @@ node #pragma ed <Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053">
 				</EquationGE>
 				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4f40/5945/2D20/68258bdd1219" dstEquation="!ed/4f4e/5945/2D20/68258be55b74">
 					<positions>
-						<Point x="11642" y="7488"/>
-						<Point x="12303" y="7488"/>
-						<Point x="12303" y="7594"/>
-						<Point x="12991" y="7594"/>
+						<Point x="11986" y="9710"/>
+						<Point x="12197" y="9710"/>
+						<Point x="12197" y="9710"/>
+						<Point x="12409" y="9710"/>
 					</positions>
 				</Edge>
 				<StateGE presentable="!ed/4fd2/5945/2D20/68258d3a7a4">
@@ -683,39 +419,112 @@ node #pragma ed <Operator oid="!ed/4a1f/3CE5/23A4/5ffc508a3053">
 				</Edge>
 				<TransitionGE presentable="!ed/5027/5945/2D20/68258d7857e7">
 					<textAreas>
-						<TextArea text="cFLOOR_TRAVEL_TIME times true and iDestinationFloorNumber &lt; oFloorNumber " role="130"/>
+						<TextArea text="(cFLOOR_TRAVEL_TIME - 1) times true and iDestinationFloorNumber &lt; oFloorNumber " role="130"/>
 					</textAreas>
 					<positions>
-						<Point x="15452" y="8202"/>
-						<Point x="16986" y="9657"/>
+						<Point x="15505" y="10107"/>
+						<Point x="16510" y="9948"/>
 						<Point x="18494" y="9499"/>
 						<Point x="20003" y="9313"/>
 					</positions>
 					<labelSize>
-						<Size width="10081" height="370"/>
+						<Size width="10610" height="370"/>
 					</labelSize>
 					<labelPos>
-						<Point x="11007" y="11218"/>
+						<Point x="13918" y="11774"/>
 					</labelPos>
 					<slashPos>
-						<Point x="20294" y="11218"/>
+						<Point x="23734" y="11774"/>
 					</slashPos>
 				</TransitionGE>
 				<TransitionGE presentable="!ed/504b/5945/2D20/68258d9f75ff">
 					<positions>
 						<Point x="20003" y="8493"/>
-						<Point x="17727" y="7779"/>
-						<Point x="16589" y="7752"/>
-						<Point x="15452" y="7699"/>
+						<Point x="17648" y="9049"/>
+						<Point x="17251" y="9260"/>
+						<Point x="15505" y="9790"/>
 					</positions>
 					<labelSize>
 						<Size width="1376" height="370"/>
 					</labelSize>
 					<labelPos>
-						<Point x="17330" y="7329"/>
+						<Point x="17330" y="7699"/>
 					</labelPos>
 					<slashPos>
-						<Point x="17912" y="7329"/>
+						<Point x="17912" y="7699"/>
+					</slashPos>
+				</TransitionGE>
+				<StateGE presentable="!ed/4b80/7ED9/553C/682847ac6e90">
+					<position>
+						<Point x="7964" y="2752"/>
+					</position>
+					<size>
+						<Size width="3995" height="2116"/>
+					</size>
+				</StateGE>
+				<EquationGE kind="OBJ_LIT" presentable="!ed/4b8e/7ED9/553C/682847d51668">
+					<position>
+						<Point x="8890" y="3598"/>
+					</position>
+					<size>
+						<Size width="212" height="318"/>
+					</size>
+				</EquationGE>
+				<EquationGE kind="OBJ_LIT" presentable="!ed/4ba0/7ED9/553C/682847d95ea8">
+					<position>
+						<Point x="8890" y="4366"/>
+					</position>
+					<size>
+						<Size width="212" height="318"/>
+					</size>
+				</EquationGE>
+				<EquationGE presentable="!ed/4bb3/7ED9/553C/682847ee621c">
+					<position>
+						<Point x="9922" y="4260"/>
+					</position>
+					<size>
+						<Size width="318" height="503"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4ba0/7ED9/553C/682847d95ea8" dstEquation="!ed/4bb3/7ED9/553C/682847ee621c">
+					<positions>
+						<Point x="9102" y="4524"/>
+						<Point x="9525" y="4524"/>
+						<Point x="9525" y="4524"/>
+						<Point x="9975" y="4524"/>
+					</positions>
+				</Edge>
+				<EquationGE presentable="!ed/4bba/7ED9/553C/682847f4147f">
+					<position>
+						<Point x="9790" y="3493"/>
+					</position>
+					<size>
+						<Size width="317" height="503"/>
+					</size>
+				</EquationGE>
+				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4b8e/7ED9/553C/682847d51668" dstEquation="!ed/4bba/7ED9/553C/682847f4147f">
+					<positions>
+						<Point x="9102" y="3757"/>
+						<Point x="9472" y="3757"/>
+						<Point x="9472" y="3757"/>
+						<Point x="9843" y="3757"/>
+					</positions>
+				</Edge>
+				<TransitionGE presentable="!ed/4c01/7ED9/553C/682848d94373">
+					<positions>
+						<Point x="9975" y="4868"/>
+						<Point x="10186" y="5398"/>
+						<Point x="10398" y="5927"/>
+						<Point x="10610" y="6482"/>
+					</positions>
+					<labelSize>
+						<Size width="4525" height="370"/>
+					</labelSize>
+					<labelPos>
+						<Point x="10424" y="5238"/>
+					</labelPos>
+					<slashPos>
+						<Point x="14155" y="5238"/>
 					</slashPos>
 				</TransitionGE>
 			</presentationElements>
@@ -814,36 +623,11 @@ state RUNNING
 #end
 
          automaton SM2
-            initial             #pragma ed             <State oid="!ed/4ca6/5945/2D20/682587ce6ae0"/>
+                        #pragma ed             <State oid="!ed/4ca6/5945/2D20/682587ce6ae0"/>
 #end
 
-state init
-            var
-                              #pragma ed                <Variable oid="!ed/4e49/5945/2D20/68258b077a5a"/>
-#end
-
-_L1 : bool;
-                              #pragma ed                <Variable oid="!ed/4e5a/5945/2D20/68258b0c5aaf"/>
-#end
-
-_L2 : bool;
+state SET_MOVEMENT
             let
-               #pragma ed                <Equation oid="!ed/4e48/5945/2D20/68258b07934"/>
-#end
-
-               _L1 = true;
-               #pragma ed                <Equation oid="!ed/4e59/5945/2D20/68258b0c2a91"/>
-#end
-
-               _L2 = false;
-               #pragma ed                <Equation oid="!ed/4e6c/5945/2D20/68258b142f73"/>
-#end
-
-               oCloseDoor = _L1;
-               #pragma ed                <Equation oid="!ed/4e72/5945/2D20/68258b1a75a3"/>
-#end
-
-               oOpenDoor = _L2;
                #pragma ed                <IfBlock oid="!ed/4f11/5945/2D20/68258b9b32c9"/>
 #end
 
@@ -893,12 +677,12 @@ _L1 : tMotorCommand;
                #pragma ed                <Transition oid="!ed/5027/5945/2D20/68258d7857e7"/>
 #end
 
-               if cFLOOR_TRAVEL_TIME #7  times (true #6  and iDestinationFloorNumber #3  < oFloorNumber)
+               if (cFLOOR_TRAVEL_TIME #3  - 1) #9  times (true #8  and iDestinationFloorNumber #4  < oFloorNumber)
                   restart ELEVATOR_DOWN;
                #pragma ed                <Transition oid="!ed/4cc4/5945/2D20/682587f0eb3"/>
 #end
 
-               if cFLOOR_TRAVEL_TIME #5  times (true #2  and iDestinationFloorNumber #2  > oFloorNumber)
+               if (cFLOOR_TRAVEL_TIME #2  - 1) #8  times (true #7  and iDestinationFloorNumber #4  > oFloorNumber)
                   restart ELEVATOR_CLIMB;
 
                         #pragma ed             <State oid="!ed/4cbc/5945/2D20/682587e41b65"/>
@@ -941,7 +725,7 @@ _L3 : int32;
 #end
 
                if true
-                  restart init;
+                  restart SET_MOVEMENT;
 
                         #pragma ed             <State oid="!ed/4fd2/5945/2D20/68258d3a7a4"/>
 #end
@@ -983,8 +767,46 @@ _L3 : int32;
 #end
 
                if true
-                  restart init;
+                  restart SET_MOVEMENT;
 
+            initial             #pragma ed             <State oid="!ed/4b80/7ED9/553C/682847ac6e90"/>
+#end
+
+state CLOSE_DOORS
+            unless
+               #pragma ed                <Transition oid="!ed/4c01/7ED9/553C/682848d94373"/>
+#end
+
+               if cDOOR_MOVE_TIME #10  times true
+                  restart SET_MOVEMENT;
+
+            var
+                              #pragma ed                <Variable oid="!ed/4b8f/7ED9/553C/682847d5107e"/>
+#end
+
+_L1 : bool;
+                              #pragma ed                <Variable oid="!ed/4ba1/7ED9/553C/682847d915da"/>
+#end
+
+_L2 : bool;
+            let
+               #pragma ed                <Equation oid="!ed/4b8e/7ED9/553C/682847d51668"/>
+#end
+
+               _L1 = true;
+               #pragma ed                <Equation oid="!ed/4ba0/7ED9/553C/682847d95ea8"/>
+#end
+
+               _L2 = false;
+               #pragma ed                <Equation oid="!ed/4bb3/7ED9/553C/682847ee621c"/>
+#end
+
+               oOpenDoor = _L2;
+               #pragma ed                <Equation oid="!ed/4bba/7ED9/553C/682847f4147f"/>
+#end
+
+               oCloseDoor = _L1;
+            tel
          returns .. ;
       tel
       until
@@ -994,352 +816,6 @@ _L3 : int32;
          if oFloorNumber #3  = iDestinationFloorNumber
             restart STOPPED;
 
-   returns .. ;
-tel
-
-node #pragma ed <Operator oid="!ed/4de8/3CE5/23A4/5ffda2761677">
-	<diagrams>
-		<NetDiagram name="DoorModes_1" landscape="true" format="A4 (210 297)" oid="!ed/4de9/3CE5/23A4/5ffda2762185">
-			<presentationElements>
-				<StateMachineGE presentable="!ed/4b28/6782/215C/6825b443deb">
-					<position>
-						<Point x="9081" y="8213"/>
-					</position>
-					<size>
-						<Size width="22479" height="12552"/>
-					</size>
-				</StateMachineGE>
-				<StateGE presentable="!ed/4b29/6782/215C/6825b44363e2">
-					<position>
-						<Point x="9187" y="8382"/>
-					</position>
-					<size>
-						<Size width="5567" height="3133"/>
-					</size>
-				</StateGE>
-				<EquationGE kind="OBJ_OUTPUT" presentable="!ed/4b2a/6782/215C/6825b44310d9">
-					<position>
-						<Point x="12785" y="10054"/>
-					</position>
-					<size>
-						<Size width="338" height="508"/>
-					</size>
-				</EquationGE>
-				<EquationGE kind="OBJ_LIT" presentable="!ed/4b2b/6782/215C/6825b4434e10">
-					<position>
-						<Point x="11261" y="9250"/>
-					</position>
-					<size>
-						<Size width="169" height="297"/>
-					</size>
-				</EquationGE>
-				<StateGE presentable="!ed/4b2e/6782/215C/6825b4437ac0">
-					<position>
-						<Point x="22332" y="9419"/>
-					</position>
-					<size>
-						<Size width="6011" height="2921"/>
-					</size>
-				</StateGE>
-				<EquationGE kind="OBJ_OUTPUT" presentable="!ed/4b2f/6782/215C/6825b44357ff">
-					<position>
-						<Point x="26777" y="11430"/>
-					</position>
-					<size>
-						<Size width="339" height="508"/>
-					</size>
-				</EquationGE>
-				<EquationGE kind="OBJ_LIT" presentable="!ed/4b30/6782/215C/6825b4436790">
-					<position>
-						<Point x="24554" y="10287"/>
-					</position>
-					<size>
-						<Size width="169" height="296"/>
-					</size>
-				</EquationGE>
-				<StateGE presentable="!ed/4b33/6782/215C/6825b4432ccd">
-					<position>
-						<Point x="10309" y="15896"/>
-					</position>
-					<size>
-						<Size width="5270" height="2942"/>
-					</size>
-				</StateGE>
-				<EquationGE kind="OBJ_OUTPUT" presentable="!ed/4b34/6782/215C/6825b44361aa">
-					<position>
-						<Point x="13463" y="17230"/>
-					</position>
-					<size>
-						<Size width="339" height="508"/>
-					</size>
-				</EquationGE>
-				<EquationGE kind="OBJ_LIT" presentable="!ed/4b35/6782/215C/6825b4436782">
-					<position>
-						<Point x="11812" y="17166"/>
-					</position>
-					<size>
-						<Size width="169" height="297"/>
-					</size>
-				</EquationGE>
-				<StateGE presentable="!ed/4b38/6782/215C/6825b4434685">
-					<position>
-						<Point x="21718" y="15685"/>
-					</position>
-					<size>
-						<Size width="5651" height="2963"/>
-					</size>
-				</StateGE>
-				<EquationGE kind="OBJ_OUTPUT" presentable="!ed/4b39/6782/215C/6825b4433b1f">
-					<position>
-						<Point x="25168" y="16891"/>
-					</position>
-					<size>
-						<Size width="339" height="508"/>
-					</size>
-				</EquationGE>
-				<EquationGE kind="OBJ_LIT" presentable="!ed/4b3a/6782/215C/6825b4438fc">
-					<position>
-						<Point x="23369" y="17060"/>
-					</position>
-					<size>
-						<Size width="169" height="297"/>
-					</size>
-				</EquationGE>
-				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4b3a/6782/215C/6825b4438fc" dstEquation="!ed/4b39/6782/215C/6825b4433b1f">
-					<positions>
-						<Point x="23537" y="17209"/>
-						<Point x="24363" y="17209"/>
-						<Point x="24363" y="17145"/>
-						<Point x="25210" y="17145"/>
-					</positions>
-				</Edge>
-				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4b35/6782/215C/6825b4436782" dstEquation="!ed/4b34/6782/215C/6825b44361aa">
-					<positions>
-						<Point x="11980" y="17314"/>
-						<Point x="12742" y="17314"/>
-						<Point x="12742" y="17484"/>
-						<Point x="13504" y="17484"/>
-					</positions>
-				</Edge>
-				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4b30/6782/215C/6825b4436790" dstEquation="!ed/4b2f/6782/215C/6825b44357ff">
-					<positions>
-						<Point x="24723" y="10435"/>
-						<Point x="25760" y="10435"/>
-						<Point x="25760" y="11684"/>
-						<Point x="26818" y="11684"/>
-					</positions>
-				</Edge>
-				<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4b2b/6782/215C/6825b4434e10" dstEquation="!ed/4b2a/6782/215C/6825b44310d9">
-					<positions>
-						<Point x="11430" y="9398"/>
-						<Point x="12129" y="9398"/>
-						<Point x="12129" y="10308"/>
-						<Point x="12827" y="10308"/>
-					</positions>
-				</Edge>
-				<TransitionGE presentable="!ed/4b2d/6782/215C/6825b443b6e">
-					<textAreas>
-						<TextArea text=" iOpenDoor=true" role="130"/>
-					</textAreas>
-					<positions>
-						<Point x="12680" y="11515"/>
-						<Point x="12849" y="13229"/>
-						<Point x="12828" y="14330"/>
-						<Point x="12955" y="15896"/>
-					</positions>
-					<labelSize>
-						<Size width="3450" height="381"/>
-					</labelSize>
-					<labelPos>
-						<Point x="9906" y="12637"/>
-					</labelPos>
-					<slashPos>
-						<Point x="12637" y="12637"/>
-					</slashPos>
-				</TransitionGE>
-				<TransitionGE presentable="!ed/4b32/6782/215C/6825b443291e">
-					<positions>
-						<Point x="22332" y="10435"/>
-						<Point x="19813" y="10266"/>
-						<Point x="18500" y="10224"/>
-						<Point x="14754" y="10033"/>
-					</positions>
-					<labelSize>
-						<Size width="4043" height="381"/>
-					</labelSize>
-					<labelPos>
-						<Point x="15114" y="10414"/>
-					</labelPos>
-					<slashPos>
-						<Point x="18436" y="10414"/>
-					</slashPos>
-				</TransitionGE>
-				<TransitionGE presentable="!ed/4b37/6782/215C/6825b4435186">
-					<positions>
-						<Point x="15579" y="17717"/>
-						<Point x="17611" y="17674"/>
-						<Point x="19643" y="17717"/>
-						<Point x="21718" y="17653"/>
-					</positions>
-					<labelSize>
-						<Size width="4043" height="381"/>
-					</labelSize>
-					<labelPos>
-						<Point x="15474" y="17209"/>
-					</labelPos>
-					<slashPos>
-						<Point x="18796" y="17209"/>
-					</slashPos>
-				</TransitionGE>
-				<TransitionGE presentable="!ed/4b3c/6782/215C/6825b44345b4">
-					<textAreas>
-						<TextArea text="iCloseDoor=true" role="130"/>
-					</textAreas>
-					<positions>
-						<Point x="25126" y="15685"/>
-						<Point x="25041" y="14563"/>
-						<Point x="24639" y="13483"/>
-						<Point x="24533" y="12340"/>
-					</positions>
-					<labelSize>
-						<Size width="3450" height="381"/>
-					</labelSize>
-					<labelPos>
-						<Point x="20257" y="13060"/>
-					</labelPos>
-					<slashPos>
-						<Point x="22987" y="13060"/>
-					</slashPos>
-				</TransitionGE>
-			</presentationElements>
-		</NetDiagram>
-	</diagrams>
-</Operator>
-#end
-
-DoorModes(
-      #pragma ed    <Variable oid="!ed/4eab/3CE5/23A4/5ffda44b203b"/>
-#end
-
-iOpenDoor : bool; 
-      #pragma ed    <Variable oid="!ed/4eb3/3CE5/23A4/5ffda4795da2"/>
-#end
-
-iCloseDoor : bool)
-returns (
-      #pragma ed    <Variable oid="!ed/4dfc/3CE5/23A4/5ffda2b55c4b"/>
-#end
-
-oDoorStatus : tDoorStatusEnum)
-let
-   #pragma ed    <StateMachine oid="!ed/4b28/6782/215C/6825b443deb"/>
-#end
-
-   automaton SM1
-      initial       #pragma ed       <State oid="!ed/4b29/6782/215C/6825b44363e2"/>
-#end
-
-state CLOSED
-      unless
-         #pragma ed          <Transition oid="!ed/4b2d/6782/215C/6825b443b6e"/>
-#end
-
-         if iOpenDoor #1  = true
-            restart OPENING;
-
-      var
-                  #pragma ed          <Variable oid="!ed/4b2c/6782/215C/6825b443180a"/>
-#end
-
-_L4 : tDoorStatusEnum;
-      let
-         #pragma ed          <Equation oid="!ed/4b2a/6782/215C/6825b44310d9"/>
-#end
-
-         oDoorStatus = _L4;
-         #pragma ed          <Equation oid="!ed/4b2b/6782/215C/6825b4434e10"/>
-#end
-
-         _L4 = eDOOR_CLOSED;
-      tel
-            #pragma ed       <State oid="!ed/4b2e/6782/215C/6825b4437ac0"/>
-#end
-
-state CLOSING
-      unless
-         #pragma ed          <Transition oid="!ed/4b32/6782/215C/6825b443291e"/>
-#end
-
-         if cDOOR_MOVE_TIME #1  times true
-            restart CLOSED;
-
-      var
-                  #pragma ed          <Variable oid="!ed/4b31/6782/215C/6825b44381f"/>
-#end
-
-_L1 : tDoorStatusEnum;
-      let
-         #pragma ed          <Equation oid="!ed/4b2f/6782/215C/6825b44357ff"/>
-#end
-
-         oDoorStatus = _L1;
-         #pragma ed          <Equation oid="!ed/4b30/6782/215C/6825b4436790"/>
-#end
-
-         _L1 = eDOOR_CLOSING;
-      tel
-            #pragma ed       <State oid="!ed/4b33/6782/215C/6825b4432ccd"/>
-#end
-
-state OPENING
-      unless
-         #pragma ed          <Transition oid="!ed/4b37/6782/215C/6825b4435186"/>
-#end
-
-         if cDOOR_MOVE_TIME #2  times true
-            restart OPENED;
-
-      var
-                  #pragma ed          <Variable oid="!ed/4b36/6782/215C/6825b4437c20"/>
-#end
-
-_L1 : tDoorStatusEnum;
-      let
-         #pragma ed          <Equation oid="!ed/4b34/6782/215C/6825b44361aa"/>
-#end
-
-         oDoorStatus = _L1;
-         #pragma ed          <Equation oid="!ed/4b35/6782/215C/6825b4436782"/>
-#end
-
-         _L1 = eDOOR_OPENING;
-      tel
-            #pragma ed       <State oid="!ed/4b38/6782/215C/6825b4434685"/>
-#end
-
-state OPENED
-      unless
-         #pragma ed          <Transition oid="!ed/4b3c/6782/215C/6825b44345b4"/>
-#end
-
-         if iCloseDoor #2  = true
-            restart CLOSING;
-
-      var
-                  #pragma ed          <Variable oid="!ed/4b3b/6782/215C/6825b4436914"/>
-#end
-
-_L1 : tDoorStatusEnum;
-      let
-         #pragma ed          <Equation oid="!ed/4b39/6782/215C/6825b4433b1f"/>
-#end
-
-         oDoorStatus = _L1;
-         #pragma ed          <Equation oid="!ed/4b3a/6782/215C/6825b4438fc"/>
-#end
-
-         _L1 = eDOOR_OPENED;
-      tel
    returns .. ;
 tel
 

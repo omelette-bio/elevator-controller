@@ -21,7 +21,7 @@
 "Watch1"="ElevatorController/oDoorStatus/" 
 "Watch2"="ElevatorController/oFloorNumber/" 
 "Watch3"="ElevatorController/iDestinationFloorNumber/" 
-"Count"="4" 
+"Count"="0" 
 "Watch4"="ElevatorController/oMotorCommand/" 
 
 [SCADE\Simulator\Graph]
@@ -49,6 +49,7 @@
 "C:\\Users\\abouali\\OneDrive - Université Nice Sophia Antipolis\\03 - Formation\\Master M1 Critical Systems\\2024-2025\\SCADE Elevator Project\\Elevator\\Elevator.etp"="KCG" 
 "C:\\Users\\omele\\Documents\\SCADE Elevator Project\\SCADE Elevator Project\\Elevator\\Elevator.etp"="KCG" 
 "C:\\Users\\Dylan\\Desktop\\elevator-controller-main\\Elevator.etp"="KCG" 
+"C:\\Users\\omele\\Desktop\\elevator-controller-main\\elevator-controller-main\\Elevator.etp"="Simulation" 
 
 [STUDIO\TOOLS\CONFIGURATIONS\Metrics and Rules Checker]
 
@@ -59,6 +60,7 @@
 "C:\\Users\\abouali\\OneDrive - Université Nice Sophia Antipolis\\03 - Formation\\Master M1 Critical Systems\\2024-2025\\SCADE Elevator Project\\Elevator\\Elevator.etp"="MetricRule" 
 "C:\\Users\\omele\\Documents\\SCADE Elevator Project\\SCADE Elevator Project\\Elevator\\Elevator.etp"="MetricRule" 
 "C:\\Users\\Dylan\\Desktop\\elevator-controller-main\\Elevator.etp"="MetricRule" 
+"C:\\Users\\omele\\Desktop\\elevator-controller-main\\elevator-controller-main\\Elevator.etp"="MetricRule" 
 
 [STUDIO\TOOLS\CONFIGURATIONS\Reporter]
 
@@ -69,10 +71,11 @@
 "C:\\Users\\abouali\\OneDrive - Université Nice Sophia Antipolis\\03 - Formation\\Master M1 Critical Systems\\2024-2025\\SCADE Elevator Project\\Elevator\\Elevator.etp"="HTML" 
 "C:\\Users\\omele\\Documents\\SCADE Elevator Project\\SCADE Elevator Project\\Elevator\\Elevator.etp"="HTML" 
 "C:\\Users\\Dylan\\Desktop\\elevator-controller-main\\Elevator.etp"="HTML" 
+"C:\\Users\\omele\\Desktop\\elevator-controller-main\\elevator-controller-main\\Elevator.etp"="HTML" 
 
 [STUDIO\Workspace]
 
-"ActiveProject"="C:\\Users\\Dylan\\Desktop\\elevator-controller-main\\Elevator.etp" 
+"ActiveProject"="C:\\Users\\omele\\Desktop\\elevator-controller-main\\elevator-controller-main\\Elevator.etp" 
 
 [SCADE\Editor\Shortcut]
 

@@ -1,70 +1,62 @@
 $************** ANSYS(R) SCADE Suite(R) - SCADETOC - Version Student 2024 R1 (build 20231108T130114) **************
-** Generation date: 2025-05-15T11:31:50
-** Command: scade -code "C:\Users\Dylan\Desktop\elevator-controller-main\Elevator.etp" -root ElevatorController -conf Simulation -sim
+** Generation date: 2025-05-17T10:30:57
+** Command: scade -code "C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Elevator.etp" -root ElevatorModes -conf Simulation -sim -all
 *************************************************************$
 *** Generated Files Information (GENFIL): KCG- Generated files
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\mapping.xml, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\mapping.xml, line 0, character 0
  ~mapping.xml
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\kcg_metrics.txt, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\kcg_metrics.txt, line 0, character 0
  ~kcg_metrics.txt
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\ElevatorController.c, line 0, character 0
- ~ElevatorController.c
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\DoorModes.c, line 0, character 0
- ~DoorModes.c
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\ElevatorModes.c, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\ElevatorModes.c, line 0, character 0
  ~ElevatorModes.c
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\ElevatorController.h, line 0, character 0
- ~ElevatorController.h
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\DoorModes.h, line 0, character 0
- ~DoorModes.h
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\ElevatorModes.h, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\ElevatorModes.h, line 0, character 0
  ~ElevatorModes.h
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\kcg_types.h, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\kcg_types.h, line 0, character 0
  ~kcg_types.h
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\kcg_consts.h, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\kcg_consts.h, line 0, character 0
  ~kcg_consts.h
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\kcg_sensors.h, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\kcg_sensors.h, line 0, character 0
  ~kcg_sensors.h
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\kcg_types.c, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\kcg_types.c, line 0, character 0
  ~kcg_types.c
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\kcg_consts.c, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\kcg_consts.c, line 0, character 0
  ~kcg_consts.c
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\config.txt, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\config.txt, line 0, character 0
  ~config.txt
 *** Generated Files Information (GENFIL): Code Generator Generated files
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\user_macros.h, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\user_macros.h, line 0, character 0
  ~user_macros.h
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\kcg_imported_types.h, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\kcg_imported_types.h, line 0, character 0
  ~kcg_imported_types.h
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\sc2c.log, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\sc2c.log, line 0, character 0
  ~sc2c.log
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\sc2c_integration_files.txt, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\sc2c_integration_files.txt, line 0, character 0
  ~sc2c_integration_files.txt
 *** Generated Files Information (GENFIL): Type Utils Generated files
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\Elevator_type.h, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\Elevator_type.h, line 0, character 0
  ~Elevator_type.h
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\Elevator_type.c, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\Elevator_type.c, line 0, character 0
  ~Elevator_type.c
 *** Generated Files Information (GENFIL): Mapping Utils Generated files
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\Elevator_mapping.h, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\Elevator_mapping.h, line 0, character 0
  ~Elevator_mapping.h
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\Elevator_mapping.c, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\Elevator_mapping.c, line 0, character 0
  ~Elevator_mapping.c
 *** Generated Files Information (GENFIL): Simulator Generated files
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\Elevator_interface.h, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\Elevator_interface.h, line 0, character 0
  ~Elevator_interface.h
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\Elevator_interface.c, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\Elevator_interface.c, line 0, character 0
  ~Elevator_interface.c
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\Elevator_dll.c, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\Elevator_dll.c, line 0, character 0
  ~Elevator_dll.c
 *** Generated Files Information (GENFIL): Build Generated files
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\Makefile_win64, line 0, character 0
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\Makefile_win64, line 0, character 0
  ~Makefile_win64
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\ElevatorController.dll, line 0, character 0
- ~ElevatorController.dll
-  at file C:\Users\Dylan\Desktop\elevator-controller-main\Simulation\ElevatorController.exe, line 0, character 0
- ~ElevatorController.exe
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\ElevatorModes.dll, line 0, character 0
+ ~ElevatorModes.dll
+  at file C:\Users\omele\Desktop\elevator-controller-main\elevator-controller-main\Simulation\ElevatorModes.exe, line 0, character 0
+ ~ElevatorModes.exe
 $************** ANSYS(R) SCADE Suite(R) - SCADETOC - Version Student 2024 R1 (build 20231108T130114) **************
-** Generation date: 2025-05-15T11:31:52
+** Generation date: 2025-05-17T10:30:59
 ** sc2c.log
 *************************************************************$
