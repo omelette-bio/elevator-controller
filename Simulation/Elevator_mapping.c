@@ -16,14 +16,16 @@
 
 #define DECL_SCOPE(name, count) extern const MappingEntry name##_entries[count]; extern const MappingScope name
 
-DECL_SCOPE(scope_33, 5);
-DECL_SCOPE(scope_32, 12);
+DECL_SCOPE(scope_35, 5);
+DECL_SCOPE(scope_34, 12);
+DECL_SCOPE(scope_33, 1);
+DECL_SCOPE(scope_32, 2);
 DECL_SCOPE(scope_31, 1);
-DECL_SCOPE(scope_30, 2);
-DECL_SCOPE(scope_29, 1);
-DECL_SCOPE(scope_28, 2);
+DECL_SCOPE(scope_30, 1);
+DECL_SCOPE(scope_29, 3);
+DECL_SCOPE(scope_28, 1);
 DECL_SCOPE(scope_27, 1);
-DECL_SCOPE(scope_26, 2);
+DECL_SCOPE(scope_26, 3);
 DECL_SCOPE(scope_25, 1);
 DECL_SCOPE(scope_24, 2);
 DECL_SCOPE(scope_23, 11);
@@ -65,7 +67,9 @@ static int isActive_SSM_ST_elevator_state_SSM_st_RUNNING_elevator_state(void* pH
 static int isActive_SSM_ST_elevator_state_SSM_st_STOPPED_elevator_state(void* pHandle) { return *(SSM_ST_elevator_state*)pHandle == SSM_st_STOPPED_elevator_state; }
 static int isActive_SSM_TR_SM1_SSM_TR_CLOSED_OPENING_1_CLOSED_SM1(void* pHandle) { return *(SSM_TR_SM1*)pHandle == SSM_TR_CLOSED_OPENING_1_CLOSED_SM1; }
 static int isActive_SSM_TR_SM1_SSM_TR_CLOSING_CLOSED_1_CLOSING_SM1(void* pHandle) { return *(SSM_TR_SM1*)pHandle == SSM_TR_CLOSING_CLOSED_1_CLOSING_SM1; }
+static int isActive_SSM_TR_SM1_SSM_TR_CLOSING_OPENING_2_CLOSING_SM1(void* pHandle) { return *(SSM_TR_SM1*)pHandle == SSM_TR_CLOSING_OPENING_2_CLOSING_SM1; }
 static int isActive_SSM_TR_SM1_SSM_TR_OPENED_CLOSING_1_OPENED_SM1(void* pHandle) { return *(SSM_TR_SM1*)pHandle == SSM_TR_OPENED_CLOSING_1_OPENED_SM1; }
+static int isActive_SSM_TR_SM1_SSM_TR_OPENING_CLOSING_2_OPENING_SM1(void* pHandle) { return *(SSM_TR_SM1*)pHandle == SSM_TR_OPENING_CLOSING_2_OPENING_SM1; }
 static int isActive_SSM_TR_SM1_SSM_TR_OPENING_OPENED_1_OPENING_SM1(void* pHandle) { return *(SSM_TR_SM1*)pHandle == SSM_TR_OPENING_OPENED_1_OPENING_SM1; }
 static int isActive_SSM_TR_SM2_RUNNING_elevator_state_SSM_TR_CLOSE_DOORS_SET_MOVEMENT_1_CLOSE_DOORS_SM2_RUNNING_elevator_state(void* pHandle) { return *(SSM_TR_SM2_RUNNING_elevator_state*)pHandle == SSM_TR_CLOSE_DOORS_SET_MOVEMENT_1_CLOSE_DOORS_SM2_RUNNING_elevator_state; }
 static int isActive_SSM_TR_SM2_RUNNING_elevator_state_SSM_TR_ELEVATOR_CLIMB_SET_MOVEMENT_1_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state(void* pHandle) { return *(SSM_TR_SM2_RUNNING_elevator_state*)pHandle == SSM_TR_ELEVATOR_CLIMB_SET_MOVEMENT_1_ELEVATOR_CLIMB_SM2_RUNNING_elevator_state; }
@@ -80,19 +84,19 @@ static int isActive_kcg_bool_kcg_true(void* pHandle) { return *(kcg_bool*)pHandl
 /* mapping definition */
 
 
-const MappingEntry scope_33_entries[5] = {
+const MappingEntry scope_35_entries[5] = {
     /* 0 */ { MAP_OUTPUT, "C", NULL, sizeof(kcg_bool), offsetof(outC_Prop1_Proof, C_Implies_1), &_Type_kcg_bool_Utils, NULL, NULL, NULL, 1, 0 },
     /* 1 */ { MAP_LOCAL, "_L1", NULL, sizeof(kcg_bool), offsetof(outC_Prop1_Proof, _L1_Implies_1), &_Type_kcg_bool_Utils, NULL, NULL, NULL, 1, 1 },
     /* 2 */ { MAP_LOCAL, "_L2", NULL, sizeof(kcg_bool), offsetof(outC_Prop1_Proof, _L2_Implies_1), &_Type_kcg_bool_Utils, NULL, NULL, NULL, 1, 2 },
     /* 3 */ { MAP_LOCAL, "_L3", NULL, sizeof(kcg_bool), offsetof(outC_Prop1_Proof, _L3_Implies_1), &_Type_kcg_bool_Utils, NULL, NULL, NULL, 1, 3 },
     /* 4 */ { MAP_LOCAL, "_L4", NULL, sizeof(kcg_bool), offsetof(outC_Prop1_Proof, _L4_Implies_1), &_Type_kcg_bool_Utils, NULL, NULL, NULL, 1, 4 }
 };
-const MappingScope scope_33 = {
+const MappingScope scope_35 = {
     "Proof::Prop1/ Prop1_Proof/verif::Implies 1",
-    scope_33_entries, 5
+    scope_35_entries, 5
 };
 
-const MappingEntry scope_32_entries[12] = {
+const MappingEntry scope_34_entries[12] = {
     /* 0 */ { MAP_OUTPUT, "oProp1", NULL, sizeof(kcg_bool), offsetof(outC_Prop1_Proof, oProp1), &_Type_kcg_bool_Utils, NULL, NULL, NULL, 1, 0 },
     /* 1 */ { MAP_LOCAL, "_L8", NULL, sizeof(tDoorStatusEnum), offsetof(outC_Prop1_Proof, _L8), &_Type_tDoorStatusEnum_Utils, NULL, NULL, NULL, 1, 1 },
     /* 2 */ { MAP_LOCAL, "_L13", NULL, sizeof(tMotorCommand), offsetof(outC_Prop1_Proof, _L13), &_Type_tMotorCommand_Utils, NULL, NULL, NULL, 1, 2 },
@@ -104,45 +108,62 @@ const MappingEntry scope_32_entries[12] = {
     /* 8 */ { MAP_LOCAL, "_L19", NULL, sizeof(tDoorStatusEnum), offsetof(outC_Prop1_Proof, _L19), &_Type_tDoorStatusEnum_Utils, NULL, NULL, NULL, 1, 8 },
     /* 9 */ { MAP_LOCAL, "_L20", NULL, sizeof(kcg_bool), offsetof(outC_Prop1_Proof, _L20), &_Type_kcg_bool_Utils, NULL, NULL, NULL, 1, 9 },
     /* 10 */ { MAP_LOCAL, "_L21", NULL, sizeof(kcg_bool), offsetof(outC_Prop1_Proof, _L21), &_Type_kcg_bool_Utils, NULL, NULL, NULL, 1, 10 },
-    /* 11 */ { MAP_EXPANDED, "verif::Implies 1", NULL, 0, 0, NULL, NULL, NULL, &scope_33, 1, 11 }
+    /* 11 */ { MAP_EXPANDED, "verif::Implies 1", NULL, 0, 0, NULL, NULL, NULL, &scope_35, 1, 11 }
+};
+const MappingScope scope_34 = {
+    "Proof::Prop1/ Prop1_Proof",
+    scope_34_entries, 12
+};
+
+const MappingEntry scope_33_entries[1] = {
+    /* 0 */ { MAP_STRONG_TRANSITION, ">:", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_OPENED_CLOSING_1_OPENED_SM1, NULL, 1, 0 }
+};
+const MappingScope scope_33 = {
+    "Elevator::DoorModes/ DoorModes_ElevatorSM1:OPENED:<1",
+    scope_33_entries, 1
+};
+
+const MappingEntry scope_32_entries[2] = {
+    /* 0 */ { MAP_FORK, "<1", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_OPENED_CLOSING_1_OPENED_SM1, &scope_33, 1, 0 },
+    /* 1 */ { MAP_LOCAL, "_L1", NULL, sizeof(tDoorStatusEnum), offsetof(outC_DoorModes_Elevator, _L1_OPENED_SM1), &_Type_tDoorStatusEnum_Utils, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_OPENED_SM1, NULL, 1, 1 }
 };
 const MappingScope scope_32 = {
-    "Proof::Prop1/ Prop1_Proof",
-    scope_32_entries, 12
+    "Elevator::DoorModes/ DoorModes_ElevatorSM1:OPENED:",
+    scope_32_entries, 2
 };
 
 const MappingEntry scope_31_entries[1] = {
-    /* 0 */ { MAP_STRONG_TRANSITION, ">:", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_OPENED_CLOSING_1_OPENED_SM1, NULL, 1, 0 }
+    /* 0 */ { MAP_STRONG_TRANSITION, ">:", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_OPENING_CLOSING_2_OPENING_SM1, NULL, 1, 0 }
 };
 const MappingScope scope_31 = {
-    "Elevator::DoorModes/ DoorModes_ElevatorSM1:OPENED:<1",
+    "Elevator::DoorModes/ DoorModes_ElevatorSM1:OPENING:<2",
     scope_31_entries, 1
 };
 
-const MappingEntry scope_30_entries[2] = {
-    /* 0 */ { MAP_FORK, "<1", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_OPENED_CLOSING_1_OPENED_SM1, &scope_31, 1, 0 },
-    /* 1 */ { MAP_LOCAL, "_L1", NULL, sizeof(tDoorStatusEnum), offsetof(outC_DoorModes_Elevator, _L1_OPENED_SM1), &_Type_tDoorStatusEnum_Utils, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_OPENED_SM1, NULL, 1, 1 }
-};
-const MappingScope scope_30 = {
-    "Elevator::DoorModes/ DoorModes_ElevatorSM1:OPENED:",
-    scope_30_entries, 2
-};
-
-const MappingEntry scope_29_entries[1] = {
+const MappingEntry scope_30_entries[1] = {
     /* 0 */ { MAP_STRONG_TRANSITION, ">:", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_OPENING_OPENED_1_OPENING_SM1, NULL, 1, 0 }
 };
-const MappingScope scope_29 = {
+const MappingScope scope_30 = {
     "Elevator::DoorModes/ DoorModes_ElevatorSM1:OPENING:<1",
-    scope_29_entries, 1
+    scope_30_entries, 1
 };
 
-const MappingEntry scope_28_entries[2] = {
-    /* 0 */ { MAP_FORK, "<1", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_OPENING_OPENED_1_OPENING_SM1, &scope_29, 1, 0 },
-    /* 1 */ { MAP_LOCAL, "_L1", NULL, sizeof(tDoorStatusEnum), offsetof(outC_DoorModes_Elevator, _L1_OPENING_SM1), &_Type_tDoorStatusEnum_Utils, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_OPENING_SM1, NULL, 1, 1 }
+const MappingEntry scope_29_entries[3] = {
+    /* 0 */ { MAP_FORK, "<1", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_OPENING_OPENED_1_OPENING_SM1, &scope_30, 1, 0 },
+    /* 1 */ { MAP_FORK, "<2", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_OPENING_CLOSING_2_OPENING_SM1, &scope_31, 1, 1 },
+    /* 2 */ { MAP_LOCAL, "_L1", NULL, sizeof(tDoorStatusEnum), offsetof(outC_DoorModes_Elevator, _L1_OPENING_SM1), &_Type_tDoorStatusEnum_Utils, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_OPENING_SM1, NULL, 1, 2 }
+};
+const MappingScope scope_29 = {
+    "Elevator::DoorModes/ DoorModes_ElevatorSM1:OPENING:",
+    scope_29_entries, 3
+};
+
+const MappingEntry scope_28_entries[1] = {
+    /* 0 */ { MAP_STRONG_TRANSITION, ">:", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_CLOSING_OPENING_2_CLOSING_SM1, NULL, 1, 0 }
 };
 const MappingScope scope_28 = {
-    "Elevator::DoorModes/ DoorModes_ElevatorSM1:OPENING:",
-    scope_28_entries, 2
+    "Elevator::DoorModes/ DoorModes_ElevatorSM1:CLOSING:<2",
+    scope_28_entries, 1
 };
 
 const MappingEntry scope_27_entries[1] = {
@@ -153,13 +174,14 @@ const MappingScope scope_27 = {
     scope_27_entries, 1
 };
 
-const MappingEntry scope_26_entries[2] = {
+const MappingEntry scope_26_entries[3] = {
     /* 0 */ { MAP_FORK, "<1", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_CLOSING_CLOSED_1_CLOSING_SM1, &scope_27, 1, 0 },
-    /* 1 */ { MAP_LOCAL, "_L1", NULL, sizeof(tDoorStatusEnum), offsetof(outC_DoorModes_Elevator, _L1_CLOSING_SM1), &_Type_tDoorStatusEnum_Utils, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_CLOSING_SM1, NULL, 1, 1 }
+    /* 1 */ { MAP_FORK, "<2", NULL, 0, 0, NULL, &scope_23_entries[5], isActive_SSM_TR_SM1_SSM_TR_CLOSING_OPENING_2_CLOSING_SM1, &scope_28, 1, 1 },
+    /* 2 */ { MAP_LOCAL, "_L1", NULL, sizeof(tDoorStatusEnum), offsetof(outC_DoorModes_Elevator, _L1_CLOSING_SM1), &_Type_tDoorStatusEnum_Utils, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_CLOSING_SM1, NULL, 1, 2 }
 };
 const MappingScope scope_26 = {
     "Elevator::DoorModes/ DoorModes_ElevatorSM1:CLOSING:",
-    scope_26_entries, 2
+    scope_26_entries, 3
 };
 
 const MappingEntry scope_25_entries[1] = {
@@ -189,8 +211,8 @@ const MappingEntry scope_23_entries[11] = {
     /* 6 */ { MAP_LOCAL, "@active_weak_transition", NULL, sizeof(SSM_TR_SM1), offsetof(outC_DoorModes_Elevator, SM1_fired), &_Type_SSM_TR_SM1_Utils, NULL, NULL, NULL, 0, 6 },
     /* 7 */ { MAP_STATE, "CLOSED:", NULL, 0, 0, NULL, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_CLOSED_SM1, &scope_24, 1, 7 },
     /* 8 */ { MAP_STATE, "CLOSING:", NULL, 0, 0, NULL, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_CLOSING_SM1, &scope_26, 1, 8 },
-    /* 9 */ { MAP_STATE, "OPENING:", NULL, 0, 0, NULL, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_OPENING_SM1, &scope_28, 1, 9 },
-    /* 10 */ { MAP_STATE, "OPENED:", NULL, 0, 0, NULL, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_OPENED_SM1, &scope_30, 1, 10 }
+    /* 9 */ { MAP_STATE, "OPENING:", NULL, 0, 0, NULL, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_OPENING_SM1, &scope_29, 1, 9 },
+    /* 10 */ { MAP_STATE, "OPENED:", NULL, 0, 0, NULL, &scope_23_entries[0], isActive_SSM_ST_SM1_SSM_st_OPENED_SM1, &scope_32, 1, 10 }
 };
 const MappingScope scope_23 = {
     "Elevator::DoorModes/ DoorModes_ElevatorSM1:",
@@ -428,7 +450,7 @@ const MappingEntry scope_1_entries[11] = {
     /* 7 */ { MAP_LOCAL, "_L5", NULL, sizeof(kcg_bool), (size_t)&outputs_ctx._L5, &_Type_kcg_bool_Utils, NULL, NULL, NULL, 1, 7 },
     /* 8 */ { MAP_LOCAL, "_L6", NULL, sizeof(kcg_bool), (size_t)&outputs_ctx._L6, &_Type_kcg_bool_Utils, NULL, NULL, NULL, 1, 8 },
     /* 9 */ { MAP_INSTANCE, "Elevator::ElevatorController 1", NULL, sizeof(outC_ElevatorController_Elevator), (size_t)&outputs_ctx.Context_ElevatorController_1, NULL, NULL, NULL, &scope_2, 1, 9 },
-    /* 10 */ { MAP_INSTANCE, "Proof::Prop1 1", NULL, sizeof(outC_Prop1_Proof), (size_t)&outputs_ctx.Context_Prop1_1, NULL, NULL, NULL, &scope_32, 1, 10 }
+    /* 10 */ { MAP_INSTANCE, "Proof::Prop1 1", NULL, sizeof(outC_Prop1_Proof), (size_t)&outputs_ctx.Context_Prop1_1, NULL, NULL, NULL, &scope_34, 1, 10 }
 };
 const MappingScope scope_1 = {
     "Proof::Proof/ Proof_Proof",

@@ -1,6 +1,6 @@
 /* $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
 ** Command: scadecg.exe -config C:/Users/omele/Desktop/elevator-controller-main/elevator-controller-main/Simulation/config.txt
-** Generation date: 2025-05-17T14:42:01
+** Generation date: 2025-05-20T14:52:30
 *************************************************************$ */
 
 #include "kcg_consts.h"
@@ -61,6 +61,8 @@ void DoorModes_Elevator(
   kcg_bool _14_SM1_reset_act_partial;
   /* SM1: */
   SSM_TR_SM1 _15_SM1_fired_strong_partial;
+  /* SM1:CLOSING:<2> */
+  kcg_bool tr_2_guard_CLOSING_SM1;
   /* SM1:CLOSING:<1> */
   kcg_bool tr_1_guard_CLOSING_SM1;
   /* SM1: */
@@ -69,6 +71,8 @@ void DoorModes_Elevator(
   kcg_bool _17_SM1_reset_act_partial;
   /* SM1: */
   SSM_TR_SM1 _18_SM1_fired_strong_partial;
+  /* SM1:OPENING:<2> */
+  kcg_bool tr_2_guard_OPENING_SM1;
   /* SM1:OPENING:<1> */
   kcg_bool tr_1_guard_OPENING_SM1;
   /* SM1: */
@@ -138,9 +142,13 @@ void DoorModes_Elevator(
         outC->v3_times_4_size = outC->v4_times_4_size;
       }
       outC->o_times_4_size = outC->c_times_4_size & (outC->v3_times_4_size == 0);
+      tr_2_guard_OPENING_SM1 = iCloseDoor;
       tr_1_guard_OPENING_SM1 = outC->o_times_4_size;
       if (tr_1_guard_OPENING_SM1) {
         _16_SM1_state_act_partial = SSM_st_OPENED_SM1;
+      }
+      else if (tr_2_guard_OPENING_SM1) {
+        _16_SM1_state_act_partial = SSM_st_CLOSING_SM1;
       }
       else {
         _16_SM1_state_act_partial = SSM_st_OPENING_SM1;
@@ -148,6 +156,9 @@ void DoorModes_Elevator(
       outC->SM1_state_act = _16_SM1_state_act_partial;
       if (tr_1_guard_OPENING_SM1) {
         _18_SM1_fired_strong_partial = SSM_TR_OPENING_OPENED_1_OPENING_SM1;
+      }
+      else if (tr_2_guard_OPENING_SM1) {
+        _18_SM1_fired_strong_partial = SSM_TR_OPENING_CLOSING_2_OPENING_SM1;
       }
       else {
         _18_SM1_fired_strong_partial = SSM_TR_no_trans_SM1;
@@ -178,9 +189,13 @@ void DoorModes_Elevator(
         outC->v3_times_3_size = outC->v4_times_3_size;
       }
       outC->o_times_3_size = outC->c_times_3_size & (outC->v3_times_3_size == 0);
+      tr_2_guard_CLOSING_SM1 = iOpenDoor;
       tr_1_guard_CLOSING_SM1 = outC->o_times_3_size;
       if (tr_1_guard_CLOSING_SM1) {
         _13_SM1_state_act_partial = SSM_st_CLOSED_SM1;
+      }
+      else if (tr_2_guard_CLOSING_SM1) {
+        _13_SM1_state_act_partial = SSM_st_OPENING_SM1;
       }
       else {
         _13_SM1_state_act_partial = SSM_st_CLOSING_SM1;
@@ -188,6 +203,9 @@ void DoorModes_Elevator(
       outC->SM1_state_act = _13_SM1_state_act_partial;
       if (tr_1_guard_CLOSING_SM1) {
         _15_SM1_fired_strong_partial = SSM_TR_CLOSING_CLOSED_1_CLOSING_SM1;
+      }
+      else if (tr_2_guard_CLOSING_SM1) {
+        _15_SM1_fired_strong_partial = SSM_TR_CLOSING_OPENING_2_CLOSING_SM1;
       }
       else {
         _15_SM1_fired_strong_partial = SSM_TR_no_trans_SM1;
@@ -287,12 +305,22 @@ void DoorModes_Elevator(
       outC->SM1_reset_act = _20_SM1_reset_act_partial;
       break;
     case SSM_st_OPENING_SM1 :
-      _17_SM1_reset_act_partial = tr_1_guard_OPENING_SM1;
+      if (tr_1_guard_OPENING_SM1) {
+        _17_SM1_reset_act_partial = kcg_true;
+      }
+      else {
+        _17_SM1_reset_act_partial = tr_2_guard_OPENING_SM1;
+      }
       outC->SM1_reset_act = _17_SM1_reset_act_partial;
       outC->init1 = kcg_false;
       break;
     case SSM_st_CLOSING_SM1 :
-      _14_SM1_reset_act_partial = tr_1_guard_CLOSING_SM1;
+      if (tr_1_guard_CLOSING_SM1) {
+        _14_SM1_reset_act_partial = kcg_true;
+      }
+      else {
+        _14_SM1_reset_act_partial = tr_2_guard_CLOSING_SM1;
+      }
       outC->SM1_reset_act = _14_SM1_reset_act_partial;
       outC->init = kcg_false;
       break;
@@ -332,7 +360,7 @@ void DoorModes_init_Elevator(outC_DoorModes_Elevator *outC)
   outC->oDoorStatus = eDOOR_CLOSED;
   outC->SM1_reset_nxt = kcg_false;
   outC->SM1_reset_act = kcg_false;
-  outC->SM1_state_nxt = SSM_st_OPENED_SM1;
+  outC->SM1_state_nxt = SSM_st_CLOSED_SM1;
 }
 #endif /* KCG_USER_DEFINED_INIT */
 
@@ -344,7 +372,7 @@ void DoorModes_reset_Elevator(outC_DoorModes_Elevator *outC)
   outC->init = kcg_true;
   outC->SM1_reset_nxt = kcg_false;
   outC->SM1_reset_act = kcg_false;
-  outC->SM1_state_nxt = SSM_st_OPENED_SM1;
+  outC->SM1_state_nxt = SSM_st_CLOSED_SM1;
 }
 #endif /* KCG_NO_EXTERN_CALL_TO_RESET */
 
@@ -356,6 +384,6 @@ void DoorModes_reset_Elevator(outC_DoorModes_Elevator *outC)
 
 /* $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
 ** DoorModes_Elevator.c
-** Generation date: 2025-05-17T14:42:01
+** Generation date: 2025-05-20T14:52:30
 *************************************************************$ */
 

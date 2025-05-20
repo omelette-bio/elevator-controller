@@ -1,6 +1,6 @@
 /* $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
 ** Command: scadecg.exe -config C:/Users/omele/Desktop/elevator-controller-main/elevator-controller-main/Simulation/config.txt
-** Generation date: 2025-05-17T14:42:01
+** Generation date: 2025-05-20T14:52:30
 *************************************************************$ */
 #ifndef _KCG_TYPES_H_
 #define _KCG_TYPES_H_
@@ -221,7 +221,9 @@ typedef enum kcg_tag_SSM_TR_SM1 {
   SSM_TR_no_trans_SM1,
   SSM_TR_CLOSED_OPENING_1_CLOSED_SM1,
   SSM_TR_CLOSING_CLOSED_1_CLOSING_SM1,
+  SSM_TR_CLOSING_OPENING_2_CLOSING_SM1,
   SSM_TR_OPENING_OPENED_1_OPENING_SM1,
+  SSM_TR_OPENING_CLOSING_2_OPENING_SM1,
   SSM_TR_OPENED_CLOSING_1_OPENED_SM1
 } SSM_TR_SM1;
 /* Elevator::DoorModes/SM1: */
@@ -234,6 +236,6 @@ typedef enum kcg_tag_SSM_ST_SM1 {
 #endif /* _KCG_TYPES_H_ */
 /* $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
 ** kcg_types.h
-** Generation date: 2025-05-17T14:42:01
+** Generation date: 2025-05-20T14:52:30
 *************************************************************$ */
 

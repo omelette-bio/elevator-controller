@@ -1,6 +1,6 @@
 $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
 ** Command: scadecg.exe -config C:/Users/omele/Desktop/elevator-controller-main/elevator-controller-main/Simulation/config.txt
-** Generation date: 2025-05-17T14:42:01
+** Generation date: 2025-05-20T14:52:30
 *************************************************************$
 Data structures
   Structures
@@ -9,7 +9,7 @@ Data structures
     Max number of dimensions for an array: 0
     Maximum size for a dimension: 0
   Enumeration
-    Max of enum constants in a single enumeration: 6
+    Max of enum constants in a single enumeration: 7
 Control structures
   Max numbers of case labels in a switch: 4
   Max number of nesting levels in compound statement: 4
@@ -25,5 +25,5 @@ Program size
     Max number of extern identifiers in one translation unit: 15
 $ ANSYS SCADE Suite (R) Code Generator version Student 2022 R1 (build 20211130) 
 ** kcg_metrics.txt
-** Generation date: 2025-05-17T14:42:01
+** Generation date: 2025-05-20T14:52:30
 *************************************************************$

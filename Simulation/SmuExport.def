@@ -447,62 +447,66 @@ EXPORTS
     scope_32_entries @446 DATA
     scope_33 @447 DATA
     scope_33_entries @448 DATA
-    scope_3_entries @449 DATA
-    scope_4 @450 DATA
-    scope_4_entries @451 DATA
-    scope_5 @452 DATA
-    scope_5_entries @453 DATA
-    scope_6 @454 DATA
-    scope_6_entries @455 DATA
-    scope_7 @456 DATA
-    scope_7_entries @457 DATA
-    scope_8 @458 DATA
-    scope_8_entries @459 DATA
-    scope_9 @460 DATA
-    scope_9_entries @461 DATA
-    ssm_char_to_string @462
-    ssm_double_to_string @463
-    ssm_float_to_string @464
-    ssm_int_to_base_string @465
-    ssm_int_to_string @466
-    ssm_real_to_string_ @467
-    ssm_string_to_bool @468
-    ssm_string_to_char @469
-    ssm_string_to_char_ @470
-    ssm_string_to_double @471
-    ssm_string_to_float @472
-    ssm_string_to_int @473
-    ssm_string_to_int_ @474
-    ssm_string_to_real_ @475
-    strDefaultRealFormat @476 DATA
-    string_to_SSM_ST_SM1 @477
-    string_to_SSM_ST_SM2_RUNNING_elevator_state @478
-    string_to_SSM_ST_elevator_state @479
-    string_to_SSM_TR_SM1 @480
-    string_to_SSM_TR_SM2_RUNNING_elevator_state @481
-    string_to_SSM_TR_elevator_state @482
-    string_to_VTable @483
-    string_to_kcg_bool @484
-    string_to_kcg_char @485
-    string_to_kcg_float32 @486
-    string_to_kcg_float64 @487
-    string_to_kcg_int16 @488
-    string_to_kcg_int32 @489
-    string_to_kcg_int64 @490
-    string_to_kcg_int8 @491
-    string_to_kcg_size @492
-    string_to_kcg_uint16 @493
-    string_to_kcg_uint32 @494
-    string_to_kcg_uint64 @495
-    string_to_kcg_uint8 @496
-    string_to_tDoorStatusEnum @497
-    string_to_tMotorCommand @498
-    tDoorStatusEnum_nb_values @499 DATA
-    tDoorStatusEnum_to_double @500
-    tDoorStatusEnum_to_long @501
-    tDoorStatusEnum_to_string @502
-    tMotorCommand_nb_values @503 DATA
-    tMotorCommand_to_double @504
-    tMotorCommand_to_long @505
-    tMotorCommand_to_string @506
-    updateCompareResult @507
+    scope_34 @449 DATA
+    scope_34_entries @450 DATA
+    scope_35 @451 DATA
+    scope_35_entries @452 DATA
+    scope_3_entries @453 DATA
+    scope_4 @454 DATA
+    scope_4_entries @455 DATA
+    scope_5 @456 DATA
+    scope_5_entries @457 DATA
+    scope_6 @458 DATA
+    scope_6_entries @459 DATA
+    scope_7 @460 DATA
+    scope_7_entries @461 DATA
+    scope_8 @462 DATA
+    scope_8_entries @463 DATA
+    scope_9 @464 DATA
+    scope_9_entries @465 DATA
+    ssm_char_to_string @466
+    ssm_double_to_string @467
+    ssm_float_to_string @468
+    ssm_int_to_base_string @469
+    ssm_int_to_string @470
+    ssm_real_to_string_ @471
+    ssm_string_to_bool @472
+    ssm_string_to_char @473
+    ssm_string_to_char_ @474
+    ssm_string_to_double @475
+    ssm_string_to_float @476
+    ssm_string_to_int @477
+    ssm_string_to_int_ @478
+    ssm_string_to_real_ @479
+    strDefaultRealFormat @480 DATA
+    string_to_SSM_ST_SM1 @481
+    string_to_SSM_ST_SM2_RUNNING_elevator_state @482
+    string_to_SSM_ST_elevator_state @483
+    string_to_SSM_TR_SM1 @484
+    string_to_SSM_TR_SM2_RUNNING_elevator_state @485
+    string_to_SSM_TR_elevator_state @486
+    string_to_VTable @487
+    string_to_kcg_bool @488
+    string_to_kcg_char @489
+    string_to_kcg_float32 @490
+    string_to_kcg_float64 @491
+    string_to_kcg_int16 @492
+    string_to_kcg_int32 @493
+    string_to_kcg_int64 @494
+    string_to_kcg_int8 @495
+    string_to_kcg_size @496
+    string_to_kcg_uint16 @497
+    string_to_kcg_uint32 @498
+    string_to_kcg_uint64 @499
+    string_to_kcg_uint8 @500
+    string_to_tDoorStatusEnum @501
+    string_to_tMotorCommand @502
+    tDoorStatusEnum_nb_values @503 DATA
+    tDoorStatusEnum_to_double @504
+    tDoorStatusEnum_to_long @505
+    tDoorStatusEnum_to_string @506
+    tMotorCommand_nb_values @507 DATA
+    tMotorCommand_to_double @508
+    tMotorCommand_to_long @509
+    tMotorCommand_to_string @510
+    updateCompareResult @511

@@ -43,7 +43,7 @@
 	<data>
 		<StateMachine name="SM1">
 			<states>
-				<State name="CLOSED">
+				<State initial="true" name="CLOSED">
 					<unless>
 						<Transition kind="restart">
 							<target>
@@ -148,6 +148,21 @@
 								<ed:Transition oid="!ed/4b32/6782/215C/6825b443291e"/>
 							</pragmas>
 						</Transition>
+						<Transition kind="restart">
+							<target>
+								<StateRef name="OPENING"/>
+							</target>
+							<condition>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="iOpenDoor"/>
+									</path>
+								</IdExpression>
+							</condition>
+							<pragmas>
+								<ed:Transition oid="!ed/4be0/1139/1520/682c79b462c9"/>
+							</pragmas>
+						</Transition>
 					</unless>
 					<locals>
 						<Variable name="_L1">
@@ -230,6 +245,21 @@
 								<ed:Transition oid="!ed/4b37/6782/215C/6825b4435186"/>
 							</pragmas>
 						</Transition>
+						<Transition kind="restart">
+							<target>
+								<StateRef name="CLOSING"/>
+							</target>
+							<condition>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="iCloseDoor"/>
+									</path>
+								</IdExpression>
+							</condition>
+							<pragmas>
+								<ed:Transition oid="!ed/4bce/1139/1520/682c799b7193"/>
+							</pragmas>
+						</Transition>
 					</unless>
 					<locals>
 						<Variable name="_L1">
@@ -283,7 +313,7 @@
 						<ed:State oid="!ed/4b33/6782/215C/6825b4432ccd"/>
 					</pragmas>
 				</State>
-				<State initial="true" name="OPENED">
+				<State name="OPENED">
 					<unless>
 						<Transition kind="restart">
 							<target>
@@ -584,6 +614,40 @@
 							</labelPos>
 							<slashPos>
 								<Point x="22992" y="13070"/>
+							</slashPos>
+						</TransitionGE>
+						<TransitionGE presentable="!ed/4bce/1139/1520/682c799b7193">
+							<positions>
+								<Point x="15399" y="15928"/>
+								<Point x="17701" y="14658"/>
+								<Point x="20003" y="13388"/>
+								<Point x="22357" y="12091"/>
+							</positions>
+							<labelSize>
+								<Size width="2170" height="370"/>
+							</labelSize>
+							<labelPos>
+								<Point x="17700" y="12568"/>
+							</labelPos>
+							<slashPos>
+								<Point x="19076" y="12568"/>
+							</slashPos>
+						</TransitionGE>
+						<TransitionGE presentable="!ed/4be0/1139/1520/682c79b462c9">
+							<positions>
+								<Point x="22728" y="12330"/>
+								<Point x="20346" y="13653"/>
+								<Point x="17965" y="14975"/>
+								<Point x="15584" y="16325"/>
+							</positions>
+							<labelSize>
+								<Size width="2117" height="370"/>
+							</labelSize>
+							<labelPos>
+								<Point x="19024" y="14420"/>
+							</labelPos>
+							<slashPos>
+								<Point x="20347" y="14420"/>
 							</slashPos>
 						</TransitionGE>
 					</presentationElements>

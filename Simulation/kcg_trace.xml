@@ -258,6 +258,10 @@
               </Action>
               <Transition kind="strong" scadeDest="CLOSED" targetName="SSM_TR_CLOSING_CLOSED_1_CLOSING_SM1"/>
             </Fork>
+            <Fork priority="2">
+              <Condition/>
+              <Transition kind="strong" scadeDest="OPENING" targetName="SSM_TR_CLOSING_OPENING_2_CLOSING_SM1"/>
+            </Fork>
           </State>
           <State scadeName="OPENING" targetName="SSM_st_OPENING_SM1">
             <Local clockVal="SSM_st_OPENING_SM1" clockVar="SM1_state_act" inCtx="true" scadeName="_L1" scadeType="tDoorStatusEnum" targetName="_L1_OPENING_SM1" targetType="tDoorStatusEnum"/>
@@ -270,6 +274,10 @@
                 </Times>
               </Action>
               <Transition kind="strong" scadeDest="OPENED" targetName="SSM_TR_OPENING_OPENED_1_OPENING_SM1"/>
+            </Fork>
+            <Fork priority="2">
+              <Condition/>
+              <Transition kind="strong" scadeDest="CLOSING" targetName="SSM_TR_OPENING_CLOSING_2_OPENING_SM1"/>
             </Fork>
           </State>
           <State scadeName="OPENED" targetName="SSM_st_OPENED_SM1">
