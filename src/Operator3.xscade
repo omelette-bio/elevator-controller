@@ -1196,6 +1196,12 @@
 	</data>
 	<pragmas>
 		<ed:Operator oid="!ed/4ba4/669F/11AC/682f31c2573a" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/7">
+			<comment>La logique de cette propriete est de compter le temps uniquement lorsque l'ascenceur n'est pas arrive a l'etage desire + lorsque l'ascenceur est en marche</comment>
+			<comment>La verification se fait comme suit:</comment>
+			<comment>Si on arrive au bon etage:</comment>
+			<comment>       On fait (etage actuel - etage de depart * 20) OU (etage de depart - etage actuel * 20) et on compare au temps actuel.</comment>
+			<comment>Sinon:</comment>
+			<comment>       On garde la precedente valeur (qui commence a TRUE)</comment>
 			<diagrams>
 				<NetDiagram name="Prop2_1" landscape="true" format="A4 (210 297)" oid="!ed/4ba5/669F/11AC/682f31c23e08">
 					<presentationElements>
